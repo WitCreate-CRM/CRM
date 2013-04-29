@@ -1,0 +1,2 @@
+module SugerenciasyquejasHelper
+end

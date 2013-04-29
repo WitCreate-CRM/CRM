@@ -1,0 +1,12 @@
+<%= simple_form_for @visita, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :obsequio_id_id %>
+  <%= f.input :empleado_id_id %>
+  <%= f.input :empresa_id_id %>
+  <%= f.input :fecha %>
+  <%= f.input :comentarios %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                visitas_path, :class => 'btn' %>
+  </div>
+<% end %>

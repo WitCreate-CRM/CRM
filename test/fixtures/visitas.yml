@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  obsequio_id: 
+  empleado_id: 
+  empresa_id: 
+  fecha: 2013-04-29
+  comentarios: MyText
+
+two:
+  obsequio_id: 
+  empleado_id: 
+  empresa_id: 
+  fecha: 2013-04-29
+  comentarios: MyText

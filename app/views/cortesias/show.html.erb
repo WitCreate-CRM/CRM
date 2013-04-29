@@ -1,0 +1,29 @@
+<%- model_class = Cortesia -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:huesped_id_id) %>:</strong></dt>
+  <dd><%= @cortesia.huesped_id_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tabla_de_queso) %>:</strong></dt>
+  <dd><%= @cortesia.tabla_de_queso %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:botella_de_vino) %>:</strong></dt>
+  <dd><%= @cortesia.botella_de_vino %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:alimento_id_id) %>:</strong></dt>
+  <dd><%= @cortesia.alimento_id_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:otro_regalo) %>:</strong></dt>
+  <dd><%= @cortesia.otro_regalo %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              cortesias_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_cortesia_path(@cortesia), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              cortesia_path(@cortesia),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

@@ -1,0 +1,54 @@
+<%- model_class = Huesped -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:primer_nombre) %></th>
+      <th><%= model_class.human_attribute_name(:segundo_nombre) %></th>
+      <th><%= model_class.human_attribute_name(:primer_apellido) %></th>
+      <th><%= model_class.human_attribute_name(:segundo_apellido) %></th>
+      <th><%= model_class.human_attribute_name(:tipo_identificacion_id_id) %></th>
+      <th><%= model_class.human_attribute_name(:documento) %></th>
+      <th><%= model_class.human_attribute_name(:fecha_nacimiento) %></th>
+      <th><%= model_class.human_attribute_name(:direccion) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:empleado_encargado_id_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @huespedes.each do |huesped| %>
+      <tr>
+        <td><%= link_to huesped.id, huesped_path(huesped) %></td>
+        <td><%= huesped.primer_nombre %></td>
+        <td><%= huesped.segundo_nombre %></td>
+        <td><%= huesped.primer_apellido %></td>
+        <td><%= huesped.segundo_apellido %></td>
+        <td><%= huesped.tipo_identificacion_id_id %></td>
+        <td><%= huesped.documento %></td>
+        <td><%= huesped.fecha_nacimiento %></td>
+        <td><%= huesped.direccion %></td>
+        <td><%= huesped.email %></td>
+        <td><%= huesped.empleado_encargado_id_id %></td>
+        <td><%=l huesped.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_huesped_path(huesped), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      huesped_path(huesped),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_huesped_path,
+            :class => 'btn btn-primary' %>

@@ -1,0 +1,25 @@
+<%- model_class = Preferencia -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:tipo_habitacion_id_id) %>:</strong></dt>
+  <dd><%= @preferencia.tipo_habitacion_id_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:huesped_id_id) %>:</strong></dt>
+  <dd><%= @preferencia.huesped_id_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:numero_almohada_en_cama) %>:</strong></dt>
+  <dd><%= @preferencia.numero_almohada_en_cama %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              preferencias_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_preferencia_path(@preferencia), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              preferencia_path(@preferencia),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

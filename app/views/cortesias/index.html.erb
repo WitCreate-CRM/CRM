@@ -1,0 +1,44 @@
+<%- model_class = Cortesia -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:huesped_id_id) %></th>
+      <th><%= model_class.human_attribute_name(:tabla_de_queso) %></th>
+      <th><%= model_class.human_attribute_name(:botella_de_vino) %></th>
+      <th><%= model_class.human_attribute_name(:alimento_id_id) %></th>
+      <th><%= model_class.human_attribute_name(:otro_regalo) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cortesias.each do |cortesia| %>
+      <tr>
+        <td><%= link_to cortesia.id, cortesia_path(cortesia) %></td>
+        <td><%= cortesia.huesped_id_id %></td>
+        <td><%= cortesia.tabla_de_queso %></td>
+        <td><%= cortesia.botella_de_vino %></td>
+        <td><%= cortesia.alimento_id_id %></td>
+        <td><%= cortesia.otro_regalo %></td>
+        <td><%=l cortesia.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_cortesia_path(cortesia), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      cortesia_path(cortesia),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_cortesia_path,
+            :class => 'btn btn-primary' %>

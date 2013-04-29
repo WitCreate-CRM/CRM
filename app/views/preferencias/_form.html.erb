@@ -1,0 +1,10 @@
+<%= simple_form_for @preferencia, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :tipo_habitacion_id_id %>
+  <%= f.input :huesped_id_id %>
+  <%= f.input :numero_almohada_en_cama %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                preferencias_path, :class => 'btn' %>
+  </div>
+<% end %>

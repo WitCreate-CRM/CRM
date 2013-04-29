@@ -1,0 +1,12 @@
+<%= simple_form_for @contacto, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :empresa_id_id %>
+  <%= f.input :nombre %>
+  <%= f.input :celular %>
+  <%= f.input :email %>
+  <%= f.input :fecha_nacimiento %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                contactos_path, :class => 'btn' %>
+  </div>
+<% end %>

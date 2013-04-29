@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  huesped_id: 
+  tabla_de_queso: MyString
+  botella_de_vino: MyString
+  alimento_id: 
+  otro_regalo: MyString
+
+two:
+  huesped_id: 
+  tabla_de_queso: MyString
+  botella_de_vino: MyString
+  alimento_id: 
+  otro_regalo: MyString

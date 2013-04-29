@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  propietario_id: 
+  numero_telefonico: MyString
+
+two:
+  propietario_id: 
+  numero_telefonico: MyString
