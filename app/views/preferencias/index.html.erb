@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:tipo_habitacion_id_id) %></th>
-      <th><%= model_class.human_attribute_name(:huesped_id_id) %></th>
+      <th><%= model_class.human_attribute_name(:tipo_habitacion_id) %></th>
+      <th><%= model_class.human_attribute_name(:huesped_id) %></th>
       <th><%= model_class.human_attribute_name(:numero_almohada_en_cama) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -17,8 +17,8 @@
     <% @preferencias.each do |preferencia| %>
       <tr>
         <td><%= link_to preferencia.id, preferencia_path(preferencia) %></td>
-        <td><%= preferencia.tipo_habitacion_id_id %></td>
-        <td><%= preferencia.huesped_id_id %></td>
+        <td><%= preferencia.tipo_habitacion_id %></td>
+        <td><%= preferencia.huesped_id %></td>
         <td><%= preferencia.numero_almohada_en_cama %></td>
         <td><%=l preferencia.created_at %></td>
         <td>

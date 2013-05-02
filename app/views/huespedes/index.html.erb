@@ -10,12 +10,12 @@
       <th><%= model_class.human_attribute_name(:segundo_nombre) %></th>
       <th><%= model_class.human_attribute_name(:primer_apellido) %></th>
       <th><%= model_class.human_attribute_name(:segundo_apellido) %></th>
-      <th><%= model_class.human_attribute_name(:tipo_identificacion_id_id) %></th>
+      <th><%= model_class.human_attribute_name(:tipo_identificacion_id) %></th>
       <th><%= model_class.human_attribute_name(:documento) %></th>
       <th><%= model_class.human_attribute_name(:fecha_nacimiento) %></th>
       <th><%= model_class.human_attribute_name(:direccion) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
-      <th><%= model_class.human_attribute_name(:empleado_encargado_id_id) %></th>
+      <th><%= model_class.human_attribute_name(:empleado_encargado_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -28,12 +28,12 @@
         <td><%= huesped.segundo_nombre %></td>
         <td><%= huesped.primer_apellido %></td>
         <td><%= huesped.segundo_apellido %></td>
-        <td><%= huesped.tipo_identificacion_id_id %></td>
+        <td><%= huesped.tipo_identificacion_id %></td>
         <td><%= huesped.documento %></td>
         <td><%= huesped.fecha_nacimiento %></td>
         <td><%= huesped.direccion %></td>
         <td><%= huesped.email %></td>
-        <td><%= huesped.empleado_encargado_id_id %></td>
+        <td><%= huesped.empleado_encargado_id %></td>
         <td><%=l huesped.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

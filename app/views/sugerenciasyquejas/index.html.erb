@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:huesped_id_id) %></th>
+      <th><%= model_class.human_attribute_name(:huesped_id) %></th>
       <th><%= model_class.human_attribute_name(:observaciones) %></th>
       <th><%= model_class.human_attribute_name(:sugerencias) %></th>
       <th><%= model_class.human_attribute_name(:problemas_en_la_estadia) %></th>
@@ -18,7 +18,7 @@
     <% @sugerenciasyquejas.each do |sugerenciasyqueja| %>
       <tr>
         <td><%= link_to sugerenciasyqueja.id, sugerenciasyqueja_path(sugerenciasyqueja) %></td>
-        <td><%= sugerenciasyqueja.huesped_id_id %></td>
+        <td><%= sugerenciasyqueja.huesped_id %></td>
         <td><%= sugerenciasyqueja.observaciones %></td>
         <td><%= sugerenciasyqueja.sugerencias %></td>
         <td><%= sugerenciasyqueja.problemas_en_la_estadia %></td>

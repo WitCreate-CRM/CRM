@@ -1,44 +1,40 @@
 class CortesiasController < ApplicationController
-  # GET /cortesias
-  # GET /cortesias.json
+
   def index
     @cortesias = Cortesia.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html 
       format.json { render json: @cortesias }
     end
   end
 
-  # GET /cortesias/1
-  # GET /cortesias/1.json
+
   def show
     @cortesia = Cortesia.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html 
       format.json { render json: @cortesia }
     end
   end
 
-  # GET /cortesias/new
-  # GET /cortesias/new.json
+
   def new
     @cortesia = Cortesia.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html 
       format.json { render json: @cortesia }
     end
   end
 
-  # GET /cortesias/1/edit
+
   def edit
     @cortesia = Cortesia.find(params[:id])
   end
 
-  # POST /cortesias
-  # POST /cortesias.json
+
   def create
     @cortesia = Cortesia.new(params[:cortesia])
 
@@ -53,8 +49,7 @@ class CortesiasController < ApplicationController
     end
   end
 
-  # PUT /cortesias/1
-  # PUT /cortesias/1.json
+
   def update
     @cortesia = Cortesia.find(params[:id])
 
@@ -69,8 +64,7 @@ class CortesiasController < ApplicationController
     end
   end
 
-  # DELETE /cortesias/1
-  # DELETE /cortesias/1.json
+
   def destroy
     @cortesia = Cortesia.find(params[:id])
     @cortesia.destroy
