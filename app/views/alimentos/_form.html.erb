@@ -1,8 +1,9 @@
-<%= simple_form_for @alimento, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :descripcion %>
+<%= simple_form_for(@alimento, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+  <%= f.input :id, :label => "Id" %>
+  <%= f.input :descripcion, :label => 'Descripcion' %>
   <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                alimentos_path, :class => 'btn' %>
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <%= link_to 'Atras', alimentos_path, :class => 'btn btn-small' %>
   </div>
 <% end %>
