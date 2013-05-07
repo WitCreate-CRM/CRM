@@ -1,6 +1,5 @@
 <tr id=<%= "alimento_#{alimento.id}" %>>
   <td><%= link_to alimento.id, edit_alimento_path(alimento), :remote => true %></td>
-  <td><%= alimento.id %></td>
   <td><%= alimento.descripcion %></td>
   <td>
     <%= link_to 'Mostrar', alimento, :remote => true, :class => 'btn btn-mini' %>
