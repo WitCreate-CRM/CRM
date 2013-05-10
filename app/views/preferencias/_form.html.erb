@@ -1,10 +1,11 @@
-<%= simple_form_for @preferencia, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :tipo_habitacion_id %>
-  <%= f.input :huesped_id %>
-  <%= f.input :numero_almohada_en_cama %>
+<%= simple_form_for(@preferencia, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+  <%= f.input :tipo_habitacion_id, :label => 'Tipo de habitación' %>
+  <%= f.input :huesped_id, :label => 'Huésped' %>
+  <%= f.input :numero_almohada_en_cama, :label => 'Número de almohadas en la cama' %>
+
   <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                preferencias_path, :class => 'btn' %>
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <%= link_to 'Atras', preferencias_path, :class => 'btn btn-small' %>
   </div>
 <% end %>

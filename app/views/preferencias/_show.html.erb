@@ -1,0 +1,11 @@
+<%- model_class = Preferencia -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class='gen'>
+  <p><b>Id:</b> <%= @preferencia.id %></p>
+  <p><b>Tipo De Habitación:</b> <%= @preferencia.tipo_habitacion_id %></p>
+  <p><b>Huésped:</b> <%= @preferencia.huesped_id %></p>
+  <p><b>Número De Almohadas En La Cama:</b> <%= @preferencia.numero_almohada_en_cama %></p>
+</div>

@@ -1,10 +1,13 @@
-<%= simple_form_for @tiposdehabitacion, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :descripcion %>
-  <%= f.input :piso %>
-  <%= f.input :habitacion_tina %>
+<%= simple_form_for(@tiposdehabitacion, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+
+  <%= f.input :descripcion, :label => "Descripción" %>
+  <%= f.input :habitacion_tina, :label => "Habitación con tina" %>
+  <%= f.input :piso, :label => "Piso" %>
+  
+  
   <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                tiposdehabitaciones_path, :class => 'btn' %>
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <%= link_to 'Atras', tiposdehabitaciones_path, :class => 'btn btn-small' %>
   </div>
 <% end %>

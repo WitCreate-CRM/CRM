@@ -1,0 +1,21 @@
+<tr id=<%= "huesped_#{huesped.id}" %>>
+  <td><%= link_to huesped.id, edit_huesped_path(huesped), :remote => true %></td>
+  <td><%= huesped.primer_nombre %></td>
+  <td><%= huesped.segundo_nombre %></td>
+  <td><%= huesped.primer_apellido %></td>
+  <td><%= huesped.segundo_apellido %></td>
+  <td><%= huesped.tipo_identificacion_id %></td>
+  <td><%= huesped.documento %></td>
+  <td><%= huesped.fecha_nacimiento %></td>
+  <td><%= huesped.direccion %></td>
+  <td><%= huesped.email %></td>
+  <td><%= huesped.empleado_encargado_id %></td>
+  <td>
+    <%= link_to 'Mostrar', huesped, :remote => true, :class => 'btn btn-mini' %>
+    <%= link_to 'Editar', edit_huesped_path(huesped), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', huesped, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+  </td>
+</tr>

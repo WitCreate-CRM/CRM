@@ -7,7 +7,7 @@ class Huesped < ActiveRecord::Base
    :length => { :maximum => 25 }
 
   validates :documento, :presence => true, 
-   :length => { :minimum => 12, :maximum => 13 }
+   :length => { :minimum => 11, :maximum => 13 }
 
   validates :email, :presence => true, 
    :length => { :maximum => 50 },
@@ -16,14 +16,10 @@ class Huesped < ActiveRecord::Base
 
   validates :primer_nombre, :presence => true,
    :length => { :minimum => 2, :maximum => 15 }
-
-  validates :segundo_nombre, :presence => true,
-   :length => { :minimum => 2, :maximum => 15 } 
+ 
 
   validates :primer_apellido, :presence => true,
    :length => { :minimum => 2, :maximum => 15 }
 
-  validates :segundo_apellido, :presence => true,
-   :length => { :minimum => 2, :maximum => 15 }
 
 end
