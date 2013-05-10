@@ -2,15 +2,30 @@
 <div class="page-header">
   <h1>Cortesias</h1>
 </div>
-<table class="table table-striped table-bordered table-condensed">
+
+<%= form_tag request.path, :method => 'get' do %> 
+ <%= content_tag :label do %> 
+ Buscar Cortesia: 
+ <%= text_field_tag :search, params[:search] %> 
+ <%= submit_tag "Consultar", :name => nil, :class => 'btn' %> 
+ <% end %> 
+<br> 
+Seleccione numero de registros por pagina:
+<%= text_field_tag :limit, params[:limit] , :id=>'num'%> 
+<%= submit_tag "Mostrar", :name => nil, :class => 'btn' %> 
+<% end %> 
+
+<br />
+
+<table class="table table-striped table-bordered table-condensed pretty">
   <thead>
     <tr>
-      <th>Id</th>
-      <th> Huesped </th>
-      <th> Botella de vino </th>
-      <th> Otro regalo </th>
-      <th>Tabla de queso </th>
-      <th>Alimento</th>
+      <th><%= sortable 'id' %></th>
+      <th><%= sortable 'huesped_id', :Huésped %></th>
+      <th><%= sortable 'botella_de_vino' %></th>
+      <th><%= sortable 'otro_regalo' %></th>
+      <th><%= sortable 'tabla_de_queso' %></th>
+      <th><%= sortable 'alimento_id', :Alimento %></th>
       <th></th>
     </tr>
   </thead>
@@ -23,3 +38,12 @@
     </tr>
   </tfoot>
 </table>
+
+<br /> 
+
+<div align="center"> 
+<%= will_paginate @cortesias, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente
+&raquo;' %> 
+</div> 
+
+<p> Total Cortesias : <%= @cortesias.total_entries %> </p>
