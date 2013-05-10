@@ -54,3 +54,18 @@
   border: none;
   box-shadow: none;
 }
+
+.pretty th .current {
+  background-size: 10px;
+  padding-right: 18px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.pretty th .asc {
+  background-image: url(up_arrow.png);
+}
+
+.pretty th .desc {
+  background-image: url(down_arrow.png);
+}
