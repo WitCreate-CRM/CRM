@@ -1,6 +1,6 @@
 class Visita < ActiveRecord::Base
-  belongs_to :obsequio_id
-  belongs_to :empleado_id
-  belongs_to :empresa_id
-  attr_accessible :comentarios, :fecha
+  belongs_to :obsequio
+  belongs_to :empleado
+  belongs_to :empresa
+  attr_accessible :comentarios, :fecha, :obsequio_id, :empleado_id, :empresa_id
 end

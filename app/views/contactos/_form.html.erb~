@@ -1,0 +1,18 @@
+<%= simple_form_for(@contacto, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+  <%= f.error_notification %>
+ 
+
+  <%= f.input :empresa_id, :label => "Empresa",  :required => true %>
+  <%= f.input :nombre, :label => "Nombre",  :required => true %>
+  <%= f.input :celular, :label => "Celular",  :required => true %>
+  <%= f.input :fecha_nacimiento, :label => "Fecha de Nacimiento",  :required => true %>
+  
+  
+  
+ 
+   <div class="form-actions">
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <%= link_to 'Atras', contactos_path, :class => 'btn btn-small' %>
+  </div>
+<% end %>

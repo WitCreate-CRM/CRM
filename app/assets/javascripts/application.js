@@ -15,3 +15,14 @@
 //= require twitter/bootstrap
 //= require bootstrap
 //= require_tree .
+//= require lazybox
+
+$(document).ready(function() {
+  
+  $('a#show_visita_link').lazybox({closeImg: true});
+  
+  $('a[rel*=lazybox]').lazybox({close: false, modal: false, opacity: 0.7, klass: 'lazybox', speed: 200});
+  $.lazybox.settings = {cancelClass: "button green", submitClass: 'button red', closeImg: false, niceClose: false}
+  $.rails.allowAction = $.lazybox.confirm;
+ 
+});

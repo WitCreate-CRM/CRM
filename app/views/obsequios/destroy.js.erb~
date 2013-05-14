@@ -1,0 +1,1 @@
+$("table tr#visita_<%= @visita.id %>").remove();

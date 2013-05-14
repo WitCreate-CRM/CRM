@@ -1,0 +1,14 @@
+<tr id=<%= "telefono_#{telefono.id}" %>>
+  <td><%= telefono.id %></td>
+  <td><%= telefono.propietario_id %></td>
+  <td><%= telefono.numero_telefonico %></td>
+ 
+  <td>
+    <%= link_to 'Mostrar', telefono, :remote => true, :class => 'btn btn-success btn-mini' %>
+    <%= link_to 'Editar', edit_telefono_path(telefono), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', telefono, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+  </td>
+</tr>
