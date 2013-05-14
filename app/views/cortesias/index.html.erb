@@ -1,44 +1,49 @@
 <%- model_class = Cortesia -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1>Cortesias</h1>
 </div>
-<table class="table table-striped">
+
+<%= form_tag request.path, :method => 'get' do %> 
+ <%= content_tag :label do %> 
+ Buscar Cortesia: 
+ <%= text_field_tag :search, params[:search] %> 
+ <%= submit_tag "Consultar", :name => nil, :class => 'btn' %> 
+ <% end %> 
+<br> 
+Seleccione numero de registros por pagina:
+<%= text_field_tag :limit, params[:limit] , :id=>'num'%> 
+<%= submit_tag "Mostrar", :name => nil, :class => 'btn' %> 
+<% end %> 
+
+<br />
+
+<table class="table table-striped table-bordered table-condensed pretty">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:huesped_id) %></th>
-      <th><%= model_class.human_attribute_name(:tabla_de_queso) %></th>
-      <th><%= model_class.human_attribute_name(:botella_de_vino) %></th>
-      <th><%= model_class.human_attribute_name(:alimento_id) %></th>
-      <th><%= model_class.human_attribute_name(:otro_regalo) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><%= sortable 'id' %></th>
+      <th><%= sortable 'huesped_id', :Huésped %></th>
+      <th><%= sortable 'botella_de_vino' %></th>
+      <th><%= sortable 'otro_regalo' %></th>
+      <th><%= sortable 'tabla_de_queso' %></th>
+      <th><%= sortable 'alimento_id', :Alimento %></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <% @cortesias.each do |cortesia| %>
-      <tr>
-        <td><%= link_to cortesia.id, cortesia_path(cortesia) %></td>
-        <td><%= cortesia.huesped_id %></td>
-        <td><%= cortesia.tabla_de_queso %></td>
-        <td><%= cortesia.botella_de_vino %></td>
-        <td><%= cortesia.alimento_id %></td>
-        <td><%= cortesia.otro_regalo %></td>
-        <td><%=l cortesia.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_cortesia_path(cortesia), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      cortesia_path(cortesia),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
+     <%= render @cortesias %>
   </tbody>
+  <tfoot>
+    <tr>
+      <td><%= link_to 'Nueva Cortesia', new_cortesia_path, :remote => true %></td>
+    </tr>
+  </tfoot>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_cortesia_path,
-            :class => 'btn btn-primary' %>
+<br /> 
+
+<div align="center"> 
+<%= will_paginate @cortesias, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente
+&raquo;' %> 
+</div> 
+
+<p> Total Cortesias : <%= @cortesias.total_entries %> </p>

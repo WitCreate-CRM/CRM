@@ -1,9 +1,13 @@
-<%= simple_form_for @tiposdeidentificacion, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :descripcion %>
-  <%= f.input :sigla %>
+<%= simple_form_for(@tiposdeidentificacion, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+
+  <%= f.input :descripcion, :label => "Descripción" %>
+  <%= f.input :sigla, :label => "Sigla" %>
+
+  
+  
   <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                tiposdeidentificaciones_path, :class => 'btn' %>
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <%= link_to 'Atras', tiposdeidentificaciones_path, :class => 'btn btn-small' %>
   </div>
 <% end %>

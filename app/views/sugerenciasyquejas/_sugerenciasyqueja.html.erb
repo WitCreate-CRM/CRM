@@ -1,0 +1,15 @@
+<tr id=<%= "sugerenciasyqueja_#{sugerenciasyqueja.id}" %>>
+  <td><%= link_to sugerenciasyqueja.id, edit_sugerenciasyqueja_path(sugerenciasyqueja), :remote => true %></td>
+  <td><%= sugerenciasyqueja.huesped_id %></td>
+  <td><%= sugerenciasyqueja.observaciones %></td>
+  <td><%= sugerenciasyqueja.problemas_en_la_estadia %></td>
+  <td><%= sugerenciasyqueja.sugerencias %></td>
+  <td>
+    <%= link_to 'Mostrar', sugerenciasyqueja, :remote => true, :class => 'btn btn-mini' %>
+    <%= link_to 'Editar', edit_sugerenciasyqueja_path(sugerenciasyqueja), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', sugerenciasyqueja,
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+  </td>
+</tr>

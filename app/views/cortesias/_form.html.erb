@@ -1,12 +1,13 @@
-<%= simple_form_for @cortesia, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :huesped_id %>
-  <%= f.input :tabla_de_queso %>
-  <%= f.input :botella_de_vino %>
-  <%= f.input :alimento_id %>
-  <%= f.input :otro_regalo %>
+<%= simple_form_for(@cortesia, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+  <%= f.input :huesped_id, :label => 'Huesped' %>
+  <%= f.input :botella_de_vino, :label => 'Botella de vino' %>
+  <%= f.input :otro_regalo, :label => 'Otro regalo' %>
+  <%= f.input :tabla_de_queso, :label => 'Tabla de queso' %>
+  <%= f.input :alimento_id, :label => 'Alimento' %>
+
   <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                cortesias_path, :class => 'btn' %>
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <%= link_to 'Atras', cortesias_path, :class => 'btn btn-small' %>
   </div>
 <% end %>

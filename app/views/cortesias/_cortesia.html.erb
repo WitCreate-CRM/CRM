@@ -1,0 +1,16 @@
+<tr id=<%= "cortesia_#{cortesia.id}" %>>
+  <td><%= link_to cortesia.id, edit_cortesia_path(cortesia), :remote => true %></td>
+  <td><%= cortesia.huesped_id %></td>
+  <td><%= cortesia.botella_de_vino %></td>
+  <td><%= cortesia.otro_regalo %></td>
+  <td><%= cortesia.tabla_de_queso %></td>
+  <td><%= cortesia.alimento_id %></td>
+  <td>
+    <%= link_to 'Mostrar', cortesia, :remote => true, :class => 'btn btn-mini' %>
+    <%= link_to 'Editar', edit_cortesia_path(cortesia), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', cortesia, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+  </td>
+</tr>

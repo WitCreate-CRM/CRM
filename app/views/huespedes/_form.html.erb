@@ -1,17 +1,18 @@
-<%= simple_form_for @huesped, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :primer_nombre %>
-  <%= f.input :segundo_nombre %>
-  <%= f.input :primer_apellido %>
-  <%= f.input :segundo_apellido %>
-  <%= f.input :tipo_identificacion_id %>
-  <%= f.input :documento %>
-  <%= f.input :fecha_nacimiento %>
-  <%= f.input :direccion %>
-  <%= f.input :email %>
-  <%= f.input :empleado_encargado_id %>
+<%= simple_form_for(@huesped, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+  <%= f.input :primer_nombre, :label => 'Primer nombre' %>
+  <%= f.input :segundo_nombre, :label => 'Segundo nombre' %>
+  <%= f.input :primer_apellido, :label => 'Primer apellido' %>
+  <%= f.input :segundo_apellido, :label => 'Segundo apellido' %>
+  <%= f.input :tipo_identificacion_id, :label => 'Tipo de identificación' %>
+  <%= f.input :documento, :label => 'Documento' %>
+  <%= f.input :fecha_nacimiento, :label => 'Fecha de nacimiento' %>
+  <%= f.input :direccion, :label => 'Dirección' %>
+  <%= f.input :email, :label => 'Email' %>
+  <%= f.input :empleado_encargado_id, :label => 'Empleado encargado' %>
+
   <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                huespedes_path, :class => 'btn' %>
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <%= link_to 'Atras', huespedes_path, :class => 'btn btn-small' %>
   </div>
 <% end %>

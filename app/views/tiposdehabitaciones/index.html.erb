@@ -1,40 +1,23 @@
 <%- model_class = Tiposdehabitacion -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1>Tipos De Habitaciones</h1>
 </div>
-<table class="table table-striped">
+<table class="table table-striped table-bordered table-condensed">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:descripcion) %></th>
-      <th><%= model_class.human_attribute_name(:piso) %></th>
-      <th><%= model_class.human_attribute_name(:habitacion_tina) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th>Id</th>
+      <th>Descripción</th>
+      <th>Habitacion Con Tina</th>
+      <th>Piso</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <% @tiposdehabitaciones.each do |tiposdehabitacion| %>
-      <tr>
-        <td><%= link_to tiposdehabitacion.id, tiposdehabitacion_path(tiposdehabitacion) %></td>
-        <td><%= tiposdehabitacion.descripcion %></td>
-        <td><%= tiposdehabitacion.piso %></td>
-        <td><%= tiposdehabitacion.habitacion_tina %></td>
-        <td><%=l tiposdehabitacion.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_tiposdehabitacion_path(tiposdehabitacion), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      tiposdehabitacion_path(tiposdehabitacion),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
+     <%= render @tiposdehabitaciones %>
   </tbody>
+  <tfoot>
+    <tr>
+      <td><%= link_to 'Nuevo Tipo De Habitación', new_tiposdehabitacion_path, :remote => true %></td>
+    </tr>
+  </tfoot>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_tiposdehabitacion_path,
-            :class => 'btn btn-primary' %>
