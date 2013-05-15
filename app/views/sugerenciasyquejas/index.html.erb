@@ -5,7 +5,7 @@
 
 <%= form_tag request.path, :method => 'get' do %> 
  <%= content_tag :label do %> 
- Buscar Alimento: 
+ Buscar Sugerencias/Quejas: 
  <%= text_field_tag :search, params[:search] %> 
  <%= submit_tag "Consultar", :name => nil, :class => 'btn' %> 
  <% end %> 
