@@ -1,7 +1,13 @@
 class TiposdeidentificacionesController < ApplicationController
   
+  helper_method :sort_column, :sort_direction
+
   def index
-    @tiposdeidentificaciones = Tiposdeidentificacion.all
+    if params[:limit] == nil or params[:limit] <= "0" then
+          params[:limit] = 10
+    end 
+
+    @tiposdeidentificaciones = Tiposdeidentificacion.order(sort_column + ' ' + sort_direction).search(params[:search]).page(params[:page]).per_page(params[:limit].to_i)
     respond_to do |format|
       format.html
       format.json { render json: @tiposdeidentificaciones }
@@ -35,4 +41,14 @@ class TiposdeidentificacionesController < ApplicationController
       @tiposdeidentificacion.destroy
   end
   
+ private
+ 
+  def sort_column
+    Tiposdeidentificacion.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  end
+
 end
