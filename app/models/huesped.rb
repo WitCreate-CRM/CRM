@@ -3,11 +3,15 @@ class Huesped < ActiveRecord::Base
   belongs_to :empleado_encargado
   attr_accessible :direccion, :documento, :email, :fecha_nacimiento, :primer_apellido, :primer_nombre, :segundo_apellido, :segundo_nombre, :empleado_encargado_id, :tipo_identificacion_id
 
+  def self.search(search) 
+    where('direccion like ? OR documento like ? OR email like ? OR primer_nombre like ? OR segundo_nombre like ? OR primer_apellido like ? OR segundo_apellido like ? ', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%" ) 
+  end
+
   validates :direccion, :presence => true, 
    :length => { :maximum => 25 }
 
   validates :documento, :presence => true, 
-   :length => { :minimum => 11, :maximum => 13 }
+   :length => { :minimum => 10, :maximum => 13 }
 
   validates :email, :presence => true, 
    :length => { :maximum => 50 },

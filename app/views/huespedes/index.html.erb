@@ -1,21 +1,36 @@
-<%- model_class = Cortesia -%>
+<%- model_class = Huesped -%>
 <div class="page-header">
   <h1>Huéspedes</h1>
 </div>
-<table class="table table-striped table-bordered table-condensed">
+
+<%= form_tag request.path, :method => 'get' do %> 
+ <%= content_tag :label do %> 
+ Buscar Huésped: 
+ <%= text_field_tag :search, params[:search] %> 
+ <%= submit_tag "Consultar", :name => nil, :class => 'btn' %> 
+ <% end %> 
+<br> 
+Seleccione numero de registros por pagina:
+<%= text_field_tag :limit, params[:limit] , :id=>'num'%> 
+<%= submit_tag "Mostrar", :name => nil, :class => 'btn' %> 
+<% end %> 
+
+<br />
+
+<table class="table table-striped table-bordered table-condensed pretty">
   <thead>
     <tr>
-      <th>Id</th>
-      <th> Primer Nombre </th>
-      <th> Segundo Nombre </th>
-      <th> Primer Apellido</th>
-      <th> Segundo Apellido </th>
-      <th> Tipo De Identificación </th>
-      <th> Documento </th>
-      <th> Fecha De Nacimiento </th>
-      <th> Dirección </th>
-      <th> Email </th>
-      <th> Empleado Encargado </th>
+      <th><%= sortable 'id' %></th>
+      <th> <%= sortable 'primer_nombre', :Primer_Nombre %> </th>
+      <th> <%= sortable 'segundo_nombre', :Segundo_Nombre %> </th>
+      <th> <%= sortable 'primer_apellido', :Primer_Apellido %> </th>
+      <th> <%= sortable 'segundo_apellido', :Segundo_Apellido %> </th>
+      <th> <%= sortable 'tipo_identificacion_id', :Tipo_De_Identificación %> </th>
+      <th> <%= sortable 'documento', :Documento %> </th>
+      <th> <%= sortable 'fecha_nacimiento', :Fecha_De_Nacimiento %> </th>
+      <th> <%= sortable 'direccion', :Dirección %> </th>
+      <th> <%= sortable 'email', :Email %> </th>
+      <th> <%= sortable 'empleado_encargado_id', :Empleado_Encargado %> </th>
       <th></th>
     </tr>
   </thead>
@@ -28,3 +43,12 @@
     </tr>
   </tfoot>
 </table>
+
+<br /> 
+
+<div align="center"> 
+<%= will_paginate @huespedes, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente
+&raquo;' %> 
+</div> 
+
+<p> Total Huéspedes : <%= @huespedes.total_entries %> </p>
