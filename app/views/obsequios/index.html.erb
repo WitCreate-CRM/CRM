@@ -1,6 +1,23 @@
 <%- model_class = Obsequio -%>
 <div class="page-header">
   <h1>Obsequios</h1>
+
+<%= form_tag request.path, :method => 'get' do %> 
+ <%= content_tag :label do %>
+
+Busqueda por Descripcion:
+
+ <%= text_field_tag :search, params[:search] %> 
+ <%= submit_tag "Consultar", :name => nil %> 
+ <% end %>
+
+<br>
+Seleccione numero de registros por pagina:
+
+<%= text_field_tag :limit, params[:limit] , :id=>'num'%> 
+<%= submit_tag "Mostrar", :name => nil, :class => 'btn' %> 
+<% end %> 
+</br>
 </div>
 <table class="table table-striped table-bordered table-condensed">
   <thead>
@@ -20,4 +37,13 @@
     </tr>
   </tfoot>
 </table>
+
+
+<div align="center"> 
+ <%= will_paginate @obsequios, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente
+&raquo;' %> 
+</div> 
+<p> 
+ Total obsequios : <%= @obsequios.total_entries %> 
+</p>
 
