@@ -1,7 +1,12 @@
 class CargosController < ApplicationController
 
   def index
-    @cargos= Cargo.all
+
+    if params[:limit] == nil or params[:limit] <= "0" then
+          params[:limit] = 10
+    end
+
+    @cargos = Cargo.order(sort_column + ' ' + sort_direction).search(params[:search]).page(params[:page]).per_page(params[:limit].to_i)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @cargos }
@@ -34,5 +39,15 @@ class CargosController < ApplicationController
       @cargo  = Cargo.find(params[:id])
       @cargo  .destroy
   end
-  
+
+  private
+ 
+  def sort_column
+    Cargo.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  end
+
 end
