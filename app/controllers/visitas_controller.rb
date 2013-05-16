@@ -42,7 +42,7 @@ class VisitasController < ApplicationController
   private
  
   def sort_column
-    Alimento.column_names.include?(params[:sort]) ? params[:sort] : "id"
+    Visita.column_names.include?(params[:sort]) ? params[:sort] : "id"
   end
 
   def sort_direction
