@@ -1,83 +1,53 @@
 class EmpleadosController < ApplicationController
-  # GET /empleados
-  # GET /empleados.json
-  def index
-    @empleados = Empleado.all
 
+  def index
+    
+    if params[:limit] == nil or params[:limit] <= "0" then
+          params[:limit] = 10
+    end
+
+    @empleados = Empleado.order(sort_column + ' ' + sort_direction).search(params[:search]).page(params[:page]).per_page(params[:limit].to_i)
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @empleados }
+      format.json { render json: @empleados}
     end
   end
 
-  # GET /empleados/1
-  # GET /empleados/1.json
   def show
-    @empleado = Empleado.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @empleado }
-    end
+      @empleado = Empleado.find(params[:id])
   end
 
-  # GET /empleados/new
-  # GET /empleados/new.json
   def new
-    @empleado = Empleado.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @empleado }
-    end
+      @empleado = Empleado.new
   end
 
-  # GET /empleados/1/edit
   def edit
-    @empleado = Empleado.find(params[:id])
+      @empleado  = Empleado.find(params[:id])
   end
 
-  # POST /empleados
-  # POST /empleados.json
   def create
-    @empleado = Empleado.new(params[:empleado])
-
-    respond_to do |format|
-      if @empleado.save
-        format.html { redirect_to @empleado, notice: 'Empleado was successfully created.' }
-        format.json { render json: @empleado, status: :created, location: @empleado }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @empleado.errors, status: :unprocessable_entity }
-      end
-    end
+      @empleado  = Empleado.new(params[:empleado])
+      render :action => :new unless @empleado.save
   end
 
-  # PUT /empleados/1
-  # PUT /empleados/1.json
   def update
-    @empleado = Empleado.find(params[:id])
-
-    respond_to do |format|
-      if @empleado.update_attributes(params[:empleado])
-        format.html { redirect_to @empleado, notice: 'Empleado was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @empleado.errors, status: :unprocessable_entity }
-      end
-    end
+      @empleado  = Empleado.find(params[:id])
+      render :action => :edit unless @empleado.update_attributes(params[:empleado])
   end
 
-  # DELETE /empleados/1
-  # DELETE /empleados/1.json
   def destroy
-    @empleado = Empleado.find(params[:id])
-    @empleado.destroy
-
-    respond_to do |format|
-      format.html { redirect_to empleados_url }
-      format.json { head :no_content }
-    end
+      @empleado  = Empleado.find(params[:id])
+      @empleado .destroy
   end
+
+  private
+ 
+  def sort_column
+    Empleado.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  end
+
 end

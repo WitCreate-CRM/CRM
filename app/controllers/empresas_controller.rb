@@ -1,6 +1,7 @@
 class EmpresasController < ApplicationController
 
   def index
+    
     if params[:limit] == nil or params[:limit] <= "0" then
           params[:limit] = 10
     end

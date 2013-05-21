@@ -1,15 +1,21 @@
-<%= simple_form_for @empleado, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :cargo_id %>
-  <%= f.input :primer_nombre %>
-  <%= f.input :segundo_nombre %>
-  <%= f.input :primer_apellido %>
-  <%= f.input :segundo_apellido %>
-  <%= f.input :tipo_identificacion_id %>
-  <%= f.input :documento %>
-  <%= f.input :departamento_id %>
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                empleados_path, :class => 'btn' %>
+<%= simple_form_for(@empleado, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+  <%= f.error_notification %>
+ 
+
+  <%= f.input :cargo_id, :label => "Cargo",  :required => true %>
+  <%= f.input :primer_nombre, :label => "Primer Nombre",  :required => true %>
+  <%= f.input :segundo_nombre, :label => "Segundo Nombre",  :required => true %>
+  <%= f.input :primer_apellido, :label => "Primer Apellido",  :required => true %>
+  <%= f.input :segundo_apellido, :label => "Segundo Apellido",  :required => true %>
+  <%= f.input :tipo_identificacion_id, :label => "tipo de documentacion",  :required => true %>
+  <%= f.input :documento, :label => "Documento",  :required => true %>
+  <%= f.input :departamento_id, :label => "Departamento",  :required => true %>
+  
+  
+ 
+   <div class="form-actions">
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <%= link_to 'Atras', empleados_path, :class => 'btn btn-small' %>
   </div>
 <% end %>
