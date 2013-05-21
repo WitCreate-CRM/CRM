@@ -19,25 +19,26 @@ Seleccione numero de registros por pagina:
  
 <br />
 </div>
-<table class="table table-striped table-bordered table-condensed">
+<table class="table table-striped table-bordered table-condensed pretty">
   <thead>
     <tr>
-      <th>id</th>
-      <th>propietario_id</th>
-      <th>numero telefonico</th>
-      <th>created_at</th>
+      <th><%= sortable 'id' %></th>
+      <th><%= sortable 'propietario_id' %></th>
+      <th><%= sortable 'numero_telefonico' %></th>
+      <th>actions</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
      <%= render @telefonos %>
   </tbody>
-  <tfoot>
+  
+</table>
+<tfoot>
     <tr>
       <td><%= link_to 'Nuevo Telefono', new_telefono_path, :remote => true %></td>
     </tr>
   </tfoot>
-</table>
 
 <br /> 
 <br /> 

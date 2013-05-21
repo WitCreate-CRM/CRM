@@ -1,5 +1,8 @@
 class TelefonosController < ApplicationController
 
+
+   helper_method :sort_column, :sort_direction
+   
   def index
 
     if params[:limit] == nil or params[:limit] <= "0" then
