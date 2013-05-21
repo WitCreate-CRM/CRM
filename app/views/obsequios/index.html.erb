@@ -19,12 +19,12 @@ Seleccione numero de registros por pagina:
 <% end %> 
 </br>
 </div>
-<table class="table table-striped table-bordered table-condensed">
+<table class="table table-striped table-bordered table-condensed pretty">
   <thead>
     <tr>
-      <th>id</th>
-      <th>descripcion</th>
-      <th>created_at</th>
+      <th><%= sortable 'id' %></th>
+      <th><%= sortable 'descripcion' %></th>
+      <th>actions</th>
       <th></th>
     </tr>
   </thead>
