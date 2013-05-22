@@ -1,8 +1,8 @@
 class CreatePreferencias < ActiveRecord::Migration
   def change
     create_table :preferencias do |t|
-      t.references :tipo_habitacion_id
-      t.references :huesped_id
+      t.references :tipo_habitacion
+      t.references :huesped
       t.string :numero_almohada_en_cama
 
       t.timestamps
