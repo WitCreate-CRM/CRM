@@ -16,6 +16,15 @@ class AlimentosController < ApplicationController
 
   def show
       @alimento = Alimento.find(params[:id])
+
+      respond_to do |format|
+      format.js 
+      format.pdf do
+          pdf = AlimentoPdf.new(@alimento, view_context)
+          send_data pdf.render, filename:
+          "Alimento_#{@alimento.id}.pdf", type: "application/pdf"
+        end
+      end
   end
 
   def new

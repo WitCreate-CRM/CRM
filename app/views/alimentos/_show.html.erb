@@ -7,3 +7,5 @@
   <p><b>Id:</b> <%= @alimento.id %></p>
   <p><b>Descripción:</b> <%= @alimento.descripcion %></p>
 </div>
+<br>
+<%= link_to "pdf", alimento_path(@alimento, :format => "pdf"), :class => 'btn' %>
