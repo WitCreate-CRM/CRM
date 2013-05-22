@@ -16,8 +16,19 @@ class ContactosController < ApplicationController
   end
 
   def show
-      @contacto = Contacto.find(params[:id])
-  end
+
+    @contacto = Contacto.find(params[:id])
+    respond_to do |format|
+      format.js # show.html.erb
+      
+        format.pdf do
+          pdf = ContactoPdf.new(@contacto, view_context)
+          send_data pdf.render, filename:
+         "Contacto_#{@contacto.id}.pdf",
+          type: "application/pdf"
+   end
+       end
+ end
 
   def new
       @contacto = Contacto.new

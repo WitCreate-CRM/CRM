@@ -25,4 +25,4 @@ gem 'will_paginate'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem 'lazybox'
-
+gem 'prawn'
