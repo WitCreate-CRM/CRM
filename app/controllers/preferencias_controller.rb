@@ -16,6 +16,15 @@ class PreferenciasController < ApplicationController
 
   def show
       @preferencia = Preferencia.find(params[:id])
+
+      respond_to do |format|
+      format.js 
+      format.pdf do
+          pdf = PreferenciaPdf.new(@preferencia, view_context)
+          send_data pdf.render, filename:
+          "Preferencia_#{@preferencia.id}.pdf", type: "application/pdf"
+        end
+      end
   end
 
   def new
