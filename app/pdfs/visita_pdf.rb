@@ -51,11 +51,11 @@ class VisitaPdf < Prawn::Document
 
 		move_down 60
 		id = @visita.id
-		obsequio = @visita.obsequio_id 
-		empleado = @visita.empleado_id
-		empresa= @visita.empresa_id
+		obsequio_id = @visita.obsequio_id 
+		empleado_id = @visita.empleado_id
+		empresa_id = @visita.empresa_id
 		fecha = @visita.fecha
-		comentario = @visita.comentarios
+		comentarios = @visita.comentarios
 		table ([["Visita No", "#{id} "] ,
 		
 		["Obsequio", "#{obsequio_id} "],
