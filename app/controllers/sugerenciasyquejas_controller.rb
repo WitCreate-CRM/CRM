@@ -16,6 +16,15 @@ def index
 
   def show
       @sugerenciasyqueja = Sugerenciasyqueja.find(params[:id])
+
+      respond_to do |format|
+      format.js 
+      format.pdf do
+          pdf = SugerenciasyquejaPdf.new(@sugerenciasyqueja, view_context)
+          send_data pdf.render, filename:
+          "Sugerenciasyqueja_#{@sugerenciasyqueja.id}.pdf", type: "application/pdf"
+        end
+      end
   end
 
   def new

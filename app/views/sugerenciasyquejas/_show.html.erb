@@ -10,3 +10,6 @@
   <p><b>Problemas en la estadia:</b> <%= @sugerenciasyqueja.problemas_en_la_estadia %></p>
   <p><b>Sugerencias:</b> <%= @sugerenciasyqueja.sugerencias %></p>
 </div>
+
+<br>
+<%= link_to "pdf", sugerenciasyqueja_path(@sugerenciasyqueja, :format => "pdf"), :class => 'btn' %>

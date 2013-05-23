@@ -21,7 +21,7 @@ class AlimentoPdf < Prawn::Document
     descripcion = @alimento.descripcion
     
   	table ([["Id",  "#{id} "] ,
-    ["Descripcion", "#{descripcion} "],
+    ["Descripción", "#{descripcion} "],
    
     
     ]),
