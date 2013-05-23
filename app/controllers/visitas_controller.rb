@@ -15,8 +15,18 @@ class VisitasController < ApplicationController
      end
 
   def show
-      @visita = Visita.find(params[:id])
-  end
+       @visita = Visita.find(params[:id])
+    respond_to do |format|
+      format.js # show.html.erb
+      
+        format.pdf do
+          pdf = VisitaPdf.new(@visita, view_context)
+          send_data pdf.render, filename:
+         "Visita_#{@visita.id}.pdf",
+          type: "application/pdf"
+     end
+    end
+ end
 
   def new
       @visita = Visita.new
