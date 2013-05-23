@@ -17,6 +17,16 @@ class CargosController < ApplicationController
 
   def show
       @cargo = Cargo.find(params[:id])
+    respond_to do |format|
+      format.js # show.html.erb
+      
+        format.pdf do
+          pdf = CargoPdf.new(@cargo, view_context)
+          send_data pdf.render, filename:
+         "Cargo_#{@cargo.id}.pdf",
+          type: "application/pdf"
+     end
+    end
   end
 
   def new

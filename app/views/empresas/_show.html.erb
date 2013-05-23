@@ -10,3 +10,5 @@
   <p><%= @empresa.direccion %></p>
  
 </div>
+
+<td><%= link_to image_tag("pdf.png"), empresa_path(@empresa, :format => "pdf") %></td>

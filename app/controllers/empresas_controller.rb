@@ -17,6 +17,16 @@ class EmpresasController < ApplicationController
 
   def show
       @empresa = Empresa.find(params[:id])
+    respond_to do |format|
+      format.js # show.html.erb
+      
+        format.pdf do
+          pdf = EmpresaPdf.new(@empresa, view_context)
+          send_data pdf.render, filename:
+         "Empresa_#{@empresa.id}.pdf",
+          type: "application/pdf"
+     end
+    end
   end
 
   def new

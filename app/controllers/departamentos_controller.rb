@@ -17,6 +17,16 @@ class DepartamentosController < ApplicationController
 
   def show
       @departamento = Departamento.find(params[:id])
+    respond_to do |format|
+      format.js # show.html.erb
+      
+        format.pdf do
+          pdf = DepartamentoPdf.new(@departamento, view_context)
+          send_data pdf.render, filename:
+         "Departamento_#{@departamento.id}.pdf",
+          type: "application/pdf"
+     end
+    end
   end
 
   def new

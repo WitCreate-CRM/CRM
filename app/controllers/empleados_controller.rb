@@ -17,6 +17,16 @@ class EmpleadosController < ApplicationController
 
   def show
       @empleado = Empleado.find(params[:id])
+       respond_to do |format|
+       format.js # show.html.erb
+      
+        format.pdf do
+          pdf = EmpleadoPdf.new(@empleado, view_context)
+          send_data pdf.render, filename:
+         "Empleado_#{@empleado.id}.pdf",
+          type: "application/pdf"
+     end
+    end
   end
 
   def new

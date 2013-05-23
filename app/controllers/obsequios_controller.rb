@@ -16,7 +16,17 @@ class ObsequiosController < ApplicationController
   end
 
   def show
-      @obsequio = Obsequio.find(params[:id])
+       @obsequio = Obsequio.find(params[:id])
+       respond_to do |format|
+       format.js # show.html.erb
+      
+        format.pdf do
+          pdf = ObsequioPdf.new(@obsequio, view_context)
+          send_data pdf.render, filename:
+         "Obsequio_#{@obsequio.id}.pdf",
+          type: "application/pdf"
+     end
+    end
   end
 
   def new
