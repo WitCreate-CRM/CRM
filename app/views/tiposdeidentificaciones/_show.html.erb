@@ -9,3 +9,6 @@
   <p><b>Sigla:</b> <%= @tiposdeidentificacion.sigla %></p>
   
 </div>
+
+<br>
+<%= link_to "pdf", tiposdeidentificacion_path(@tiposdeidentificacion, :format => "pdf"), :class => 'btn' %>

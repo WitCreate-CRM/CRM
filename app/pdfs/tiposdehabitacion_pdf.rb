@@ -11,7 +11,7 @@ class TiposdehabitacionPdf < Prawn::Document
     logopath =  "#{Rails.root}/app/assets/images/crm.png"
     image logopath, :width => 150, :height => 70
     move_down 10
-    draw_text "Alimento", :at => [220, 675], size: 22
+    draw_text "Tipo De Habitación", :at => [220, 675], size: 22
   end
 
 
