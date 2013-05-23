@@ -4,7 +4,6 @@ class CortesiaPdf < Prawn::Document
     @cortesia = cortesia
     @view = view
     logo
-    deliver_details
     cortesia_details
   end
 
@@ -15,26 +14,6 @@ class CortesiaPdf < Prawn::Document
     draw_text "Cortesia", :at => [220, 675], size: 22
   end
 
-  def deliver_details
-    move_down 60
-    text "Cortesia Id:
-   #{@cortesia.id} ", :size => 13
-    move_down 20
-    text "Huésped:
-   #{@cortesia.huesped_id} ", :size => 13
-     move_down 20
-    text "Botella De Vino:
-   #{@cortesia.botella_de_vino} ", :size => 13
-    move_down 20
-    text "Otro Regalo:
-   #{@cortesia.otro_regalo} ", :size => 13
-    move_down 20
-    text "Tabla De Queso:
-   #{@cortesia.tabla_de_queso} ", :size => 13
-    move_down 20
-    text "Alimento:
-   #{@cortesia.alimento_id} ", :size => 13
-  end
 
   def cortesia_details    
   	move_down 60

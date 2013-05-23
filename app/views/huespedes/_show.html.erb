@@ -16,3 +16,6 @@
   <p><b>Email:</b> <%= @huesped.email %></p>
   <p><b>Empleado encargado:</b> <%= @huesped.empleado_encargado_id %></p>
 </div>
+
+<br>
+<%= link_to "pdf", huesped_path(@huesped, :format => "pdf"), :class => 'btn' %>
