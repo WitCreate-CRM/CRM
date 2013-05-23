@@ -17,7 +17,17 @@ class TelefonosController < ApplicationController
   end
 
   def show
-      @telefono= Telefono.find(params[:id])
+       @telefono = Telefono.find(params[:id])
+    respond_to do |format|
+      format.js # show.html.erb
+      
+        format.pdf do
+          pdf = TelefonoPdf.new(@telefono, view_context)
+          send_data pdf.render, filename:
+         "Telefono_#{@telefono.id}.pdf",
+          type: "application/pdf"
+     end
+    end
   end
 
   def new
