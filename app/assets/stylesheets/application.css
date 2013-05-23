@@ -11,7 +11,7 @@
  *= require_self
  *= require lazybox
  *= require_tree .
- //= require lazybox
+ *= require lazybox
  */
 
 
@@ -25,7 +25,7 @@
 }
 
 #lazybox_close.img {
-  background: url('close.png') no-repeat;
+  background: url('../assets/images/close.png') no-repeat;
   width: 25px;
   height: 25px;
   top: -17px;

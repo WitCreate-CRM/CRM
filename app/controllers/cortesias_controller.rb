@@ -16,6 +16,15 @@ class CortesiasController < ApplicationController
 
   def show
       @cortesia = Cortesia.find(params[:id])
+
+      respond_to do |format|
+      format.js 
+      format.pdf do
+          pdf = CortesiaPdf.new(@cortesia, view_context)
+          send_data pdf.render, filename:
+          "Cortesia_#{@cortesia.id}.pdf", type: "application/pdf"
+        end
+      end
   end
 
   def new
