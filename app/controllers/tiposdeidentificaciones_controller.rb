@@ -16,6 +16,15 @@ class TiposdeidentificacionesController < ApplicationController
 
   def show
       @tiposdeidentificacion = Tiposdeidentificacion.find(params[:id])
+
+      respond_to do |format|
+      format.js 
+      format.pdf do
+          pdf = TiposdeidentificacionPdf.new(@tiposdeidentificacion, view_context)
+          send_data pdf.render, filename:
+          "Tiposdeidentificacion_#{@tiposdeidentificacion.id}.pdf", type: "application/pdf"
+        end
+      end
   end
 
   def new
