@@ -16,6 +16,15 @@ class HuespedesController < ApplicationController
 
   def show
       @huesped = Huesped.find(params[:id])
+
+      respond_to do |format|
+      format.js 
+      format.pdf do
+          pdf = HuespedPdf.new(@huesped, view_context)
+          send_data pdf.render, filename:
+          "Huesped_#{@huesped.id}.pdf", type: "application/pdf"
+        end
+      end
   end
 
   def new

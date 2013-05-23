@@ -4,7 +4,6 @@ class AlimentoPdf < Prawn::Document
     @alimento = alimento
     @view = view
     logo
-    deliver_details
     alimento_details
   end
 
@@ -15,14 +14,6 @@ class AlimentoPdf < Prawn::Document
     draw_text "Alimento", :at => [220, 675], size: 22
   end
 
-  def deliver_details
-    move_down 60
-    text "Alimento Id:
-   #{@alimento.id} ", :size => 13
-    move_down 20
-    text "Descripcion:
-   #{@alimento.descripcion} ", :size => 13
-  end
 
   def alimento_details    
   	move_down 60
