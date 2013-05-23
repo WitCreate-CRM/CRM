@@ -10,3 +10,6 @@
   <p><b>Piso:</b> <%= @tiposdehabitacion.piso %></p>
   
 </div>
+
+<br>
+<%= link_to "pdf", tiposdehabitacion_path(@tiposdehabitacion, :format => "pdf"), :class => 'btn' %>

@@ -16,6 +16,15 @@ class TiposdehabitacionesController < ApplicationController
 
   def show
       @tiposdehabitacion = Tiposdehabitacion.find(params[:id])
+      
+      respond_to do |format|
+      format.js 
+      format.pdf do
+          pdf = TiposdehabitacionPdf.new(@tiposdehabitacion, view_context)
+          send_data pdf.render, filename:
+          "Tiposdehabitacion_#{@tiposdehabitacion.id}.pdf", type: "application/pdf"
+        end
+      end
   end
 
   def new
