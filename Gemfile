@@ -16,7 +16,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'json'
   gem 'less-rails'
-  gem 'paperclip'
+  gem 'paperclip', '~>3.3.1'
+  gem 'remotipart'
 end
 
 gem 'jquery-rails'
@@ -26,4 +27,5 @@ gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem 'lazybox'
 gem 'prawn'
+
 

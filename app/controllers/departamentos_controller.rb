@@ -43,7 +43,7 @@ class DepartamentosController < ApplicationController
   end
 
   def update
-      @visita  = Departamento.find(params[:id])
+      @departamento  = Departamento.find(params[:id])
       render :action => :edit unless @departamento.update_attributes(params[:departamento])
   end
 

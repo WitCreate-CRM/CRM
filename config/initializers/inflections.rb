@@ -29,6 +29,7 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'action', 'actions'
   inflect.irregular 'pais', 'paises'
   inflect.irregular 'cuy', 'cuyes'
+  
 end
 
 

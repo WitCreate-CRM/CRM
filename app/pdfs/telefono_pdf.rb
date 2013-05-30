@@ -1,5 +1,5 @@
 class TelefonoPdf < Prawn::Document
-  def initialize(cortesia, view)
+  def initialize(telefono, view)
     super()
     @telefono = telefono
     @view = view
@@ -20,11 +20,11 @@ class TelefonoPdf < Prawn::Document
     text "Telefono Id:
    #{@telefono.id} ", :size => 13
     move_down 20
-    text "propietario:
-   #{@telefono.propietario_id} ", :size => 13
+  
+   
      move_down 20
-    text "Numero Telefonico:
-   #{@telefono.numero_telefonico} ", :size => 13
+    text "Numero Telefonico:"
+  
     
   end
 
@@ -34,8 +34,8 @@ class TelefonoPdf < Prawn::Document
     propietario_id = @telefono.propietario_id
     numero_telefonico = @telefono.numero_telefonico
     
-    ["Telefono", "#{telefono_id} "],
-    ["propietario", "#{propietario_id} "],
+    table ([["Telefono", "#{id} "],
+    
     ["numero Telefonico", "#{numero_telefonico} "],
     
     ]),

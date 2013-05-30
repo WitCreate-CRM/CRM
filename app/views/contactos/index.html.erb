@@ -24,6 +24,7 @@ Seleccione numero de registros por pagina:
     <tr>
       <th><%= sortable 'id' %></th>
       <th><%= sortable 'empresa' %></th>
+      <th><%= sortable 'Foto' %></th>
       <th><%= sortable 'nombre' %></th>
       <th><%= sortable 'celular' %></th>
       <th><%= sortable 'email' %></th>
@@ -38,6 +39,7 @@ Seleccione numero de registros por pagina:
   <tfoot>
     <tr>
       <td><%= link_to 'Nuevo Contacto', new_contacto_path, :remote => true %></td>
+      
     </tr>
   </tfoot>
 </table>

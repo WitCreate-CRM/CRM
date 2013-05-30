@@ -1,6 +1,7 @@
 <%- model_class = Telefono -%>
 <div class="page-header">
-  <h1>Telefonos</h1>
+
+  <h1>Listado de Telefono de: <%= @empleado.primer_nombre %></h1>
 
  <%= form_tag request.path, :method => 'get' do %> 
  <%= content_tag :label do %> 
@@ -23,7 +24,6 @@ Seleccione numero de registros por pagina:
   <thead>
     <tr>
       <th><%= sortable 'id' %></th>
-      <th><%= sortable 'propietario_id' %></th>
       <th><%= sortable 'numero_telefonico' %></th>
       <th>actions</th>
       <th></th>
@@ -36,7 +36,10 @@ Seleccione numero de registros por pagina:
 </table>
 <tfoot>
     <tr>
-      <td><%= link_to 'Nuevo Telefono', new_telefono_path, :remote => true %></td>
+      <td><%= link_to 'Nuevo Telefono', new_empleado_telefono_path, :remote => true %>
+      <%= link_to 'Empleados', empleados_path %>
+      </td>
+
     </tr>
   </tfoot>
 

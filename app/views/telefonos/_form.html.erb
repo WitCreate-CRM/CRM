@@ -1,14 +1,15 @@
-<%= simple_form_for(@telefono, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+<%= simple_form_for([@empleado, @telefono], :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
 
   <%= f.error_notification %>
  
 
-  <%= f.input :propietario_id, :label => "Propietario",  :required => true %>
   <%= f.input :numero_telefonico, :label => "Numero telefonico",  :required => true %>
   
  
    <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
-    <%= link_to 'Atras', telefonos_path, :class => 'btn btn-small' %>
+    <%= link_to 'Atras', empleado_telefonos_path, :class => 'btn btn-small' %>
   </div>
+
 <% end %>
+

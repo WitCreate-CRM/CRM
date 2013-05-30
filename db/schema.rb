@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130429172150) do
+ActiveRecord::Schema.define(:version => 20130527163008) do
 
   create_table "alimentos", :force => true do |t|
     t.text     "descripcion"
@@ -31,8 +31,12 @@ ActiveRecord::Schema.define(:version => 20130429172150) do
     t.string   "celular"
     t.string   "email"
     t.date     "fecha_nacimiento"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "contactos", ["empresa_id"], :name => "index_contactos_on_empresa_id"
@@ -67,6 +71,10 @@ ActiveRecord::Schema.define(:version => 20130429172150) do
     t.integer  "departamento_id"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "empleados", ["cargo_id"], :name => "index_empleados_on_cargo_id"

@@ -1,4 +1,5 @@
 Witcrm::Application.routes.draw do
+  
   resources :huespedes
 
 
@@ -11,16 +12,15 @@ Witcrm::Application.routes.draw do
   resources :tiposdeidentificaciones
 
 
-  resources :empleados
+  resources :empleados do 
+    resources :telefonos
+  end
 
 
   resources :visitas
 
 
   resources :contactos
-
-
-  resources :telefonos
 
 
   resources :cortesias

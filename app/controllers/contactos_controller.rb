@@ -1,6 +1,7 @@
 class ContactosController < ApplicationController
 
   helper_method :sort_column, :sort_direction
+  
 
   def index
     
@@ -31,16 +32,18 @@ class ContactosController < ApplicationController
  end
 
   def new
-      @contacto = Contacto.new
-  end
+       @contacto = Contacto.new
+    end
 
   def edit
       @contacto = Contacto.find(params[:id])
   end
 
   def create
-      @contacto  = Contacto.new(params[:contacto])
+      @contacto = Contacto.new(params[:contacto])
       render :action => :new unless @contacto.save
+      @contactos = Contacto.all
+      #render :action => :new unless @contacto.save
   end
 
   def update
@@ -48,9 +51,12 @@ class ContactosController < ApplicationController
       render :action => :edit unless @contacto.update_attributes(params[:contacto])
   end
 
+
   def destroy
-      @contacto  = Contacto.find(params[:id])
+      @contacto = Contacto.find(params[:id])
       @contacto .destroy
+      @contactos = Contacto.all
+
   end
   
   private

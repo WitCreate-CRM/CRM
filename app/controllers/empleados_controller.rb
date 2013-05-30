@@ -2,6 +2,8 @@ class EmpleadosController < ApplicationController
   
     helper_method :sort_column, :sort_direction
 
+    before_filter :find_empleado, :except => [ :index, :create, :new ]
+
   def index
 
     if params[:limit] == nil or params[:limit] <= "0" then
@@ -13,10 +15,11 @@ class EmpleadosController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @empleados}
     end
-  end
+
+ end
 
   def show
-      @empleado = Empleado.find(params[:id])
+    
        respond_to do |format|
        format.js # show.html.erb
       
@@ -34,25 +37,32 @@ class EmpleadosController < ApplicationController
   end
 
   def edit
-      @empleado  = Empleado.find(params[:id])
+      
   end
+
 
   def create
       @empleado  = Empleado.new(params[:empleado])
       render :action => :new unless @empleado.save
+      @empleados = Empleado.all
+      #render :action => :new unless @instructor.save
   end
 
   def update
-      @empleado  = Empleado.find(params[:id])
+      
       render :action => :edit unless @empleado.update_attributes(params[:empleado])
   end
 
   def destroy
-      @empleado  = Empleado.find(params[:id])
       @empleado .destroy
+      @empleados = Empleado.all
   end
 
   private
+
+  def find_empleado
+      @empleado = Empleado.find(params[:id]) if params[:id]
+  end
  
   def sort_column
     Empleado.column_names.include?(params[:sort]) ? params[:sort] : "id"

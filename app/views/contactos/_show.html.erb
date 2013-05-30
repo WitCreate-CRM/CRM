@@ -4,15 +4,18 @@
 </div>
 
 <div class='contacto'>
-  <p><%= @contacto.id %></p>
-  <p><%= @contacto.empresa_id %></p>
-  <p><%= @contacto.nombre %></p>
-  <p><%= @contacto.celular %></p>
-  <p><%= @contacto.email %></p>
-  <p><%= @contacto.fecha_nacimiento %></p>
- 
- 
+  <p><b>Id: </b><%= @contacto.id %></p>
+  <p><b>Empresa: </b><%= @contacto.empresa_id %></p>
+  <p><b>Nombre: </b><%= @contacto.nombre %></p>
+  <p><b>Celular: </b><%= @contacto.celular %></p>
+  <p><b>Email: </b><%= @contacto.email %></p>
+  <p><b>Fecha De Nacimiento: </b><%= @contacto.fecha_nacimiento %></p>
+  <p><b>Foto: </b>
+    <br>
+  	<%= image_tag @contacto.avatar.url(:small) %></p>
  
 </div>
 
 <td><%= link_to image_tag("pdf.png"), contacto_path(@contacto, :format => "pdf") %></td>
+
+<dt><strong></strong></dt>

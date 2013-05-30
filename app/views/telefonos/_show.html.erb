@@ -5,10 +5,9 @@
 
 <div class='telefono'>
   <p><%= @telefono.id %></p>
-  <p><%= @telefono.propietario_id %></p>
   <p><%= @telefono.numero_telefonico %></p>
   
  
 </div>
 
-<td><%= link_to image_tag("pdf.png"), telefono_path(@telefono, :format => "pdf") %></td>
+<td><%= link_to image_tag("pdf.png"), empleado_telefono_path(@telefono, :format => "pdf") %></td>
