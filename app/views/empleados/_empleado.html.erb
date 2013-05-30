@@ -1,0 +1,28 @@
+<tr id=<%= "empleado_#{empleado.id}" %>>
+ 
+  <td><%= empleado.id %></td>
+  <td><%= empleado.cargo.descripcion %></td>
+  <td><%= image_tag empleado.avatar.url(:lsmall) %> </td>
+   <td> <%= empleado.primer_nombre%></td> 
+  
+  <td><%= empleado.segundo_nombre %></td>
+  <td><%= empleado.primer_apellido %></td>
+  <td><%= empleado.segundo_apellido %></td>
+  <td><%= empleado.tiposdeidentificacion.sigla %></td>
+  <td><%= empleado.documento %></td>
+  <td><%= empleado.departamento.nombre %></td>
+ 
+  <td>
+    <%= link_to 'Mostrar', empleado, :remote => true, :class => 'btn btn-success btn-mini' %>
+    <%= link_to 'Editar', edit_empleado_path(empleado), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', empleado, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+
+  </td>
+
+<td>
+<%= link_to 'Telefonos', empleado_telefonos_path(empleado) %></td>
+</td>
+</tr>
