@@ -1,6 +1,6 @@
 <%- model_class = Cortesia -%>
 <div class="page-header">
-  <h1>Cortesias</h1>
+  <h1>Cortesias de <%= @huesped.primer_nombre %></h1>
 </div>
 
 <%= form_tag request.path, :method => 'get' do %> 
@@ -21,7 +21,6 @@ Seleccione numero de registros por pagina:
   <thead>
     <tr>
       <th><%= sortable 'id' %></th>
-      <th><%= sortable 'huesped_id', :Huésped %></th>
       <th><%= sortable 'botella_de_vino' %></th>
       <th><%= sortable 'otro_regalo' %></th>
       <th><%= sortable 'tabla_de_queso' %></th>
@@ -32,14 +31,15 @@ Seleccione numero de registros por pagina:
   <tbody>
      <%= render @cortesias %>
   </tbody>
+  </table>
   <tfoot>
     <tr>
-      <td><%= link_to 'Nueva Cortesia', new_cortesia_path, :remote => true %></td>
+      <td><%= link_to 'Nueva Cortesia', new_huesped_cortesia_path, :remote => true %></td> |
+      <td><%= link_to 'Huéspedes', huespedes_path %></td>
     </tr>
   </tfoot>
-</table>
-
-<br /> 
+<br>
+<br> 
 
 <div align="center"> 
 <%= will_paginate @cortesias, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente

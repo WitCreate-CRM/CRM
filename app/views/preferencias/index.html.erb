@@ -1,6 +1,6 @@
 <%- model_class = Preferencia -%>
 <div class="page-header">
-  <h1>Preferencias</h1>
+  <h1>Preferencias de <%= @huesped.primer_nombre %></h1>
 </div>
 
 <%= form_tag request.path, :method => 'get' do %> 
@@ -21,8 +21,7 @@ Seleccione numero de registros por pagina:
   <thead>
     <tr>
       <th><%= sortable 'id' %></th>
-      <th> <%= sortable 'tipo_habitacion_id'%> </th>
-      <th> <%= sortable 'huesped_id' %> </th>
+      <th> <%= sortable 'tiposdehabitacion_id'%> </th>
       <th> <%= sortable 'numero_almohada_en_cama' %> </th>
       <th></th>
     </tr>
@@ -30,13 +29,15 @@ Seleccione numero de registros por pagina:
   <tbody>
      <%= render @preferencias %>
   </tbody>
+  </table>
   <tfoot>
     <tr>
-      <td><%= link_to 'Nueva Preferencia', new_preferencia_path, :remote => true %></td>
+      <td><%= link_to 'Nueva Preferencia', new_huesped_preferencia_path, :remote => true %></td> | 
+      <td> <%= link_to 'Huéspedes', huespedes_path %> </td>
     </tr>
   </tfoot>
-</table>
 
+<br>
 <br /> 
 
 <div align="center"> 

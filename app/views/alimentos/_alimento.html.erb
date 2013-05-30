@@ -3,10 +3,7 @@
   <td><%= alimento.descripcion %></td>
   <td>
     <%= link_to 'Mostrar', alimento, :remote => true, :class => 'btn btn-mini' %>
-    <%= link_to 'Editar', edit_alimento_path(alimento), :remote => true,
-        :class => 'btn btn-mini' %>
-    <%= link_to 'Eliminar', alimento, 
-        :data => { :confirm => 'Esta Seguro?' },
-        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+    <%= link_to 'Editar', edit_alimento_path(alimento), :remote => true, :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', alimento, :data => { :confirm => 'Esta Seguro?' }, :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
   </td>
 </tr>

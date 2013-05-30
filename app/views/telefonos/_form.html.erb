@@ -1,14 +1,24 @@
+<<<<<<< HEAD
 <%= simple_form_for([@empleado, @telefono], :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+=======
+<%= simple_form_for([@huesped, @telefono], :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+>>>>>>> 2d302407786e22f7976665e2b1d8fac36cfe483b
 
-  <%= f.error_notification %>
- 
 
+<<<<<<< HEAD
   <%= f.input :numero_telefonico, :label => "Numero telefonico",  :required => true %>
+=======
+  <%= f.input :numero_telefonico, :label => "Numero telefonico" %>
+>>>>>>> 2d302407786e22f7976665e2b1d8fac36cfe483b
   
  
    <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
+<<<<<<< HEAD
     <%= link_to 'Atras', empleado_telefonos_path, :class => 'btn btn-small' %>
+=======
+    <%= link_to 'Atras', huesped_telefonos_path, :class => 'btn btn-small' %>
+>>>>>>> 2d302407786e22f7976665e2b1d8fac36cfe483b
   </div>
 
 <% end %>

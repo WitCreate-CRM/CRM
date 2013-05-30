@@ -18,13 +18,11 @@ class PreferenciaPdf < Prawn::Document
   def preferencia_details    
   	move_down 60
     id = @preferencia.id
-    tipo_habitacion_id = @preferencia.tipo_habitacion_id
-    huesped_id = @preferencia.huesped_id
+    tiposdehabitacion_id = @preferencia.tiposdehabitacion_id
     numero_almohada_en_cama = @preferencia.numero_almohada_en_cama
     
   	table ([["Id",  "#{id} "] ,
-    ["Tipo De Habitación", "#{tipo_habitacion_id} "],
-    ["Huésped", "#{huesped_id} "],
+    ["Tipo De Habitación", "#{tiposdehabitacion_id} "],
     ["Número De Almohadas En La Cama", "#{numero_almohada_en_cama} "],
     
     ]),

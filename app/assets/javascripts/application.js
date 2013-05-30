@@ -16,16 +16,17 @@
 //= require bootstrap
 //= require lazybox
 //= require jquery.remotipart
+<<<<<<< HEAD
+=======
+//= require jquery-ui
+//= require autocomplete-rails
+>>>>>>> 2d302407786e22f7976665e2b1d8fac36cfe483b
 //= require_tree .
 
 
-$(document).ready(function() {
-  
-  $('a#show_visita_link').lazybox({closeImg: true})
 
 $(document).ready(function() {
-  
-  $('a#show_alimento_link').lazybox({closeImg: true});
+
 
   $('a[rel*=lazybox]').lazybox({close: false, modal: false, opacity: 0.7, klass: 'lazybox', speed: 200});
   $.lazybox.settings = {cancelClass: "button green", submitClass: 'button red', closeImg: false, niceClose: false}

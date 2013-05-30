@@ -20,13 +20,36 @@
       <div class="nav-collapse">
         <ul class="nav">
 
-        	<li><%= link_to "Alimentos", alimentos_path %></li>
-        	<li><%= link_to "Cortesias", cortesias_path %></li>
-        	<li><%= link_to "Huespedes", huespedes_path %></li>
-          	<li><%= link_to "Preferencias", preferencias_path %></li>
-          	<li><%= link_to "Sugerencias y quejas", sugerenciasyquejas_path %></li>
-          	<li><%= link_to "Tipos de habitaciones", tiposdehabitaciones_path %></li>
-	        <li><%= link_to "Tipos de identificaciones", tiposdeidentificaciones_path %></li>
+        	<li class= "dropdown">
+            <a class = "dropdown-toggle btn-large" data-toggle = "dropdown" href = ""><i class="icon-user"></i> Calidad </a> 
+            <ul class="dropdown-menu">
+              <li><%= link_to "Alimentos", alimentos_path %></li>
+              <li><%= link_to "Huespedes", huespedes_path %></li>
+              <li><%= link_to "Sugerencias y quejas", sugerenciasyquejas_path %></li>
+              <li><%= link_to "Tipos de habitaciones", tiposdehabitaciones_path %></li>
+              <li><%= link_to "Tipos de identificaciones", tiposdeidentificaciones_path %></li>
+              </li>
+              </ul>
+
+          <li>
+          <ul class="nav">
+            <li class= "dropdown">
+            <a class = "dropdown-toggle btn-large" data-toggle = "dropdown" href = ""><i class="icon-folder-open"></i> Mercadeo </a> 
+            <ul class="dropdown-menu">
+              <li><%= link_to "Cargos", cargos_path %></li>
+              <li><%= link_to "Contactos", contactos_path %></li>
+              <li><%= link_to "Departamentos", departamentos_path %></li>
+              <li><%= link_to "Empleados", empleados_path %></li>
+              <li><%= link_to "Empresas", empresas_path %></li>
+              <li><%= link_to "Obsequios", obsequios_path %></li>
+              <li><%= link_to "Visitas", visitas_path %></li>
+              </li>
+
+            </ul>
+          </li>
+        	
+        	
+      
         </ul>
       </div>
     </div>

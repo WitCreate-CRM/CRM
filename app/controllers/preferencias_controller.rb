@@ -1,5 +1,7 @@
 class PreferenciasController < ApplicationController
 
+  before_filter :find_huesped_preferencias
+
   helper_method :sort_column, :sort_direction  
 
   def index
@@ -7,7 +9,7 @@ class PreferenciasController < ApplicationController
           params[:limit] = 10
     end
 
-    @preferencias = Preferencia.order(sort_column + ' ' + sort_direction).search(params[:search]).page(params[:page]).per_page(params[:limit].to_i)
+    @preferencias = @huesped.preferencias.order(sort_column + ' ' + sort_direction).search(params[:search]).page(params[:page]).per_page(params[:limit].to_i)
     respond_to do |format|
       format.html 
       format.json { render json: @preferencias }
@@ -15,8 +17,6 @@ class PreferenciasController < ApplicationController
   end
 
   def show
-      @preferencia = Preferencia.find(params[:id])
-
       respond_to do |format|
       format.js 
       format.pdf do
@@ -32,21 +32,18 @@ class PreferenciasController < ApplicationController
   end
 
   def edit
-      @preferencia = Preferencia.find(params[:id])
   end
 
   def create
-      @preferencia = Preferencia.new(params[:preferencia])
+      @preferencia = @huesped.preferencias.build(params[:preferencia])
       render :action => :new unless @preferencia.save
   end
 
   def update
-      @preferencia = Preferencia.find(params[:id])
       render :action => :edit unless @preferencia.update_attributes(params[:preferencia])
   end
 
   def destroy
-      @preferencia = Preferencia.find(params[:id])
       @preferencia.destroy
   end
   
@@ -58,6 +55,11 @@ class PreferenciasController < ApplicationController
 
   def sort_direction
     %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  end
+
+  def find_huesped_preferencias
+    @huesped = Huesped.find(params[:huesped_id])
+    @preferencia = Preferencia.find(params[:id]) if params[:id]
   end
 
 end

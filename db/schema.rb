@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130527163008) do
+=======
+ActiveRecord::Schema.define(:version => 20130524160046) do
+>>>>>>> 2d302407786e22f7976665e2b1d8fac36cfe483b
 
   create_table "alimentos", :force => true do |t|
     t.text     "descripcion"
@@ -94,18 +98,22 @@ ActiveRecord::Schema.define(:version => 20130527163008) do
     t.string   "segundo_nombre"
     t.string   "primer_apellido"
     t.string   "segundo_apellido"
-    t.integer  "tipo_identificacion_id"
+    t.integer  "tiposdeidentificacion_id"
     t.string   "documento"
     t.date     "fecha_nacimiento"
     t.string   "direccion"
     t.string   "email"
     t.integer  "empleado_encargado_id"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "huespedes", ["empleado_encargado_id"], :name => "index_huespedes_on_empleado_encargado_id"
-  add_index "huespedes", ["tipo_identificacion_id"], :name => "index_huespedes_on_tipo_identificacion_id"
+  add_index "huespedes", ["tiposdeidentificacion_id"], :name => "index_huespedes_on_tiposdeidentificacion_id"
 
   create_table "obsequios", :force => true do |t|
     t.text     "descripcion"
@@ -114,7 +122,7 @@ ActiveRecord::Schema.define(:version => 20130527163008) do
   end
 
   create_table "preferencias", :force => true do |t|
-    t.integer  "tipo_habitacion_id"
+    t.integer  "tiposdehabitacion_id"
     t.integer  "huesped_id"
     t.string   "numero_almohada_en_cama"
     t.datetime "created_at",              :null => false
@@ -122,7 +130,7 @@ ActiveRecord::Schema.define(:version => 20130527163008) do
   end
 
   add_index "preferencias", ["huesped_id"], :name => "index_preferencias_on_huesped_id"
-  add_index "preferencias", ["tipo_habitacion_id"], :name => "index_preferencias_on_tipo_habitacion_id"
+  add_index "preferencias", ["tiposdehabitacion_id"], :name => "index_preferencias_on_tiposdehabitacion_id"
 
   create_table "sugerenciasyquejas", :force => true do |t|
     t.integer  "huesped_id"
@@ -136,13 +144,15 @@ ActiveRecord::Schema.define(:version => 20130527163008) do
   add_index "sugerenciasyquejas", ["huesped_id"], :name => "index_sugerenciasyquejas_on_huesped_id"
 
   create_table "telefonos", :force => true do |t|
-    t.integer  "propietario_id"
+    t.integer  "huesped_id"
+    t.integer  "empleado_id"
     t.string   "numero_telefonico"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
 
-  add_index "telefonos", ["propietario_id"], :name => "index_telefonos_on_propietario_id"
+  add_index "telefonos", ["empleado_id"], :name => "index_telefonos_on_empleado_id"
+  add_index "telefonos", ["huesped_id"], :name => "index_telefonos_on_huesped_id"
 
   create_table "tiposdehabitaciones", :force => true do |t|
     t.string   "descripcion"

@@ -1,9 +1,21 @@
 Witcrm::Application.routes.draw do
   
+<<<<<<< HEAD
   resources :huespedes
+=======
+  resources :huespedes do
+    resources :telefonos
+    resources :cortesias do 
+      get :autocomplete_alimento_descripcion, :on => :collection
+    end 
+    resources :preferencias
+  end
+>>>>>>> 2d302407786e22f7976665e2b1d8fac36cfe483b
 
 
-  resources :sugerenciasyquejas
+  resources :sugerenciasyquejas do
+    get :autocomplete_huesped_primer_nombre, :on => :collection
+  end
 
 
   resources :tiposdehabitaciones
@@ -23,12 +35,15 @@ Witcrm::Application.routes.draw do
   resources :contactos
 
 
+<<<<<<< HEAD
   resources :cortesias
 
 
   resources :preferencias
 
 
+=======
+>>>>>>> 2d302407786e22f7976665e2b1d8fac36cfe483b
   resources :obsequios
 
 

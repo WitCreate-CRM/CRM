@@ -1,2 +1,2 @@
-$('tr#_<%= @cortesia.id %>').replaceWith("<%= escape_javascript(render @cortesia) %>")
+$('tr#cortesia_<%= @cortesia.id %>').replaceWith("<%= escape_javascript(render @cortesia) %>")
 $.lazybox.close()

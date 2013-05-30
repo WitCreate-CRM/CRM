@@ -1,13 +1,12 @@
 <tr id=<%= "preferencia_#{preferencia.id}" %>>
-  <td><%= link_to preferencia.id, edit_preferencia_path(preferencia), :remote => true %></td>
-  <td><%= preferencia.tipo_habitacion_id %></td>
-  <td><%= preferencia.huesped_id %></td>
+  <td><%= link_to preferencia.id, edit_huesped_preferencia_path(@huesped, preferencia), :remote => true %></td>
+  <td><%= preferencia.tiposdehabitacion.descripcion %></td>
   <td><%= preferencia.numero_almohada_en_cama %></td>
   <td>
-    <%= link_to 'Mostrar', preferencia, :remote => true, :class => 'btn btn-mini' %>
-    <%= link_to 'Editar', edit_preferencia_path(preferencia), :remote => true,
+    <%= link_to 'Mostrar', huesped_preferencia_path(@huesped, preferencia), :remote => true, :class => 'btn btn-mini' %>
+    <%= link_to 'Editar', edit_huesped_preferencia_path(@huesped, preferencia), :remote => true,
         :class => 'btn btn-mini' %>
-    <%= link_to 'Eliminar', preferencia, 
+    <%= link_to 'Eliminar', huesped_preferencia_path(@huesped, preferencia), 
         :data => { :confirm => 'Esta Seguro?' },
         :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
   </td>

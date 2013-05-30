@@ -10,7 +10,7 @@
  <%= submit_tag "Consultar", :name => nil, :class => 'btn' %> 
  <% end %> 
 <br> 
-Seleccione numero de registros por pagina:
+Seleccione numero de registros por página:
 <%= text_field_tag :limit, params[:limit] , :id=>'num'%> 
 <%= submit_tag "Mostrar", :name => nil, :class => 'btn' %> 
 <% end %> 
@@ -21,30 +21,29 @@ Seleccione numero de registros por pagina:
   <thead>
     <tr>
       <th><%= sortable 'id' %></th>
-      <th> <%= sortable 'primer_nombre', :Primer_Nombre %> </th>
-      <th> <%= sortable 'segundo_nombre', :Segundo_Nombre %> </th>
-      <th> <%= sortable 'primer_apellido', :Primer_Apellido %> </th>
-      <th> <%= sortable 'segundo_apellido', :Segundo_Apellido %> </th>
-      <th> <%= sortable 'tipo_identificacion_id', :Tipo_De_Identificación %> </th>
-      <th> <%= sortable 'documento', :Documento %> </th>
-      <th> <%= sortable 'fecha_nacimiento', :Fecha_De_Nacimiento %> </th>
+      <th> Foto </th>
+      <th> <%= sortable 'primer_nombre' %> </th>
+      <th> <%= sortable 'primer_apellido' %> </th>
+      <th> <%= sortable 'tipo_identificacion_id' %> </th>
+      <th> <%= sortable 'fecha_nacimiento' %> </th>
       <th> <%= sortable 'direccion', :Dirección %> </th>
-      <th> <%= sortable 'email', :Email %> </th>
-      <th> <%= sortable 'empleado_encargado_id', :Empleado_Encargado %> </th>
+      <th> <%= sortable 'email' %> </th>
+      <th>Otros Datos</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
      <%= render @huespedes %>
   </tbody>
+  </table>
   <tfoot>
     <tr>
       <td><%= link_to 'Nuevo Huésped', new_huesped_path, :remote => true %></td>
     </tr>
   </tfoot>
-</table>
 
-<br /> 
+
+<br /> <br>
 
 <div align="center"> 
 <%= will_paginate @huespedes, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente

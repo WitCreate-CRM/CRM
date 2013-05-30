@@ -1,4 +1,6 @@
 class Tiposdeidentificacion < ActiveRecord::Base
+  has_many :preferencias
+
   attr_accessible :descripcion, :sigla
 
   def self.search(search) 

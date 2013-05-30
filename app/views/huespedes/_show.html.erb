@@ -9,12 +9,14 @@
   <p><b>Segundo nombre:</b> <%= @huesped.segundo_nombre %></p>
   <p><b>Primer apellido:</b> <%= @huesped.primer_apellido %></p>
   <p><b>Segundo apellido:</b> <%= @huesped.segundo_apellido %></p>
-  <p><b>Tipo de identificación:</b> <%= @huesped.tipo_identificacion_id %></p>
+  <p><b>Tipo de identificación:</b> <%= @huesped.tiposdeidentificacion_id %></p>
   <p><b>Documento:</b> <%= @huesped.documento %></p>
   <p><b>Fecha de nacimiento:</b> <%= @huesped.fecha_nacimiento %></p>
   <p><b>Dirección:</b> <%= @huesped.direccion %></p>
   <p><b>Email:</b> <%= @huesped.email %></p>
   <p><b>Empleado encargado:</b> <%= @huesped.empleado_encargado_id %></p>
+  <p><b>Foto :</b></p>
+  <%= image_tag @huesped.avatar.url(:thumb) %>
 </div>
 
 <br>

@@ -1,4 +1,7 @@
 class Alimento < ActiveRecord::Base
+
+  has_many :cortesias
+
   attr_accessible :descripcion
 
   def self.search(search) 

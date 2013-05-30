@@ -1,11 +1,12 @@
-<%= simple_form_for(@preferencia, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+<%= simple_form_for([@huesped, @preferencia], :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
 
-  <%= f.input :tipo_habitacion_id, :label => 'Tipo de habitación' %>
-  <%= f.input :huesped_id, :label => 'Huésped' %>
+  <%= f.label :Tipo_De_Habitación %> 
+  <div class = "span4"> <%= f.collection_select :tiposdehabitacion_id, Tiposdehabitacion.all, :id, :descripcion, :prompt => 'Seleccionar' %> </div>
+  <br><br><br>
   <%= f.input :numero_almohada_en_cama, :label => 'Número de almohadas en la cama' %>
 
   <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
-    <%= link_to 'Atras', preferencias_path, :class => 'btn btn-small' %>
+    <%= link_to 'Atras', huesped_preferencias_path, :class => 'btn btn-small' %>
   </div>
 <% end %>

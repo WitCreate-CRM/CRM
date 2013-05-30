@@ -4,7 +4,6 @@ class TelefonoPdf < Prawn::Document
     @telefono = telefono
     @view = view
     logo
-    deliver_details
     telefono_details
   end
 
@@ -15,6 +14,7 @@ class TelefonoPdf < Prawn::Document
     draw_text "Telefono", :at => [220, 675], size: 22
   end
 
+<<<<<<< HEAD
   def deliver_details
     move_down 60
     text "Telefono Id:
@@ -27,17 +27,20 @@ class TelefonoPdf < Prawn::Document
   
     
   end
+=======
+>>>>>>> 2d302407786e22f7976665e2b1d8fac36cfe483b
 
-  def telefono_details    
+  def telefono_details
   	move_down 60
     id = @telefono.id
-    propietario_id = @telefono.propietario_id
     numero_telefonico = @telefono.numero_telefonico
     
     table ([["Telefono", "#{id} "],
+<<<<<<< HEAD
     
+=======
+>>>>>>> 2d302407786e22f7976665e2b1d8fac36cfe483b
     ["numero Telefonico", "#{numero_telefonico} "],
-    
     ]),
 
 	:width => 500 do

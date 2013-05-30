@@ -12,10 +12,11 @@
  *= require lazybox
  *= require_tree .
  *= require lazybox
+ *= require_jquery-ui
  */
 
 
- #lazybox div.visita { max-width: 500px; }
+#lazybox div.visita { max-width: 500px; }
 
 #lazybox div.gen { max-width: 500px; }
 

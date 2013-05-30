@@ -1,5 +1,7 @@
 class HuespedesController < ApplicationController
   
+  before_filter :find_huesped, :except => [ :index, :create, :new]
+
   helper_method :sort_column, :sort_direction
 
   def index
@@ -15,8 +17,6 @@ class HuespedesController < ApplicationController
   end
 
   def show
-      @huesped = Huesped.find(params[:id])
-
       respond_to do |format|
       format.js 
       format.pdf do
@@ -32,21 +32,19 @@ class HuespedesController < ApplicationController
   end
 
   def edit
-      @huesped = Huesped.find(params[:id])
   end
 
   def create
       @huesped = Huesped.new(params[:huesped])
       render :action => :new unless @huesped.save
+      @huespedes = Huesped.all
   end
 
   def update
-      @huesped = Huesped.find(params[:id])
       render :action => :edit unless @huesped.update_attributes(params[:huesped])
   end
 
   def destroy
-      @huesped = Huesped.find(params[:id])
       @huesped.destroy
   end
   
@@ -60,4 +58,8 @@ class HuespedesController < ApplicationController
     %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
   end
 
+  def find_huesped
+    @huesped = Huesped.find(params[:id]) if params[:id]
+  end
+  
 end

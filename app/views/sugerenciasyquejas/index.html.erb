@@ -31,12 +31,14 @@ Seleccione numero de registros por pagina:
   <tbody>
      <%= render @sugerenciasyquejas %>
   </tbody>
+  </table>
   <tfoot>
     <tr>
       <td><%= link_to 'Nueva Sugerencia/Queja', new_sugerenciasyqueja_path, :remote => true %></td>
     </tr>
   </tfoot>
-</table>
+
+<br><br>
 
 <div align="center"> 
 <%= will_paginate @sugerenciasyquejas, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente

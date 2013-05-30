@@ -5,7 +5,7 @@ class CreateHuespedes < ActiveRecord::Migration
       t.string :segundo_nombre
       t.string :primer_apellido
       t.string :segundo_apellido
-      t.references :tipo_identificacion
+      t.references :tiposdeidentificacion
       t.string :documento
       t.date :fecha_nacimiento
       t.string :direccion
@@ -14,7 +14,7 @@ class CreateHuespedes < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :huespedes, :tipo_identificacion_id
+    add_index :huespedes, :tiposdeidentificacion_id
     add_index :huespedes, :empleado_encargado_id
   end
 end
