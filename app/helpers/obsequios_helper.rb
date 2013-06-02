@@ -1,0 +1,2 @@
+module ObsequiosHelper
+end

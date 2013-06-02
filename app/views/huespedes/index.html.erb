@@ -1,0 +1,70 @@
+<%- model_class = Huesped -%>
+<div class="page-header">
+  <center><h1>Huéspedes</h1></center>
+</div>
+
+<form method="get" class="form-search">
+  <div class="input-append">
+
+      <%= text_field_tag :search, params[:search], :class => "span2 search-query ", :placeholder => "Buscar huésped" %> 
+
+      <button type="submit" class="btn btn-info"><i class="icon-search"></i></button>
+       
+  </div>
+</form>
+
+
+<br> 
+
+<form method="get" class="form-search">
+  <div class="input-append">
+
+    <%= content_tag :label do %> 
+
+    Seleccione numero de registros por pagina
+
+    <%= text_field_tag :limit, params[:limit] , :id=>'num', :class => "span1 search-query" %> 
+
+    <% end %>
+
+    <button type="submit" class="btn btn-info">Mostrar</button>
+ 
+  </div>
+</form>
+
+<br /><br> 
+
+
+<table class="table table-striped table-bordered table-condensed pretty">
+  <thead>
+    <tr>
+      <th><%= sortable 'id' %></th>
+      <th> Foto </th>
+      <th> <%= sortable 'primer_nombre' %> </th>
+      <th> <%= sortable 'primer_apellido' %> </th>
+      <th> <%= sortable 'tipo_identificacion_id' %> </th>
+      <th> <%= sortable 'fecha_nacimiento' %> </th>
+      <th> <%= sortable 'direccion', :Dirección %> </th>
+      <th> <%= sortable 'email' %> </th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+     <%= render @huespedes %>
+  </tbody>
+  </table>
+  <tfoot>
+    <tr>
+      <td><%= link_to 'Nuevo Huésped', new_huesped_path, :remote => true, :class => "btn btn-info" %></td>
+    </tr>
+  </tfoot>
+
+<hr>
+
+<div class="flickr_pagination" > 
+  <div class="page_info">
+      <p><b> Total Huéspedes :</b> <%= @huespedes.total_entries %> </p>
+    </div>
+    <%= will_paginate @huespedes, :container => false, :previous_label => '&larr; Anterior', :next_label => 'Siguiente &rarr;' %>
+  </div>

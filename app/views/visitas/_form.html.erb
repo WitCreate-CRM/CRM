@@ -1,0 +1,18 @@
+<%= simple_form_for(@visita, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+  <%= f.error_notification %>
+ 
+
+  <%= f.input :obsequio_id, :label => "Obsequio",  :required => true %>
+  <%= f.input :empleado_id, :label => "Empleado",  :required => true %>
+  <%= f.input :empresa_id, :label => "Empresa",  :required => true %>
+  <%= f.input :fecha, :label => "Fecha",  :required => true %>
+  <%= f.input :comentarios, :label => "Comentarios",  :required => true %>
+  
+  
+ 
+   <div class="form-actions">
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <%= link_to 'Atras', visitas_path, :class => 'btn btn-small' %>
+  </div>
+<% end %>

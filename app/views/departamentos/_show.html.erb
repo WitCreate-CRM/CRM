@@ -1,0 +1,14 @@
+<%- model_class = Departamento-%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class='departamento'>
+  <p><%= @departamento.id %></p>
+  <p><%= @departamento.nombre %></p>
+  
+ 
+</div>
+
+<td><%= link_to image_tag("pdf.png"), departamento_path(@departamento, :format => "pdf") %></td>
+

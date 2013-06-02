@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tipo_habitacion_id: 
+  huesped_id: 
+  numero_almohada_en_cama: 1
+
+two:
+  tipo_habitacion_id: 
+  huesped_id: 
+  numero_almohada_en_cama: 1

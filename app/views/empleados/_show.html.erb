@@ -1,0 +1,21 @@
+<%- model_class = Empleado-%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class='empleado'>
+  <p><%= @empleado.id %></p>
+  <p><%= @empleado.cargo_id %></p>
+  <p><%= @empleado.primer_nombre %></p>
+  <p><%= @empleado.segundo_nombre %></p>
+  <p><%= @empleado.primer_apellido %></p>
+  <p><%= @empleado.segundo_apellido %></p>
+  <p><%= @empleado.tipo_identificacion_id %></p>
+  <p><%= @empleado.documento %></p>
+  <p><%= @empleado.departamento_id %></p>
+ 
+ 
+ 
+</div>
+
+<td><%= link_to image_tag("pdf.png"), empleado_path(@empleado, :format => "pdf") %></td>

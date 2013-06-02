@@ -1,0 +1,13 @@
+class CreatePreferencias < ActiveRecord::Migration
+  def change
+    create_table :preferencias do |t|
+      t.references :tipo_habitacion_id
+      t.references :huesped_id
+      t.string :numero_almohada_en_cama
+
+      t.timestamps
+    end
+    add_index :preferencias, :tipo_habitacion_id
+    add_index :preferencias, :huesped_id
+  end
+end

@@ -1,0 +1,15 @@
+<tr id=<%= "tiposdehabitacion_#{tiposdehabitacion.id}" %>>
+  <td><%= link_to tiposdehabitacion.id, edit_tiposdehabitacion_path(tiposdehabitacion), :remote => true %></td>
+  <td><%= tiposdehabitacion.descripcion %></td>
+  <td><%= tiposdehabitacion.habitacion_tina %></td>
+  <td><%= tiposdehabitacion.piso %></td>
+ 
+ <td>
+    <%= link_to 'Mostrar', tiposdehabitacion, :remote => true, :class => 'btn btn-mini' %>
+    <%= link_to 'Editar', edit_tiposdehabitacion_path(tiposdehabitacion), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', tiposdehabitacion,
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+  </td>
+</tr>

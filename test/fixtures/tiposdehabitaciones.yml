@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  descripcion: MyString
+  piso: 1
+  habitacion_tina: false
+
+two:
+  descripcion: MyString
+  piso: 1
+  habitacion_tina: false

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  huesped_id: 
+  observaciones: MyText
+  sugerencias: MyText
+  problemas_en_la_estadia: MyText
+
+two:
+  huesped_id: 
+  observaciones: MyText
+  sugerencias: MyText
+  problemas_en_la_estadia: MyText

@@ -1,0 +1,47 @@
+<tr id=<%= "huesped_#{huesped.id}" %>>
+  <td><%= link_to huesped.id, edit_huesped_path(huesped), :remote => true %></td>
+  <td><%= image_tag huesped.avatar.url(:thumb) %></td>
+  <td><%= huesped.primer_nombre %></td>
+  <td><%= huesped.primer_apellido %></td>
+  <td><%= huesped.tiposdeidentificacion.sigla %></td>
+  <td><%= huesped.fecha_nacimiento %></td>
+  <td><%= huesped.direccion %></td>
+  <td><%= huesped.email %></td>
+  <td>
+
+    <div class="btn-group">
+      <button class="btn btn-mini btn-info"> Más Datos </button>
+      <button class="btn btn-mini btn-info dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" >
+
+    <li><%= link_to 'Teléfonos', huesped_telefonos_path(huesped), :class => "btn btn-mini", :style => "color:black" %></li>
+
+    <li><%= link_to 'Costesias', huesped_cortesias_path(huesped), :class => "btn btn-mini", :style => "color:black" %></li>
+
+    <li><%= link_to 'Preferencias', huesped_preferencias_path(huesped), :class => "btn btn-mini", :style => "color:black" %></li>
+    </ul>
+    </div>
+  </td>
+
+
+  <td>
+    <div class="btn-group">
+      <button class="btn btn-mini btn-info"> Opciones </button>
+      <button class="btn btn-mini btn-info dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" >
+
+    <li><%= link_to 'Mostrar', huesped, :remote => true, :class => 'btn btn-mini', :style => "color:black" %></li>
+
+    <li><%= link_to 'Editar', edit_huesped_path(huesped), :remote => true, :class => 'btn btn-mini', :style => "color:black" %></li>
+
+    <li><%= link_to 'Eliminar', huesped, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger', :style => "color:white" %></li>
+        </ul>
+    </div>
+  </td>
+</tr>

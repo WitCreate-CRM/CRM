@@ -1,0 +1,13 @@
+<tr id=<%= "cargo_#{cargo.id}" %>>
+  <td><%= cargo.id %></td>
+  <td><%= cargo.descripcion %></td>
+ 
+  <td>
+    <%= link_to 'Mostrar', cargo, :remote => true, :class => 'btn btn-success btn-mini' %>
+    <%= link_to 'Editar', edit_cargo_path(cargo), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', cargo, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+  </td>
+</tr>

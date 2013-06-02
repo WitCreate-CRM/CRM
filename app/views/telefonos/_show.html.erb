@@ -1,0 +1,13 @@
+<%- model_class = Telefono-%>
+<div class="page-header">
+  <h1>Teléfonos de <%= @huesped.primer_nombre %></h1>
+</div>
+
+<div class='gen'>
+  <p><b>Id:</b> <%= @telefono.id %></p>
+  <p><b>Número Teléfonico:</b> <%= @telefono.numero_telefonico %></p>
+  
+ 
+</div>
+
+<td><%= link_to image_tag("pdf.png"), huesped_telefono_path(@telefono, :format => "pdf") %></td>

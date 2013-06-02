@@ -1,0 +1,13 @@
+<tr id=<%= "tiposdeidentificacion_#{tiposdeidentificacion.id}" %>>
+  <td><%= link_to tiposdeidentificacion.id, edit_tiposdeidentificacion_path(tiposdeidentificacion), :remote => true %></td>
+  <td><%= tiposdeidentificacion.descripcion %></td>
+  <td><%= tiposdeidentificacion.sigla %></td>
+ <td>
+    <%= link_to 'Mostrar', tiposdeidentificacion, :remote => true, :class => 'btn btn-mini' %>
+    <%= link_to 'Editar', edit_tiposdeidentificacion_path(tiposdeidentificacion), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', tiposdeidentificacion,
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+  </td>
+</tr>

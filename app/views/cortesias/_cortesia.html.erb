@@ -1,0 +1,26 @@
+<tr id=<%= "cortesia_#{cortesia.id}" %>>
+  <td><%= link_to cortesia.id, edit_huesped_cortesia_path(@huesped, cortesia), :remote => true %></td>
+  <td><%= cortesia.botella_de_vino %></td>
+  <td><%= cortesia.otro_regalo %></td>
+  <td><%= cortesia.tabla_de_queso %></td>
+  <td><%= cortesia.alimento_descripcion %></td>
+  <td>
+    <div class="btn-group">
+      <button class="btn btn-mini btn-info"> Opciones </button>
+      <button class="btn btn-mini btn-info dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" >
+
+      <li><%= link_to 'Mostrar', huesped_cortesia_path(@huesped, cortesia), :remote => true, :class => 'btn btn-mini', :style => "color:black" %></li>
+
+      <li><%= link_to 'Editar', edit_huesped_cortesia_path(@huesped, cortesia), :remote => true,
+        :class => 'btn btn-mini', :style => "color:black" %></li>
+
+      <li><%= link_to 'Eliminar', huesped_cortesia_path(@huesped, cortesia), 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger', :style => "color:white" %></li>
+        </ul>
+    </div>
+  </td>
+</tr>

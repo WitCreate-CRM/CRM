@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cargo_id: 
+  primer_nombre: MyString
+  segundo_nombre: MyString
+  primer_apellido: MyString
+  segundo_apellido: MyString
+  tipo_identificacion_id: 
+  documento: MyString
+  departamento_id: 
+
+two:
+  cargo_id: 
+  primer_nombre: MyString
+  segundo_nombre: MyString
+  primer_apellido: MyString
+  segundo_apellido: MyString
+  tipo_identificacion_id: 
+  documento: MyString
+  departamento_id: 

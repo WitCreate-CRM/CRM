@@ -1,0 +1,64 @@
+<%- model_class = Alimento -%>
+<div class="page-header">
+  <center><h1>Alimentos</h1></center>
+</div>
+ 
+<form method="get" class="form-search">
+  <div class="input-append">
+
+      <%= text_field_tag :search, params[:search], :class => "span2 search-query ", :placeholder => "Buscar alimento" %> 
+
+      <button type="submit" class="btn btn-info"><i class="icon-search"></i></button>
+       
+  </div>
+</form>
+
+
+<br> 
+
+<form method="get" class="form-search">
+  <div class="input-append">
+
+    <%= content_tag :label do %> 
+
+    Seleccione numero de registros por pagina
+
+    <%= text_field_tag :limit, params[:limit] , :id=>'num', :class => "span1 search-query" %> 
+
+    <% end %>
+
+    <button type="submit" class="btn btn-info">Mostrar</button>
+ 
+  </div>
+</form>
+
+<br /><br />
+
+<table class="table table-hover table-bordered table-condensed pretty">
+  <thead>
+    <tr>
+      <th><%= sortable 'id' %></th>
+      <th><%= sortable 'descripcion', :Descripción %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+     <%= render @alimentos %>
+  </tbody>
+  </table>
+  <tfoot>
+    <tr>
+      <td><%= link_to 'Nuevo Alimento', new_alimento_path, :remote => true, :class => "btn btn-info" %></td>
+      
+    </tr>
+  </tfoot>
+
+<hr>
+
+<div class="flickr_pagination" > 
+  <div class="page_info">
+      <p><b> Total Alimentos :</b> <%= @alimentos.total_entries %> </p>
+    </div>
+    <%= will_paginate @alimentos, :container => false, :previous_label => '&larr; Anterior', :next_label => 'Siguiente &rarr;' %>
+  </div>
+<br>

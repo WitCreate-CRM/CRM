@@ -1,0 +1,13 @@
+<%= simple_form_for(@sugerenciasyqueja, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+  <%= f.input :huesped_primer_nombre, :url => autocomplete_huesped_primer_nombre_sugerenciasyquejas_path, :label =>"Huésped", :as => 
+:autocomplete, :id_element => '#id' %>
+  <%= f.input :observaciones, :label => "Observaciones" %>
+  <%= f.input :problemas_en_la_estadia, :label => "Problemas en la estadia" %>
+  <%= f.input :sugerencias, :label => "Sugerencias" %>
+  
+  <div class="form-actions">
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <%= link_to 'Atras', sugerenciasyquejas_path, :class => 'btn btn-small' %>
+  </div>
+<% end %>

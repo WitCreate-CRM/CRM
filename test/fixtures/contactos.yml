@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  empresa_id: 
+  nombre: MyString
+  celular: MyString
+  email: MyString
+  fecha_nacimiento: 2013-04-29
+
+two:
+  empresa_id: 
+  nombre: MyString
+  celular: MyString
+  email: MyString
+  fecha_nacimiento: 2013-04-29

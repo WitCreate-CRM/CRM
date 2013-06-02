@@ -1,0 +1,25 @@
+<tr id=<%= "telefono_#{telefono.id}" %>>
+  <td><%= link_to telefono.id, edit_huesped_telefono_path(@huesped, telefono), :remote => true %></td>
+  <td><%= telefono.numero_telefonico %></td>
+ 
+  <td>
+
+    <div class="btn-group">
+      <button class="btn btn-mini btn-info"> Opciones </button>
+      <button class="btn btn-mini btn-info dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" >
+
+      <li><%= link_to 'Mostrar', huesped_telefono_path(@huesped, telefono), :remote => true, :class => 'btn btn-mini', :style => "color:black" %></li>
+
+      <li><%= link_to 'Editar', edit_huesped_telefono_path(@huesped, telefono), :remote => true,
+        :class => 'btn btn-mini', :style => "color:black" %></li>
+
+      <li><%= link_to 'Eliminar', huesped_telefono_path(@huesped, telefono), 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger', :style => "color:white" %></li>
+        </ul>
+    </div>
+  </td>
+</tr>

@@ -1,0 +1,15 @@
+<%- model_class = Cortesia -%>
+<div class="page-header">
+  <h1>Cortesias de <%= @huesped.primer_nombre %></h1>
+</div>
+
+<div class='gen'>
+  <p><b>Id:</b> <%= @cortesia.id %></p>
+  <p><b>Botella de vino:</b> <%= @cortesia.botella_de_vino %></p>
+  <p><b>Otro regalo:</b> <%= @cortesia.otro_regalo %></p>
+  <p><b>Tabla de queso:</b> <%= @cortesia.tabla_de_queso %></p>
+  <p><b>Alimento:</b> <%= @cortesia.alimento_id %></p>
+</div>
+
+<br>
+<%= link_to "pdf", huesped_cortesia_path(@cortesia, :format => "pdf"), :class => 'btn' %>

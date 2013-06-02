@@ -1,0 +1,65 @@
+<%- model_class = Telefono -%>
+<div class="page-header">
+  <h1><%= image_tag @huesped.avatar.url(:thumb), :class => "img-rounded img-polaroid" %> &nbsp; &nbsp; &nbsp; &nbsp; Teléfonos de <%= @huesped.primer_nombre %></h1>
+</div>
+
+<form method="get" class="form-search">
+  <div class="input-append">
+
+      <%= text_field_tag :search, params[:search], :class => "span2 search-query ", :placeholder => "Buscar Teléfono" %> 
+
+      <button type="submit" class="btn btn-info"><i class="icon-search"></i></button>
+       
+  </div>
+</form>
+
+
+<br>
+
+<form method="get" class="form-search">
+  <div class="input-append">
+
+    <%= content_tag :label do %> 
+
+    Seleccione numero de registros por pagina
+
+    <%= text_field_tag :limit, params[:limit] , :id=>'num', :class => "span1 search-query" %> 
+
+    <% end %>
+
+    <button type="submit" class="btn btn-info">Mostrar</button>
+ 
+  </div>
+</form>
+
+<br /><br />
+
+
+<table class="table table-striped table-bordered table-condensed pretty">
+  <thead>
+    <tr>
+      <th><%= sortable 'id' %></th>
+      <th><%= sortable 'numero_telefonico' %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+     <%= render @telefonos %>
+  </tbody>
+  </table>
+
+<tfoot>
+    <tr>
+      <td><%= link_to 'Nuevo Telefono',new_huesped_telefono_path, :remote => true, :class => "btn btn-info" %></td> 
+      <td><%= link_to 'Huéspedes', huespedes_path, :class => "btn btn-info", :style => "color:white" %></td>
+    </tr>
+  </tfoot>
+
+<hr>
+
+<div class="flickr_pagination" > 
+  <div class="page_info">
+      <p><b> Total Télefonos :</b> <%= @telefonos.total_entries %> </p>
+    </div>
+    <%= will_paginate @telefonos, :container => false, :previous_label => '&larr; Anterior', :next_label => 'Siguiente &rarr;' %>
+  </div>
