@@ -1,5 +1,7 @@
 class VisitasController < ApplicationController
   
+  before_filter :require_login
+  
   helper_method :sort_column, :sort_direction
 
   def index

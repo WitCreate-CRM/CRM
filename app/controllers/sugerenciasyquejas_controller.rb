@@ -1,5 +1,7 @@
 class SugerenciasyquejasController < ApplicationController
  
+  before_filter :require_login
+ 
   autocomplete :huesped, :primer_nombre, :full => true
 
   helper_method :sort_column, :sort_direction

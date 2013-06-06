@@ -1,6 +1,10 @@
 <%= simple_form_for(@alimento, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
-
-  <%= f.input :descripcion, :label => 'Descripcion' %>
+  
+  <%= f.label :descripción %>
+  <div class = "span3">
+  <%= f.text_area(:descripcion, :size => "10x5")  %>
+  </div>
+  <br><br><br><br><br><br><br>
   <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
     <%= link_to 'Atras', alimentos_path, :class => 'btn btn-small' %>

@@ -28,7 +28,9 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'hint', 'hints'
   inflect.irregular 'action', 'actions'
   inflect.irregular 'pais', 'paises'
-  inflect.irregular 'cuy', 'cuyes'
+  inflect.irregular 'user', 'users'
+  inflect.irregular 'session', 'sessions'
+  inflect.irregular 'role', 'roles'
 end
 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130524160046) do
+ActiveRecord::Schema.define(:version => 20130605154317) do
 
   create_table "alimentos", :force => true do |t|
     t.text     "descripcion"
@@ -62,38 +62,16 @@ ActiveRecord::Schema.define(:version => 20130524160046) do
     t.string   "segundo_nombre"
     t.string   "primer_apellido"
     t.string   "segundo_apellido"
-<<<<<<< HEAD
-<<<<<<< HEAD
-    t.integer  "tiposdeidentificacion_id"
-    t.string   "documento"
-    t.integer  "departamento_id"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
-=======
-=======
->>>>>>> 0184f34a6134a46aba248fed0a625e7424609d32
     t.integer  "tipo_identificacion_id"
     t.string   "documento"
     t.integer  "departamento_id"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
-<<<<<<< HEAD
->>>>>>> 0184f34a6134a46aba248fed0a625e7424609d32
-=======
->>>>>>> 0184f34a6134a46aba248fed0a625e7424609d32
   end
 
   add_index "empleados", ["cargo_id"], :name => "index_empleados_on_cargo_id"
   add_index "empleados", ["departamento_id"], :name => "index_empleados_on_departamento_id"
-<<<<<<< HEAD
-<<<<<<< HEAD
-  add_index "empleados", ["tiposdeidentificacion_id"], :name => "index_empleados_on_tiposdeidentificacion_id"
-=======
   add_index "empleados", ["tipo_identificacion_id"], :name => "index_empleados_on_tipo_identificacion_id"
->>>>>>> 0184f34a6134a46aba248fed0a625e7424609d32
-=======
-  add_index "empleados", ["tipo_identificacion_id"], :name => "index_empleados_on_tipo_identificacion_id"
->>>>>>> 0184f34a6134a46aba248fed0a625e7424609d32
 
   create_table "empresas", :force => true do |t|
     t.string   "nombre"
@@ -178,6 +156,23 @@ ActiveRecord::Schema.define(:version => 20130524160046) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "username",                        :null => false
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.string   "remember_me_token"
+    t.datetime "remember_me_token_expires_at"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_token_expires_at"
+    t.datetime "reset_password_email_sent_at"
+  end
+
+  add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token"
 
   create_table "visitas", :force => true do |t|
     t.integer  "obsequio_id"

@@ -1,5 +1,7 @@
 class CortesiasController < ApplicationController
 
+  before_filter :require_login
+
   autocomplete :alimento, :descripcion, :full => true
 
   before_filter :find_huesped_cortesias

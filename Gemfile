@@ -27,4 +27,6 @@ gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem 'lazybox'
 gem 'prawn'
+gem 'sorcery'
+gem "bcrypt-ruby", :require => "bcrypt"
 

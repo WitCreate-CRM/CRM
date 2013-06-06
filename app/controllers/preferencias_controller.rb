@@ -1,5 +1,7 @@
 class PreferenciasController < ApplicationController
 
+  before_filter :require_login
+
   before_filter :find_huesped_preferencias
 
   helper_method :sort_column, :sort_direction  
