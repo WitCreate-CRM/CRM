@@ -1,11 +1,6 @@
 <%= simple_form_for(@cargo, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
-
-  <%= f.error_notification %>
  
-
-  <%= f.input :descripcion, :label => "Descripcion",  :required => true %>
-  
-  
+  <%= f.input :descripcion, :label => "Descripción" %>
  
    <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>

@@ -2,19 +2,27 @@
   <td><%= empleado.id %></td>
   <td><%= empleado.cargo_id %></td>
   <td><%= empleado.primer_nombre %></td>
-  <td><%= empleado.segundo_nombre %></td>
   <td><%= empleado.primer_apellido %></td>
-  <td><%= empleado.segundo_apellido %></td>
-  <td><%= empleado.tipo_identificacion_id %></td>
   <td><%= empleado.documento %></td>
   <td><%= empleado.departamento_id %></td>
  
   <td>
-    <%= link_to 'Mostrar', empleado, :remote => true, :class => 'btn btn-success btn-mini' %>
-    <%= link_to 'Editar', edit_empleado_path(empleado), :remote => true,
-        :class => 'btn btn-mini' %>
-    <%= link_to 'Eliminar', empleado, 
+    <div class="btn-group">
+      <button class="btn btn-mini btn-info"> Opciones </button>
+      <button class="btn btn-mini btn-info dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" >
+
+      <li><%= link_to 'Mostrar', empleado, :remote => true, :class => 'btn btn-mini', :style => "color:black" %></li>
+
+      <li><%= link_to 'Editar', edit_empleado_path(empleado), :remote => true,
+        :class => 'btn btn-mini', :style => "color:black" %></li>
+
+      <li><%= link_to 'Eliminar', empleado, 
         :data => { :confirm => 'Esta Seguro?' },
-        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger', :style => "color:white" %></li>
+        </ul>
+    </div>
   </td>
 </tr>

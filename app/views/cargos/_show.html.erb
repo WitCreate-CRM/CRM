@@ -3,12 +3,9 @@
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
-<div class='cargo'>
-  <p><%= @cargo.id %></p>
-  <p><%= @cargo.descripcion %></p>
-  
- 
- 
+<div class='gen'>
+  <p><b>Id:</b> <%= @cargo.id %></p>
+  <p><b>Descripción:</b> <%= @cargo.descripcion %></p>
 </div>
 
 <td><%= link_to image_tag("pdf.png"), cargo_path(@cargo, :format => "pdf") %></td>

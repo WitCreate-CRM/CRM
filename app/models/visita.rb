@@ -5,8 +5,11 @@ class Visita < ActiveRecord::Base
   attr_accessible :comentarios, :fecha, :obsequio_id, :empleado_id, :empresa_id
 
  def self.search(search) 
- where('comentarios like ?', "%#{search}%") 
+ 	where('comentarios like ?', "%#{search}%") 
  end
+
+  validates :comentarios, :presence => true, 
+  :length => { :maximum => 200 }
 
 end
 

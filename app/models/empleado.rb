@@ -8,5 +8,16 @@ class Empleado < ActiveRecord::Base
   where('primer_nombre like ? OR segundo_nombre like ? OR primer_apellido like ? OR segundo_apellido like ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%" ) 
   end
 
+   validates :documento, :presence => true, 
+   :length => { :minimum => 10, :maximum => 13 }
+
+
+  validates :primer_nombre, :presence => true,
+   :length => { :minimum => 2, :maximum => 15 }
+ 
+
+  validates :primer_apellido, :presence => true,
+   :length => { :minimum => 2, :maximum => 15 }
+
 end
 

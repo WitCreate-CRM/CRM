@@ -7,11 +7,21 @@
   <td><%= visita.comentarios %></td>
  
   <td>
-    <%= link_to 'Mostrar', visita, :remote => true, :class => 'btn btn-success btn-mini' %>
-    <%= link_to 'Editar', edit_visita_path(visita), :remote => true,
-        :class => 'btn btn-mini' %>
-    <%= link_to 'Eliminar', visita, 
+    <div class="btn-group">
+      <button class="btn btn-mini btn-info"> Opciones </button>
+      <button class="btn btn-mini btn-info dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" >
+
+      <li><%= link_to 'Mostrar', visita, :remote => true, :class => 'btn btn-mini', :style => "color:black" %></li>
+
+      <li><%= link_to 'Editar', edit_visita_path(visita), :remote => true, :class => 'btn btn-mini', :style => "color:black" %></li>
+
+      <li><%= link_to 'Eliminar', visita, 
         :data => { :confirm => 'Esta Seguro?' },
-        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger', :style => "color:white" %></li>
+        </ul>
+    </div>
   </td>
 </tr>

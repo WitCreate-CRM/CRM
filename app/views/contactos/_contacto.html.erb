@@ -7,11 +7,21 @@
   <td><%= contacto.fecha_nacimiento %></td>
  
   <td>
-    <%= link_to 'Mostrar', contacto, :remote => true, :class => 'btn btn-success btn-mini' %>
-    <%= link_to 'Editar', edit_contacto_path(contacto), :remote => true,
-        :class => 'btn btn-mini' %>
-    <%= link_to 'Eliminar', contacto, 
+    <div class="btn-group">
+      <button class="btn btn-mini btn-info"> Opciones </button>
+      <button class="btn btn-mini btn-info dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" >
+
+      <li><%= link_to 'Mostrar', contacto, :remote => true, :class => 'btn btn-mini' %></li>
+
+      <li><%= link_to 'Editar', edit_contacto_path(contacto), :remote => true, :class => 'btn btn-mini' %></li>
+
+      <li><%= link_to 'Eliminar', contacto, 
         :data => { :confirm => 'Esta Seguro?' },
-        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %></li>
+        </ul>
+    </div>
   </td>
 </tr>

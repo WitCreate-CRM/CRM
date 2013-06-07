@@ -30,7 +30,7 @@
                 <ul class="nav">
                   <li class= "dropdown">
 
-                    <a class = "dropdown-toggle btn-large" data-toggle = "dropdown" href = ""><i class="icon-user"></i> Calidad </a> 
+                    <a class = "dropdown-toggle btn-large" data-toggle = "dropdown" href = ""><i class="icon-book"></i> Calidad </a> 
 
                     <ul class="dropdown-menu">
 
@@ -64,21 +64,36 @@
                     </ul>
                   </li>
                 </ul>
+
+                <ul>
+                  <div align="right"><font size="4"><i class="icon-user"></i> <b><%= current_user.username %></b> </font>
+
+                    <div class="btn-group">
+                      <button class="btn btn-mini btn-info dropdown-toggle " data-toggle="dropdown">
+                      <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu pull-right" >
+                        <li>
+                          <%= link_to "Salir", logout_path, :style => 'font-size:15px; color:black' %> 
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-        <div align="right"><font size="3"> Sesión Iniciada Por <b><%= current_user.username %></b> | </font> 
-        <%= link_to "Salir", logout_path, :class => "btn btn-small btn-inverse", :style => 'font-size:15px; color:white' %> <div>
+        
       <% else %>
         
         <%= link_to "Registrarse", signup_path, :class => 'btn btn-info', :style => "color:white" %> 
         <%= link_to "Ingresar", login_path, :class => 'btn btn-info', :style => "color:white" %><br><br>
         
       <% end %>
-    </div>
+    
     <br>
     <% flash.each do |name, msg| %>
       <div class="alert alert-error">
