@@ -5,16 +5,17 @@
 
 <div class='empleado'>
   <p><b>Id:</b> <%= @empleado.id %></p>
-  <p><b>Cargo:</b> <%= @empleado.cargo_id %></p>
+  <p><b>Cargo:</b> <%= @empleado.cargo.descripcion %></p>
   <p><b>Primer Nombre:</b> <%= @empleado.primer_nombre %></p>
   <p><b>Segundo Nombre:</b> <%= @empleado.segundo_nombre %></p>
   <p><b>Primer Apellido:</b> <%= @empleado.primer_apellido %></p>
   <p><b>Segundo Apellido:</b> <%= @empleado.segundo_apellido %></p>
-  <p><b>Tipo de identificación:</b> <%= @empleado.tipo_identificacion_id %></p>
+  <p><b>Tipo de identificación:</b> <%= @empleado.tiposdeidentificacion.descripcion %></p>
   <p><b>Documento:</b> <%= @empleado.documento %></p>
-  <p><b>Departamento:</b> <%= @empleado.departamento_id %></p>
+  <p><b>Departamento:</b> <%= @empleado.departamento.nombre %></p>
  
- 
+ <p><b>Foto :</b></p>
+  <%= image_tag @empleado.avatar.url(:thumb) %>
  
 </div>
 

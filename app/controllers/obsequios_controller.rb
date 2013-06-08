@@ -51,7 +51,7 @@ class ObsequiosController < ApplicationController
 
   def destroy
       @obsequio  = Obsequio.find(params[:id])
-      @obsequio .destroy
+      @obsequio.destroy
   end
 
   private

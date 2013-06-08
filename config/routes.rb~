@@ -1,6 +1,6 @@
 Witcrm::Application.routes.draw do
   
-  get "pages/index"
+  get "sessions#new"
 
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
@@ -9,6 +9,15 @@ Witcrm::Application.routes.draw do
   resources :users
 
   resources :sessions
+ 
+
+  resources :huespedes do
+    resources :telefonos
+    resources :cortesias do 
+      get :autocomplete_alimento_descripcion, :on => :collection
+    end 
+    resources :preferencias
+  end
 
 
   resources :sugerenciasyquejas do
@@ -22,31 +31,10 @@ Witcrm::Application.routes.draw do
   resources :tiposdeidentificaciones
 
 
-  resources :empleados do
-    resources :huespedes do
-      resources :telefonos
-      resources :cortesias do 
-        get :autocomplete_alimento_descripcion, :on => :collection
-      end 
-      resources :preferencias
-    end
-  end
-
-  resources :huespedes do
-    resources :telefonos
-    resources :cortesias do 
-      get :autocomplete_alimento_descripcion, :on => :collection
-    end 
-    resources :preferencias
-  end
+  resources :empleados
 
 
-
-
-  resources :visitas do
-    get :autocomplete_empleado_primer_nombre, :on => :collection
-    get :autocomplete_obsequio_descripcion, :on => :collection
-  end
+  resources :visitas
 
 
   resources :contactos

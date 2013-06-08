@@ -1,7 +1,7 @@
 class HuespedesController < ApplicationController
   
   before_filter :require_login
-  
+  before_filter :find_empleado_huespedes
   before_filter :find_huesped, :except => [ :index, :create, :new]
 
   helper_method :sort_column, :sort_direction
@@ -11,7 +11,7 @@ class HuespedesController < ApplicationController
           params[:limit] = 10
     end
 
-    @huespedes = Huesped.order(sort_column + ' ' + sort_direction).search(params[:search]).page(params[:page]).per_page(params[:limit].to_i)
+    @huespedes = @empleado.huespedes.order(sort_column + ' ' + sort_direction).search(params[:search]).page(params[:page]).per_page(params[:limit].to_i)
     respond_to do |format|
       format.html 
       format.json { render json: @huespedes }
@@ -37,7 +37,7 @@ class HuespedesController < ApplicationController
   end
 
   def create
-      @huesped = Huesped.new(params[:huesped])
+      @huesped = @empleado.huespedes.build(params[:huesped])
       render :action => :new unless @huesped.save
       @huespedes = Huesped.all
   end
@@ -64,4 +64,9 @@ class HuespedesController < ApplicationController
     @huesped = Huesped.find(params[:id]) if params[:id]
   end
   
+  def find_empleado_huespedes
+    @empleado = Empleado.find(params[:empleado_id])
+    @huesped = Huesped.find(params[:id]) if params[:id]
+  end
+
 end

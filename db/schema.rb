@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605154317) do
+ActiveRecord::Schema.define(:version => 20130608211553) do
 
   create_table "alimentos", :force => true do |t|
     t.text     "descripcion"
@@ -62,16 +62,20 @@ ActiveRecord::Schema.define(:version => 20130605154317) do
     t.string   "segundo_nombre"
     t.string   "primer_apellido"
     t.string   "segundo_apellido"
-    t.integer  "tipo_identificacion_id"
+    t.integer  "tiposdeidentificacion_id"
     t.string   "documento"
     t.integer  "departamento_id"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "empleados", ["cargo_id"], :name => "index_empleados_on_cargo_id"
   add_index "empleados", ["departamento_id"], :name => "index_empleados_on_departamento_id"
-  add_index "empleados", ["tipo_identificacion_id"], :name => "index_empleados_on_tipo_identificacion_id"
+  add_index "empleados", ["tiposdeidentificacion_id"], :name => "index_empleados_on_tiposdeidentificacion_id"
 
   create_table "empresas", :force => true do |t|
     t.string   "nombre"
@@ -91,7 +95,7 @@ ActiveRecord::Schema.define(:version => 20130605154317) do
     t.date     "fecha_nacimiento"
     t.string   "direccion"
     t.string   "email"
-    t.integer  "empleado_encargado_id"
+    t.integer  "empleado_id"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
     t.string   "avatar_file_name"
@@ -100,7 +104,7 @@ ActiveRecord::Schema.define(:version => 20130605154317) do
     t.datetime "avatar_updated_at"
   end
 
-  add_index "huespedes", ["empleado_encargado_id"], :name => "index_huespedes_on_empleado_encargado_id"
+  add_index "huespedes", ["empleado_id"], :name => "index_huespedes_on_empleado_id"
   add_index "huespedes", ["tiposdeidentificacion_id"], :name => "index_huespedes_on_tiposdeidentificacion_id"
 
   create_table "obsequios", :force => true do |t|

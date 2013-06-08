@@ -1,7 +1,9 @@
 <%= simple_form_for(@contacto, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
 
 
-  <%= f.input :empresa_id, :label => "Empresa" %>
+   <div class = "span5">Empresa <%= f.collection_select :empresa_id, Empresa.all, :id, :nombre, :prompt => 'Seleccionar' %></div>
+  <br><br><br>
+
   <%= f.input :nombre, :label => "Nombre" %>
   <%= f.input :celular, :label => "Celular" %>
   <%= f.input :email, :label => "Email" %>

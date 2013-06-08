@@ -1,11 +1,13 @@
 <tr id=<%= "empleado_#{empleado.id}" %>>
-  <td><%= empleado.id %></td>
-  <td><%= empleado.cargo_id %></td>
+  <td><%= link_to empleado.id, edit_empleado_path(empleado), :remote => true %></td>
+  <td><%= image_tag empleado.avatar.url(:thumb) %></td>
+  <td><%= empleado.cargo.descripcion %></td>
   <td><%= empleado.primer_nombre %></td>
   <td><%= empleado.primer_apellido %></td>
   <td><%= empleado.documento %></td>
-  <td><%= empleado.departamento_id %></td>
- 
+  <td><%= empleado.departamento.nombre %></td>
+  <td><%= link_to 'Huéspedes', empleado_huespedes_path(empleado), :class => "btn btn-mini btn-info", :style => "color:white" %></td>
+  
   <td>
     <div class="btn-group">
       <button class="btn btn-mini btn-info"> Opciones </button>

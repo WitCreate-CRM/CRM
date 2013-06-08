@@ -51,7 +51,7 @@ class DepartamentosController < ApplicationController
 
   def destroy
       @departamento  = Departamento.find(params[:id])
-      @departamento .destroy
+      @departamento.destroy
   end
   private
  

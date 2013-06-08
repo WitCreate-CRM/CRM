@@ -51,7 +51,7 @@ class CargosController < ApplicationController
 
   def destroy
       @cargo  = Cargo.find(params[:id])
-      @cargo  .destroy
+      @cargo.destroy
   end
 
   private

@@ -1,17 +1,30 @@
-<%= simple_form_for(@empleado, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
-
-  <%= f.error_notification %>
+<%= simple_form_for(@empleado, :html => { :class => 'form-horizontal', :multipart => true }, :remote => true) do |f| %>
  
 
-  <%= f.input :cargo_id, :label => "Cargo" %>
+  <div class = "span5">Cargo <%= f.collection_select :cargo_id, Cargo.all, :id, :descripcion, :prompt => 'Seleccionar' %></div>
+  <br><br><br>
+
   <%= f.input :primer_nombre, :label => "Primer Nombre" %>
+
   <%= f.input :segundo_nombre, :label => "Segundo Nombre" %>
+
   <%= f.input :primer_apellido, :label => "Primer Apellido" %>
+
   <%= f.input :segundo_apellido, :label => "Segundo Apellido" %>
-  <%= f.input :tipo_identificacion_id, :label => "tipo de documentacion" %>
+
+  <div class = "span5">Tipo De Identificación <%= f.collection_select :tiposdeidentificacion_id, Tiposdeidentificacion.all, :id, :sigla, :prompt => 'Seleccionar' %></div>
+  <br><br><br>
+
   <%= f.input :documento, :label => "Documento" %>
-  <%= f.input :departamento_id %>
+
+  <div class = "span5">Departamento <%= f.collection_select :departamento_id, Departamento.all, :id, :nombre, :prompt => 'Seleccionar' %></div>
+  <br> <br>
   
+  <%= f.label :avatar %>
+  <div class = "span2" ><%= image_tag @empleado.avatar.url(:thumb) %></div>
+  <br>
+  <%= f.file_field :avatar %>
+  <br><br><br>
   
  
    <div class="form-actions">

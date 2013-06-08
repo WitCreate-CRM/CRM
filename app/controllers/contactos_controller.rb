@@ -52,7 +52,7 @@ class ContactosController < ApplicationController
 
   def destroy
       @contacto  = Contacto.find(params[:id])
-      @contacto .destroy
+      @contacto.destroy
   end
   
   private

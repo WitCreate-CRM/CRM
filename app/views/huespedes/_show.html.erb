@@ -1,6 +1,6 @@
 <%- model_class = Huesped -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+  <h1>Huéspedes a cargo de <%= @empleado.primer_nombre %></h1>
 </div>
 
 <div class='gen'>
@@ -14,10 +14,10 @@
   <p><b>Fecha de nacimiento:</b> <%= @huesped.fecha_nacimiento %></p>
   <p><b>Dirección:</b> <%= @huesped.direccion %></p>
   <p><b>Email:</b> <%= @huesped.email %></p>
-  <p><b>Empleado encargado:</b> <%= @huesped.empleado_encargado_id %></p>
+
   <p><b>Foto :</b></p>
   <%= image_tag @huesped.avatar.url(:thumb) %>
 </div>
 
 <br>
-<%= link_to "pdf", huesped_path(@huesped, :format => "pdf"), :class => 'btn' %>
+<%= link_to "pdf", empleado_huesped_path(@huesped, :format => "pdf"), :class => 'btn' %>

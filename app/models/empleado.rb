@@ -1,12 +1,25 @@
 class Empleado < ActiveRecord::Base
+
+  has_many :huespedes
+  has_many :visitas
+
   belongs_to :cargo
-  belongs_to :tipo_identificacion
+  belongs_to :tiposdeidentificacion
   belongs_to :departamento
-  attr_accessible :documento, :primer_apellido, :primer_nombre, :segundo_apellido, :segundo_nombre, :cargo_id, :tipo_identificacion_id, :departamento_id
+  attr_accessible :avatar ,:documento, :primer_apellido, :primer_nombre, :segundo_apellido, :segundo_nombre, :cargo_id, :tiposdeidentificacion_id, :departamento_id
 
   def self.search(search) 
   where('primer_nombre like ? OR segundo_nombre like ? OR primer_apellido like ? OR segundo_apellido like ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%" ) 
   end
+
+  has_attached_file :avatar,
+    :styles => {
+      :thumb => "75x75#",
+      :small => "100x100#",
+      :medium => "150x150>"
+    },
+    :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+    :url => "/system/:attachment/:id/:style/:filename"
 
    validates :documento, :presence => true, 
    :length => { :minimum => 10, :maximum => 13 }

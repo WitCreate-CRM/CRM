@@ -1,7 +1,8 @@
 class EmpleadosController < ApplicationController
   
   before_filter :require_login
-  
+  before_filter :find_empleado, :except => [ :index, :create, :new ]
+
   helper_method :sort_column, :sort_direction
 
   def index
@@ -12,15 +13,14 @@ class EmpleadosController < ApplicationController
 
     @empleados = Empleado.order(sort_column + ' ' + sort_direction).search(params[:search]).page(params[:page]).per_page(params[:limit].to_i)
     respond_to do |format|
-      format.html # index.html.erb
+      format.html 
       format.json { render json: @empleados}
     end
   end
 
   def show
-      @empleado = Empleado.find(params[:id])
        respond_to do |format|
-       format.js # show.html.erb
+       format.js 
       
         format.pdf do
           pdf = EmpleadoPdf.new(@empleado, view_context)
@@ -36,22 +36,21 @@ class EmpleadosController < ApplicationController
   end
 
   def edit
-      @empleado  = Empleado.find(params[:id])
   end
 
   def create
       @empleado  = Empleado.new(params[:empleado])
       render :action => :new unless @empleado.save
+      @empleados = Empleado.all
   end
 
   def update
-      @empleado  = Empleado.find(params[:id])
       render :action => :edit unless @empleado.update_attributes(params[:empleado])
   end
 
   def destroy
-      @empleado  = Empleado.find(params[:id])
-      @empleado .destroy
+      @empleado.destroy
+      @empleados = Empleado.all
   end
 
   private
@@ -62,6 +61,10 @@ class EmpleadosController < ApplicationController
 
   def sort_direction
     %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  end
+
+  def find_empleado
+    @empleado = Empleado.find(params[:id])
   end
 
 end

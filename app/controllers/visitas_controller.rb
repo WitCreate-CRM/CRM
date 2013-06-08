@@ -1,5 +1,9 @@
 class VisitasController < ApplicationController
   
+  autocomplete :obsequio, :descripcion, :full => true
+
+  autocomplete :empleado, :primer_nombre, :full => true
+
   before_filter :require_login
   
   helper_method :sort_column, :sort_direction
@@ -50,7 +54,7 @@ class VisitasController < ApplicationController
 
   def destroy
       @visita  = Visita.find(params[:id])
-      @visita .destroy
+      @visita.destroy
   end
 
   private
