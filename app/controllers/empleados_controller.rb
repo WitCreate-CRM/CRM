@@ -64,7 +64,7 @@ class EmpleadosController < ApplicationController
   end
 
   def find_empleado
-    @empleado = Empleado.find(params[:id])
+    @empleado = Empleado.find(params[:id]) if params[:id]
   end
 
 end

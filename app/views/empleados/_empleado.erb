@@ -6,7 +6,23 @@
   <td><%= empleado.primer_apellido %></td>
   <td><%= empleado.documento %></td>
   <td><%= empleado.departamento.nombre %></td>
-  <td><%= link_to 'Huéspedes', empleado_huespedes_path(empleado), :class => "btn btn-mini btn-info", :style => "color:white" %></td>
+
+
+  <td>
+  <div class="btn-group">
+      <button class="btn btn-mini btn-info"> Opciones </button>
+      <button class="btn btn-mini btn-info dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" >
+
+      <li><%= link_to 'Huéspedes', empleado_huespedes_path(empleado), :class => "btn btn-mini", :style => "color:black" %></li>
+
+      <li><%= link_to 'Teléfonos', empleado_telefonos1_path(empleado), :class => "btn btn-mini", :style => "color:black" %></li>
+       </ul>
+    </div>
+  </td>
+
   
   <td>
     <div class="btn-group">

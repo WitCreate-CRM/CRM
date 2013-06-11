@@ -2,6 +2,7 @@ class Empleado < ActiveRecord::Base
 
   has_many :huespedes
   has_many :visitas
+  has_many :telefonos1
 
   belongs_to :cargo
   belongs_to :tiposdeidentificacion

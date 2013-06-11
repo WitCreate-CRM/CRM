@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  empleado: 
+  numero_telefonico: MyString
+
+two:
+  empleado: 
+  numero_telefonico: MyString

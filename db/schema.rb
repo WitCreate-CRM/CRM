@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608211553) do
+ActiveRecord::Schema.define(:version => 20130611134356) do
 
   create_table "alimentos", :force => true do |t|
     t.text     "descripcion"
@@ -137,14 +137,21 @@ ActiveRecord::Schema.define(:version => 20130608211553) do
 
   create_table "telefonos", :force => true do |t|
     t.integer  "huesped_id"
+    t.string   "numero_telefonico"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "telefonos", ["huesped_id"], :name => "index_telefonos_on_huesped_id"
+
+  create_table "telefonos1", :force => true do |t|
     t.integer  "empleado_id"
     t.string   "numero_telefonico"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
 
-  add_index "telefonos", ["empleado_id"], :name => "index_telefonos_on_empleado_id"
-  add_index "telefonos", ["huesped_id"], :name => "index_telefonos_on_huesped_id"
+  add_index "telefonos1", ["empleado_id"], :name => "index_telefonos1_on_empleado_id"
 
   create_table "tiposdehabitaciones", :force => true do |t|
     t.string   "descripcion"

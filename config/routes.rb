@@ -1,5 +1,5 @@
 Witcrm::Application.routes.draw do
-  
+
   get "pages/index"
 
   get "logout" => "sessions#destroy", :as => "logout"
@@ -23,6 +23,7 @@ Witcrm::Application.routes.draw do
 
 
   resources :empleados do
+    resources :telefonos1
     resources :huespedes do
       resources :telefonos
       resources :cortesias do 
