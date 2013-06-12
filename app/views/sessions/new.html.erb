@@ -1,16 +1,31 @@
 <%= form_tag sessions_path do %>
 <br><br><br>
-  <center><div class="field">
+
+<div id ="login-box">
+  <img id ="img" src="assets/logo.jpg"> 
+    <h2>Login</h2>
+    <br>
+    ingrese usuario y contaseña para ingresar al sistema
+    <br>
+    <br>
+<div id ="login-box-name">
+  <center>
+    <div class="field">
     <%= label_tag :Nombre_de_usuario %>
     <%= text_field_tag :username, params[:username] %>
-  </div><br>
-  <div class="field">
+  </div>
+  <br>
+    <div class="field">
     <%= label_tag :Clave %>
     <%= password_field_tag :password %>
   </div>
-  <div class="field">
-    <p style = "font-size:15px" ><%= check_box_tag :remember_me, 1, params[:remember_me] %> Recordarme</p>
-  </div><br>
-  <div class="actions"><%= submit_tag "Ingresar", :class => 'btn btn-info' %></div>
+ 
+ <div class="field">
+    <p style = "font-size:15px" ><%= check_box_tag :remember_me, 1, params[:remember_me] %> Recordarme </p>
+    <div id="sub"><%= submit_tag "Ingresar", :class => 'btn btn-info' %> 
+    </div>
+       
+     </div>
   </center>
+  </div>
 <% end %>
