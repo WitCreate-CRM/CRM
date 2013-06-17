@@ -1,6 +1,7 @@
 <%- model_class = Empresa -%>
 <div class="page-header">
-  <center><h1>Empresas</h1></center>
+  <center><h1>Listado De Empresas De: <%= @empleado.primer_nombre %></h1>
+</center>
 </div>
 
 <form method="get" class="form-search">
@@ -50,7 +51,10 @@
   </table>
   <tfoot>
     <tr>
-      <td><%= link_to 'Nueva empresa', new_empresa_path, :remote => true, :class => "btn btn-info", :style => "color:white" %></td>
+      <td><%= link_to 'Nueva empresa', new_empleado_empresa_path, :remote => true, :class => "btn btn-info", :style => "color:white" %></td>
+
+      <td><%= link_to 'Volver a empleados', empleados_path,:class => "btn btn-info", :style => "color:white" %></td>
+
     </tr>
   </tfoot>
 

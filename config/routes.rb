@@ -16,14 +16,12 @@ Witcrm::Application.routes.draw do
   end
 
 
-  resources :tiposdehabitaciones
-
-
-  resources :tiposdeidentificaciones
-
+  
 
   resources :empleados do
     resources :telefonos1
+    resources :empresas
+
     resources :huespedes do
       resources :telefonos
       resources :cortesias do 
@@ -63,9 +61,13 @@ Witcrm::Application.routes.draw do
 
 
   resources :departamentos
+  
+
+  resources :tiposdehabitaciones
 
 
-  resources :empresas
+  resources :tiposdeidentificaciones
+
 
 
  root :to => "sessions#new"

@@ -1,8 +1,11 @@
 class EmpresasController < ApplicationController
 
-  before_filter :require_login
+   before_filter :require_login
 
    helper_method :sort_column, :sort_direction
+
+   before_filter :find_empleado_empresas
+
 
   def index
 
@@ -10,7 +13,7 @@ class EmpresasController < ApplicationController
           params[:limit] = 10
     end
 
-    @empresas = Empresa.order(sort_column + ' ' + sort_direction).search(params[:search]).page(params[:page]).per_page(params[:limit].to_i)
+    @empresas = @empleado.empresas.order(sort_column + ' ' + sort_direction).search(params[:search]).page(params[:page]).per_page(params[:limit].to_i)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @empresas}
@@ -18,7 +21,7 @@ class EmpresasController < ApplicationController
   end
 
   def show
-      @empresa = Empresa.find(params[:id])
+      
     respond_to do |format|
       format.js # show.html.erb
       
@@ -36,21 +39,18 @@ class EmpresasController < ApplicationController
   end
 
   def edit
-      @empresa  = Empresa.find(params[:id])
   end
 
   def create
-      @empresa  = Empresa.new(params[:empresa])
+      @empresa = @empleado.empresas.build(params[:empresa])
       render :action => :new unless @empresa.save
   end
 
   def update
-      @empresa  = Empresa.find(params[:id])
       render :action => :edit unless @empresa.update_attributes(params[:empresa])
   end
 
   def destroy
-      @empresa  = Empresa.find(params[:id])
       @empresa.destroy
   end
   
@@ -62,6 +62,11 @@ class EmpresasController < ApplicationController
 
   def sort_direction
     %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  end
+  
+  def find_empleado_empresas
+    @empleado = Empleado.find(params[:empleado_id])
+    @empresa = Empresa.find(params[:id]) if params[:id]
   end
 
 end

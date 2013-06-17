@@ -3,7 +3,9 @@
   <td><%= image_tag empleado.avatar.url(:thumb) %></td>
   <td><%= empleado.cargo.descripcion %></td>
   <td><%= empleado.primer_nombre %></td>
+  <td><%= empleado.segundo_nombre %></td>
   <td><%= empleado.primer_apellido %></td>
+  <td><%= empleado.segundo_apellido %></td>
   <td><%= empleado.documento %></td>
   <td><%= empleado.departamento.nombre %></td>
 
@@ -19,6 +21,9 @@
       <li><%= link_to 'Huéspedes', empleado_huespedes_path(empleado), :class => "btn btn-mini", :style => "color:black" %></li>
 
       <li><%= link_to 'Teléfonos', empleado_telefonos1_path(empleado), :class => "btn btn-mini", :style => "color:black" %></li>
+
+      <li><%= link_to 'Empresas', empleado_empresas_path(empleado), :class => "btn btn-mini", :style => "color:black" %></li>
+
        </ul>
     </div>
   </td>
