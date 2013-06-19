@@ -6,6 +6,9 @@ class EmpresasController < ApplicationController
 
    before_filter :find_empleado_empresas
 
+   before_filter :find_empresa
+
+
 
   def index
 
@@ -44,6 +47,7 @@ class EmpresasController < ApplicationController
   def create
       @empresa = @empleado.empresas.build(params[:empresa])
       render :action => :new unless @empresa.save
+      @empresas = Empresa.all
   end
 
   def update
@@ -68,5 +72,10 @@ class EmpresasController < ApplicationController
     @empleado = Empleado.find(params[:empleado_id])
     @empresa = Empresa.find(params[:id]) if params[:id]
   end
+
+  def find_empresa
+    @empresa = Empresa.find(params[:id]) if params[:id]
+  end
+
 
 end

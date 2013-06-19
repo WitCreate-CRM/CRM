@@ -1,0 +1,164 @@
+                                                 pages_index GET    /pages/index(.:format)                                                                              pages#index
+                                                      logout GET    /logout(.:format)                                                                                   sessions#destroy
+                                                       login GET    /login(.:format)                                                                                    sessions#new
+                                                      signup GET    /signup(.:format)                                                                                   users#new
+       autocomplete_huesped_primer_nombre_sugerenciasyquejas GET    /sugerenciasyquejas/autocomplete_huesped_primer_nombre(.:format)                                    sugerenciasyquejas#autocomplete_huesped_primer_nombre
+                                          sugerenciasyquejas GET    /sugerenciasyquejas(.:format)                                                                       sugerenciasyquejas#index
+                                                             POST   /sugerenciasyquejas(.:format)                                                                       sugerenciasyquejas#create
+                                       new_sugerenciasyqueja GET    /sugerenciasyquejas/new(.:format)                                                                   sugerenciasyquejas#new
+                                      edit_sugerenciasyqueja GET    /sugerenciasyquejas/:id/edit(.:format)                                                              sugerenciasyquejas#edit
+                                           sugerenciasyqueja GET    /sugerenciasyquejas/:id(.:format)                                                                   sugerenciasyquejas#show
+                                                             PUT    /sugerenciasyquejas/:id(.:format)                                                                   sugerenciasyquejas#update
+                                                             DELETE /sugerenciasyquejas/:id(.:format)                                                                   sugerenciasyquejas#destroy
+                                         empleado_telefonos1 GET    /empleados/:empleado_id/telefonos1(.:format)                                                        telefonos1#index
+                                                             POST   /empleados/:empleado_id/telefonos1(.:format)                                                        telefonos1#create
+                                      new_empleado_telefono1 GET    /empleados/:empleado_id/telefonos1/new(.:format)                                                    telefonos1#new
+                                     edit_empleado_telefono1 GET    /empleados/:empleado_id/telefonos1/:id/edit(.:format)                                               telefonos1#edit
+                                          empleado_telefono1 GET    /empleados/:empleado_id/telefonos1/:id(.:format)                                                    telefonos1#show
+                                                             PUT    /empleados/:empleado_id/telefonos1/:id(.:format)                                                    telefonos1#update
+                                                             DELETE /empleados/:empleado_id/telefonos1/:id(.:format)                                                    telefonos1#destroy
+                                  empleado_empresa_contactos GET    /empleados/:empleado_id/empresas/:empresa_id/contactos(.:format)                                    contactos#index
+                                                             POST   /empleados/:empleado_id/empresas/:empresa_id/contactos(.:format)                                    contactos#create
+                               new_empleado_empresa_contacto GET    /empleados/:empleado_id/empresas/:empresa_id/contactos/new(.:format)                                contactos#new
+                              edit_empleado_empresa_contacto GET    /empleados/:empleado_id/empresas/:empresa_id/contactos/:id/edit(.:format)                           contactos#edit
+                                   empleado_empresa_contacto GET    /empleados/:empleado_id/empresas/:empresa_id/contactos/:id(.:format)                                contactos#show
+                                                             PUT    /empleados/:empleado_id/empresas/:empresa_id/contactos/:id(.:format)                                contactos#update
+                                                             DELETE /empleados/:empleado_id/empresas/:empresa_id/contactos/:id(.:format)                                contactos#destroy
+                                           empleado_empresas GET    /empleados/:empleado_id/empresas(.:format)                                                          empresas#index
+                                                             POST   /empleados/:empleado_id/empresas(.:format)                                                          empresas#create
+                                        new_empleado_empresa GET    /empleados/:empleado_id/empresas/new(.:format)                                                      empresas#new
+                                       edit_empleado_empresa GET    /empleados/:empleado_id/empresas/:id/edit(.:format)                                                 empresas#edit
+                                            empleado_empresa GET    /empleados/:empleado_id/empresas/:id(.:format)                                                      empresas#show
+                                                             PUT    /empleados/:empleado_id/empresas/:id(.:format)                                                      empresas#update
+                                                             DELETE /empleados/:empleado_id/empresas/:id(.:format)                                                      empresas#destroy
+                                  empleado_huesped_telefonos GET    /empleados/:empleado_id/huespedes/:huesped_id/telefonos(.:format)                                   telefonos#index
+                                                             POST   /empleados/:empleado_id/huespedes/:huesped_id/telefonos(.:format)                                   telefonos#create
+                               new_empleado_huesped_telefono GET    /empleados/:empleado_id/huespedes/:huesped_id/telefonos/new(.:format)                               telefonos#new
+                              edit_empleado_huesped_telefono GET    /empleados/:empleado_id/huespedes/:huesped_id/telefonos/:id/edit(.:format)                          telefonos#edit
+                                   empleado_huesped_telefono GET    /empleados/:empleado_id/huespedes/:huesped_id/telefonos/:id(.:format)                               telefonos#show
+                                                             PUT    /empleados/:empleado_id/huespedes/:huesped_id/telefonos/:id(.:format)                               telefonos#update
+                                                             DELETE /empleados/:empleado_id/huespedes/:huesped_id/telefonos/:id(.:format)                               telefonos#destroy
+autocomplete_alimento_descripcion_empleado_huesped_cortesias GET    /empleados/:empleado_id/huespedes/:huesped_id/cortesias/autocomplete_alimento_descripcion(.:format) cortesias#autocomplete_alimento_descripcion
+                                  empleado_huesped_cortesias GET    /empleados/:empleado_id/huespedes/:huesped_id/cortesias(.:format)                                   cortesias#index
+                                                             POST   /empleados/:empleado_id/huespedes/:huesped_id/cortesias(.:format)                                   cortesias#create
+                               new_empleado_huesped_cortesia GET    /empleados/:empleado_id/huespedes/:huesped_id/cortesias/new(.:format)                               cortesias#new
+                              edit_empleado_huesped_cortesia GET    /empleados/:empleado_id/huespedes/:huesped_id/cortesias/:id/edit(.:format)                          cortesias#edit
+                                   empleado_huesped_cortesia GET    /empleados/:empleado_id/huespedes/:huesped_id/cortesias/:id(.:format)                               cortesias#show
+                                                             PUT    /empleados/:empleado_id/huespedes/:huesped_id/cortesias/:id(.:format)                               cortesias#update
+                                                             DELETE /empleados/:empleado_id/huespedes/:huesped_id/cortesias/:id(.:format)                               cortesias#destroy
+                               empleado_huesped_preferencias GET    /empleados/:empleado_id/huespedes/:huesped_id/preferencias(.:format)                                preferencias#index
+                                                             POST   /empleados/:empleado_id/huespedes/:huesped_id/preferencias(.:format)                                preferencias#create
+                            new_empleado_huesped_preferencia GET    /empleados/:empleado_id/huespedes/:huesped_id/preferencias/new(.:format)                            preferencias#new
+                           edit_empleado_huesped_preferencia GET    /empleados/:empleado_id/huespedes/:huesped_id/preferencias/:id/edit(.:format)                       preferencias#edit
+                                empleado_huesped_preferencia GET    /empleados/:empleado_id/huespedes/:huesped_id/preferencias/:id(.:format)                            preferencias#show
+                                                             PUT    /empleados/:empleado_id/huespedes/:huesped_id/preferencias/:id(.:format)                            preferencias#update
+                                                             DELETE /empleados/:empleado_id/huespedes/:huesped_id/preferencias/:id(.:format)                            preferencias#destroy
+                                          empleado_huespedes GET    /empleados/:empleado_id/huespedes(.:format)                                                         huespedes#index
+                                                             POST   /empleados/:empleado_id/huespedes(.:format)                                                         huespedes#create
+                                        new_empleado_huesped GET    /empleados/:empleado_id/huespedes/new(.:format)                                                     huespedes#new
+                                       edit_empleado_huesped GET    /empleados/:empleado_id/huespedes/:id/edit(.:format)                                                huespedes#edit
+                                            empleado_huesped GET    /empleados/:empleado_id/huespedes/:id(.:format)                                                     huespedes#show
+                                                             PUT    /empleados/:empleado_id/huespedes/:id(.:format)                                                     huespedes#update
+                                                             DELETE /empleados/:empleado_id/huespedes/:id(.:format)                                                     huespedes#destroy
+                                                   empleados GET    /empleados(.:format)                                                                                empleados#index
+                                                             POST   /empleados(.:format)                                                                                empleados#create
+                                                new_empleado GET    /empleados/new(.:format)                                                                            empleados#new
+                                               edit_empleado GET    /empleados/:id/edit(.:format)                                                                       empleados#edit
+                                                    empleado GET    /empleados/:id(.:format)                                                                            empleados#show
+                                                             PUT    /empleados/:id(.:format)                                                                            empleados#update
+                                                             DELETE /empleados/:id(.:format)                                                                            empleados#destroy
+                                           huesped_telefonos GET    /huespedes/:huesped_id/telefonos(.:format)                                                          telefonos#index
+                                                             POST   /huespedes/:huesped_id/telefonos(.:format)                                                          telefonos#create
+                                        new_huesped_telefono GET    /huespedes/:huesped_id/telefonos/new(.:format)                                                      telefonos#new
+                                       edit_huesped_telefono GET    /huespedes/:huesped_id/telefonos/:id/edit(.:format)                                                 telefonos#edit
+                                            huesped_telefono GET    /huespedes/:huesped_id/telefonos/:id(.:format)                                                      telefonos#show
+                                                             PUT    /huespedes/:huesped_id/telefonos/:id(.:format)                                                      telefonos#update
+                                                             DELETE /huespedes/:huesped_id/telefonos/:id(.:format)                                                      telefonos#destroy
+         autocomplete_alimento_descripcion_huesped_cortesias GET    /huespedes/:huesped_id/cortesias/autocomplete_alimento_descripcion(.:format)                        cortesias#autocomplete_alimento_descripcion
+                                           huesped_cortesias GET    /huespedes/:huesped_id/cortesias(.:format)                                                          cortesias#index
+                                                             POST   /huespedes/:huesped_id/cortesias(.:format)                                                          cortesias#create
+                                        new_huesped_cortesia GET    /huespedes/:huesped_id/cortesias/new(.:format)                                                      cortesias#new
+                                       edit_huesped_cortesia GET    /huespedes/:huesped_id/cortesias/:id/edit(.:format)                                                 cortesias#edit
+                                            huesped_cortesia GET    /huespedes/:huesped_id/cortesias/:id(.:format)                                                      cortesias#show
+                                                             PUT    /huespedes/:huesped_id/cortesias/:id(.:format)                                                      cortesias#update
+                                                             DELETE /huespedes/:huesped_id/cortesias/:id(.:format)                                                      cortesias#destroy
+                                        huesped_preferencias GET    /huespedes/:huesped_id/preferencias(.:format)                                                       preferencias#index
+                                                             POST   /huespedes/:huesped_id/preferencias(.:format)                                                       preferencias#create
+                                     new_huesped_preferencia GET    /huespedes/:huesped_id/preferencias/new(.:format)                                                   preferencias#new
+                                    edit_huesped_preferencia GET    /huespedes/:huesped_id/preferencias/:id/edit(.:format)                                              preferencias#edit
+                                         huesped_preferencia GET    /huespedes/:huesped_id/preferencias/:id(.:format)                                                   preferencias#show
+                                                             PUT    /huespedes/:huesped_id/preferencias/:id(.:format)                                                   preferencias#update
+                                                             DELETE /huespedes/:huesped_id/preferencias/:id(.:format)                                                   preferencias#destroy
+                                                   huespedes GET    /huespedes(.:format)                                                                                huespedes#index
+                                                             POST   /huespedes(.:format)                                                                                huespedes#create
+                                                 new_huesped GET    /huespedes/new(.:format)                                                                            huespedes#new
+                                                edit_huesped GET    /huespedes/:id/edit(.:format)                                                                       huespedes#edit
+                                                     huesped GET    /huespedes/:id(.:format)                                                                            huespedes#show
+                                                             PUT    /huespedes/:id(.:format)                                                                            huespedes#update
+                                                             DELETE /huespedes/:id(.:format)                                                                            huespedes#destroy
+                 autocomplete_empleado_primer_nombre_visitas GET    /visitas/autocomplete_empleado_primer_nombre(.:format)                                              visitas#autocomplete_empleado_primer_nombre
+                   autocomplete_obsequio_descripcion_visitas GET    /visitas/autocomplete_obsequio_descripcion(.:format)                                                visitas#autocomplete_obsequio_descripcion
+                                                     visitas GET    /visitas(.:format)                                                                                  visitas#index
+                                                             POST   /visitas(.:format)                                                                                  visitas#create
+                                                  new_visita GET    /visitas/new(.:format)                                                                              visitas#new
+                                                 edit_visita GET    /visitas/:id/edit(.:format)                                                                         visitas#edit
+                                                      visita GET    /visitas/:id(.:format)                                                                              visitas#show
+                                                             PUT    /visitas/:id(.:format)                                                                              visitas#update
+                                                             DELETE /visitas/:id(.:format)                                                                              visitas#destroy
+                                                       users GET    /users(.:format)                                                                                    users#index
+                                                             POST   /users(.:format)                                                                                    users#create
+                                                    new_user GET    /users/new(.:format)                                                                                users#new
+                                                   edit_user GET    /users/:id/edit(.:format)                                                                           users#edit
+                                                        user GET    /users/:id(.:format)                                                                                users#show
+                                                             PUT    /users/:id(.:format)                                                                                users#update
+                                                             DELETE /users/:id(.:format)                                                                                users#destroy
+                                                    sessions GET    /sessions(.:format)                                                                                 sessions#index
+                                                             POST   /sessions(.:format)                                                                                 sessions#create
+                                                 new_session GET    /sessions/new(.:format)                                                                             sessions#new
+                                                edit_session GET    /sessions/:id/edit(.:format)                                                                        sessions#edit
+                                                     session GET    /sessions/:id(.:format)                                                                             sessions#show
+                                                             PUT    /sessions/:id(.:format)                                                                             sessions#update
+                                                             DELETE /sessions/:id(.:format)                                                                             sessions#destroy
+                                                   obsequios GET    /obsequios(.:format)                                                                                obsequios#index
+                                                             POST   /obsequios(.:format)                                                                                obsequios#create
+                                                new_obsequio GET    /obsequios/new(.:format)                                                                            obsequios#new
+                                               edit_obsequio GET    /obsequios/:id/edit(.:format)                                                                       obsequios#edit
+                                                    obsequio GET    /obsequios/:id(.:format)                                                                            obsequios#show
+                                                             PUT    /obsequios/:id(.:format)                                                                            obsequios#update
+                                                             DELETE /obsequios/:id(.:format)                                                                            obsequios#destroy
+                                                   alimentos GET    /alimentos(.:format)                                                                                alimentos#index
+                                                             POST   /alimentos(.:format)                                                                                alimentos#create
+                                                new_alimento GET    /alimentos/new(.:format)                                                                            alimentos#new
+                                               edit_alimento GET    /alimentos/:id/edit(.:format)                                                                       alimentos#edit
+                                                    alimento GET    /alimentos/:id(.:format)                                                                            alimentos#show
+                                                             PUT    /alimentos/:id(.:format)                                                                            alimentos#update
+                                                             DELETE /alimentos/:id(.:format)                                                                            alimentos#destroy
+                                                      cargos GET    /cargos(.:format)                                                                                   cargos#index
+                                                             POST   /cargos(.:format)                                                                                   cargos#create
+                                                   new_cargo GET    /cargos/new(.:format)                                                                               cargos#new
+                                                  edit_cargo GET    /cargos/:id/edit(.:format)                                                                          cargos#edit
+                                                       cargo GET    /cargos/:id(.:format)                                                                               cargos#show
+                                                             PUT    /cargos/:id(.:format)                                                                               cargos#update
+                                                             DELETE /cargos/:id(.:format)                                                                               cargos#destroy
+                                               departamentos GET    /departamentos(.:format)                                                                            departamentos#index
+                                                             POST   /departamentos(.:format)                                                                            departamentos#create
+                                            new_departamento GET    /departamentos/new(.:format)                                                                        departamentos#new
+                                           edit_departamento GET    /departamentos/:id/edit(.:format)                                                                   departamentos#edit
+                                                departamento GET    /departamentos/:id(.:format)                                                                        departamentos#show
+                                                             PUT    /departamentos/:id(.:format)                                                                        departamentos#update
+                                                             DELETE /departamentos/:id(.:format)                                                                        departamentos#destroy
+                                         tiposdehabitaciones GET    /tiposdehabitaciones(.:format)                                                                      tiposdehabitaciones#index
+                                                             POST   /tiposdehabitaciones(.:format)                                                                      tiposdehabitaciones#create
+                                       new_tiposdehabitacion GET    /tiposdehabitaciones/new(.:format)                                                                  tiposdehabitaciones#new
+                                      edit_tiposdehabitacion GET    /tiposdehabitaciones/:id/edit(.:format)                                                             tiposdehabitaciones#edit
+                                           tiposdehabitacion GET    /tiposdehabitaciones/:id(.:format)                                                                  tiposdehabitaciones#show
+                                                             PUT    /tiposdehabitaciones/:id(.:format)                                                                  tiposdehabitaciones#update
+                                                             DELETE /tiposdehabitaciones/:id(.:format)                                                                  tiposdehabitaciones#destroy
+                                     tiposdeidentificaciones GET    /tiposdeidentificaciones(.:format)                                                                  tiposdeidentificaciones#index
+                                                             POST   /tiposdeidentificaciones(.:format)                                                                  tiposdeidentificaciones#create
+                                   new_tiposdeidentificacion GET    /tiposdeidentificaciones/new(.:format)                                                              tiposdeidentificaciones#new
+                                  edit_tiposdeidentificacion GET    /tiposdeidentificaciones/:id/edit(.:format)                                                         tiposdeidentificaciones#edit
+                                       tiposdeidentificacion GET    /tiposdeidentificaciones/:id(.:format)                                                              tiposdeidentificaciones#show
+                                                             PUT    /tiposdeidentificaciones/:id(.:format)                                                              tiposdeidentificaciones#update
+                                                             DELETE /tiposdeidentificaciones/:id(.:format)                                                              tiposdeidentificaciones#destroy
+                                                        root        /                                                                                                   sessions#new

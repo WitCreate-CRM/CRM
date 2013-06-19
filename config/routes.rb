@@ -6,10 +6,6 @@ Witcrm::Application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
 
-  resources :users
-
-  resources :sessions
-
 
   resources :sugerenciasyquejas do
     get :autocomplete_huesped_primer_nombre, :on => :collection
@@ -20,7 +16,10 @@ Witcrm::Application.routes.draw do
 
   resources :empleados do
     resources :telefonos1
-    resources :empresas
+
+    resources :empresas do
+    resources :contactos
+    end
 
     resources :huespedes do
       resources :telefonos
@@ -39,6 +38,9 @@ Witcrm::Application.routes.draw do
     resources :preferencias
   end
 
+ resources :empresas do
+    resources :contactos
+    end
 
 
 
@@ -48,7 +50,9 @@ Witcrm::Application.routes.draw do
   end
 
 
-  resources :contactos
+   resources :users
+
+  resources :sessions
 
 
   resources :obsequios
@@ -61,7 +65,7 @@ Witcrm::Application.routes.draw do
 
 
   resources :departamentos
-  
+
 
   resources :tiposdehabitaciones
 

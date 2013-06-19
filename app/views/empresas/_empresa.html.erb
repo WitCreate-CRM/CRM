@@ -3,6 +3,7 @@
   <td><%= empresa.nombre %></td>
   <td><%= empresa.nit %></td>
   <td><%= empresa.direccion %></td>
+  
  
  
   <td>
@@ -13,13 +14,14 @@
       </button>
       <ul class="dropdown-menu" >
 
-      <li><%= link_to 'Mostrar', empleado_empresa_path(@empleado, empresa), :remote => true, :class => 'btn btn-mini', :style => "color:black" %></li>
+        <li><%= link_to 'Mostrar', empleado_empresa_path(@empleado, empresa), :remote => true, :class => 'btn btn-mini', :style => "color:black" %></li>
 
-      <li><%= link_to 'Editar', edit_empleado_empresa_path(@empleado, empresa), :remote => true, :class => 'btn btn-mini', :style => "color:black" %></li>
+        <li><%= link_to 'Editar', edit_empleado_empresa_path(@empleado, empresa), :remote => true, :class => 'btn btn-mini', :style => "color:black" %></li>
 
-      <li><%= link_to 'Eliminar', empleado_empresa_path(@empleado, empresa), :data => { :confirm => 'Esta Seguro?' },
-        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger', :style => "color:white" %></li>
+        <li><%= link_to 'Eliminar', empleado_empresa_path(@empleado, empresa), :data => { :confirm => 'Esta Seguro?' },
+          :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger', :style => "color:white" %></li>
+      </ul>
+      <td><%= link_to 'Contactos', empleado_empresa_contactos_path(@empleado, empresa), :class => "btn btn-mini", :style => "color:black" %></td>
+
   </td>
 </tr>
-
-
