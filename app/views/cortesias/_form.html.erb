@@ -1,12 +1,15 @@
 <%= simple_form_for([@huesped, @cortesia], :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
 
-  <%= f.input :botella_de_vino, :label => 'Botella de vino' %>
-  <%= f.input :otro_regalo, :label => 'Otro regalo' %>
+  <p class="pos">Botella de vino &nbsp; &nbsp;<input type="checkbox" name="check" id="most" value="1" onchange="javascript:mostrar('float', 'most')" /></p>  
+  <div id="float" style="display:none"><%= f.input :botella_de_vino, :label => "Nombre botella" %><hr></div>
+
+	<p class="pos">Otro regalo &nbsp; &nbsp;<input type="checkbox" id="most1" value="1" onchange="javascript:mostrar('float1','most1')" /></p>  
+	<div id="float1" style="display:none"><%= f.input :otro_regalo, :label => "Nombre regalo" %><hr></div>
+
   <%= f.input :tabla_de_queso, :label => 'Tabla de queso' %>
   <%= f.input :alimento_descripcion, :url => autocomplete_alimento_descripcion_huesped_cortesias_path, :label => "Alimento",  :as => :autocomplete, :id_element => '#id' %>
 
   <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
-    <%= link_to 'Atras', huesped_cortesias_path, :class => 'btn btn-small' %>
   </div>
 <% end %>

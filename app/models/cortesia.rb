@@ -16,8 +16,6 @@ class Cortesia < ActiveRecord::Base
  		where('botella_de_vino like ? OR otro_regalo like ? OR tabla_de_queso like ?', "%#{search}%", "%#{search}%", "%#{search}%" ) 
   end
 
-  validates :botella_de_vino, :presence => true, 
-   :length => { :maximum => 50 }
 
   validates :otro_regalo, :presence => true, 
    :length => { :maximum => 100 }
