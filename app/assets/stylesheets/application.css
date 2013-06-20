@@ -109,6 +109,7 @@
   .flickr_pagination .next_page {
     margin-left: 1em; }
 
+<<<<<<< HEAD
 
 
 .button {
@@ -207,3 +208,118 @@
   margin-left: 55px;
   font-size: 14.49px;
 }
+=======
+  #login-box {
+  width:333px;
+  height: 352px;
+  padding: 58px 76px 0 76px;
+  color: black;
+  font: 12px Arial, Helvetica, sans-serif;
+  background-image: url('log.jpg');
+  border-radius: 10px;
+  margin-top: -50px;
+
+}
+
+  #login-boxr {
+  width:333px;
+  height: 400px;
+  padding: 58px 76px 0 76px;
+  color: black;
+  font: 12px Arial, Helvetica, sans-serif;
+  background-image: url('log.jpg');
+  border-radius: 10px;
+  margin-top: -50px;
+
+}
+
+
+
+
+
+#login-box img {
+  border:none;
+}
+
+#login-box h2 {
+  padding:0;
+  margin:0;
+  color: black;
+  font: bold 44px "Calibri", Arial;
+  margin-top: -30px;
+}
+
+
+#login-box-name {
+  float: left;
+  display:inline;
+  width:160px;
+  text-align: right;
+  padding: 14px 10px 0 0;
+  margin:0 0 7px 0;
+}
+
+#login-box-field {
+  float: left;
+  display:inline;
+  width:230px;
+  margin:0;
+  margin:0 0 7px 0;
+}
+
+
+.form-login  {
+  width: 205px;
+  padding: 10px 4px 6px 3px;
+  border: 1px solid #0d2c52;
+  background-color:black;
+  font-size: 16px;
+  color: black;
+}
+
+
+.login-box-options  {
+  clear:both;
+  padding-left:87px;
+  font-size: 11px;
+  padding-top: 150px;
+}
+
+.login-box-optionsr {
+  color: #ebebeb;
+  font-size: 11px;
+  margin-top: 20px;
+}
+
+
+#sub {
+  padding-left: 200px;
+  margin-top: -32px;
+}
+
+
+#img {
+  width:100px; 
+  margin-top: -35px;
+  padding-left:280px; 
+}
+
+.navbar {
+  width:130%;
+  margin-left:-108px; 
+
+}
+
+#txt {
+  margin-top:-80px; 
+}
+
+
+#img2 {
+  width:100px; 
+  margin-top: -25px;
+  padding-left:280px; 
+}
+
+
+>>>>>>> bb8d897154d79e98d6ab07fcc0afb28f6a694602

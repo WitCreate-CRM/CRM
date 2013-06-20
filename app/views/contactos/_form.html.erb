@@ -1,8 +1,7 @@
-<%= simple_form_for(@contacto, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+<%= simple_form_for([@empresa, @contacto], :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
 
 
-   <div class = "span5">Empresa <%= f.collection_select :empresa_id, Empresa.all, :id, :nombre, :prompt => 'Seleccionar' %></div>
-  <br><br><br>
+   
 
   <%= f.input :nombre, :label => "Nombre" %>
   <%= f.input :celular, :label => "Celular" %>
@@ -12,6 +11,6 @@
  
    <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
-    <%= link_to 'Atras', contactos_path, :class => 'btn btn-small' %>
+    <%= link_to 'Atras', empresa_contactos_path, :class => 'btn btn-small' %>
   </div>
 <% end %>

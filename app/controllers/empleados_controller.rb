@@ -4,6 +4,9 @@ class EmpleadosController < ApplicationController
   before_filter :find_empleado, :except => [ :index, :create, :new ]
 
   helper_method :sort_column, :sort_direction
+  before_filter :find_empleado
+  before_filter :find_empleado, :except => [ :index, :create, :new ]
+
 
   def index
 
@@ -66,5 +69,6 @@ class EmpleadosController < ApplicationController
   def find_empleado
     @empleado = Empleado.find(params[:id]) if params[:id]
   end
+  
 
 end

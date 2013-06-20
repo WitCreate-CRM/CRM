@@ -1,6 +1,5 @@
 <tr id=<%= "contacto_#{contacto.id}" %>>
   <td><%= contacto.id %></td>
-  <td><%= contacto.empresa.nombre %></td>
   <td><%= contacto.nombre %></td>
   <td><%= contacto.celular %></td>
   <td><%= contacto.email %></td>
@@ -14,14 +13,17 @@
       </button>
       <ul class="dropdown-menu" >
 
-      <li><%= link_to 'Mostrar', contacto, :remote => true, :class => 'btn btn-mini' %></li>
+      <li><%= link_to 'Mostrar', empresa_contacto_path(@empresa, contacto), :remote => true, :class => 'btn btn-mini' %></li>
 
-      <li><%= link_to 'Editar', edit_contacto_path(contacto), :remote => true, :class => 'btn btn-mini' %></li>
+      <li><%= link_to 'Editar', edit_empresa_contacto_path(@empresa,contacto), :remote => true, :class => 'btn btn-mini' %></li>
 
-      <li><%= link_to 'Eliminar', contacto, 
+      <li><%= link_to 'Eliminar', empresa_contacto_path(@empresa, contacto), 
         :data => { :confirm => 'Esta Seguro?' },
         :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %></li>
         </ul>
     </div>
   </td>
 </tr>
+
+
+

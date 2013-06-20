@@ -18,8 +18,15 @@
       <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
           <div class="container">
+<<<<<<< HEAD
             
      
+=======
+           
+     
+
+            
+>>>>>>> bb8d897154d79e98d6ab07fcc0afb28f6a694602
               
                 <ul class="nav">
                   <li class= "dropdown">
@@ -47,10 +54,10 @@
 
                     <ul class="dropdown-menu">
                       <li><%= link_to "Cargos", cargos_path %></li>
-                      <li><%= link_to "Contactos", contactos_path %></li>
+                      
                       <li><%= link_to "Departamentos", departamentos_path %></li>
                       <li><%= link_to "Empleados", empleados_path %></li>
-                      <li><%= link_to "Empresas", empresas_path %></li>
+                      
                       <li><%= link_to "Obsequios", obsequios_path %></li>
                       <li><%= link_to "Visitas", visitas_path %></li>
 
@@ -70,7 +77,7 @@
                           <%= link_to "Salir", logout_path, :style => 'font-size:15px; color:black' %> 
                         </li>
                       </ul>
-                    </div>
+               
                   </div>
                 </ul>
             </div>
@@ -79,8 +86,22 @@
     </div>
 
         
+<<<<<<< HEAD
       <% else %>
         
+=======
+      <% else %>  
+      <div class="navbar "> 
+        <div class="navbar-inner">
+          <ul class="nav" >
+             <li class="active"><%= link_to "Registrarse", signup_path%></li>
+             <li><a href="#"></a></li>
+            <li class="active"><%= link_to "Ingresar", login_path%></li> 
+          </ul>
+        </div>
+    </div>
+
+>>>>>>> bb8d897154d79e98d6ab07fcc0afb28f6a694602
         
       <% end %>
     

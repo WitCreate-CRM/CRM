@@ -1,4 +1,4 @@
-<%= simple_form_for(@empresa, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+<%= simple_form_for([@empleado, @empresa], :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
 
  
 
@@ -11,6 +11,7 @@
  
    <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
-    <%= link_to 'Atras', empresas_path, :class => 'btn btn-small' %>
+    <%= link_to 'Atras', empleado_empresas_path, :class => 'btn btn-small' %>
   </div>
 <% end %>
+
