@@ -211,7 +211,7 @@
   #login-box {
   width:333px;
   height: 352px;
-  padding: 58px 76px 50px 76px;
+  padding: 58px 76px 0 76px;
   color: black;
   font: 12px Arial, Helvetica, sans-serif;
   background-image: url('log.jpg');

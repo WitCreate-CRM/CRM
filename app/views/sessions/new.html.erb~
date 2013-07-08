@@ -21,16 +21,14 @@
   </div>
  
  <div class="field">
-    <p style = "font-size:15px" ><%= check_box_tag :remember_me, 1, params[:remember_me] %> Recordarme </p> <br>
-
-    <div><%= submit_tag "Ingresar", :class => 'btn btn-info' %> 
+    <p style = "font-size:15px" ><%= check_box_tag :remember_me, 1, params[:remember_me] %> Recordarme </p>
+    <div id="sub"><%= submit_tag "Ingresar", :class => 'btn btn-info' %> 
     </div>
        
-  </div>
+     </div>
   </center>
 
- </div>
+  <%= link_to 'Inicio', sessions_path %>
+
   </div>
 <% end %>
-
- <%= link_to 'Inicio', sessions_path %>

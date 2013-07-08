@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(:version => 20130611134356) do
   end
 
   create_table "contactos", :force => true do |t|
-    t.integer  "empresa_id"
     t.string   "nombre"
     t.string   "celular"
     t.string   "email"
@@ -34,8 +33,6 @@ ActiveRecord::Schema.define(:version => 20130611134356) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
-
-  add_index "contactos", ["empresa_id"], :name => "index_contactos_on_empresa_id"
 
   create_table "cortesias", :force => true do |t|
     t.integer  "huesped_id"
@@ -81,9 +78,12 @@ ActiveRecord::Schema.define(:version => 20130611134356) do
     t.string   "nombre"
     t.string   "nit"
     t.string   "direccion"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "empleado_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
+
+  add_index "empresas", ["empleado_id"], :name => "index_empresas_on_empleado_id"
 
   create_table "huespedes", :force => true do |t|
     t.string   "primer_nombre"
@@ -154,11 +154,12 @@ ActiveRecord::Schema.define(:version => 20130611134356) do
   add_index "telefonos1", ["empleado_id"], :name => "index_telefonos1_on_empleado_id"
 
   create_table "tiposdehabitaciones", :force => true do |t|
-    t.string   "descripcion"
-    t.integer  "piso"
-    t.boolean  "habitacion_tina"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.string   "piso"
+    t.string   "numero_de_habitacion"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "tiposdeidentificaciones", :force => true do |t|

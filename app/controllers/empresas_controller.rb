@@ -18,7 +18,7 @@ class EmpresasController < ApplicationController
 
     @empresas = @empleado.empresas.order(sort_column + ' ' + sort_direction).search(params[:search]).page(params[:page]).per_page(params[:limit].to_i)
     respond_to do |format|
-      format.html # index.html.erb
+      format.html 
       format.json { render json: @empresas}
     end
   end
@@ -26,7 +26,7 @@ class EmpresasController < ApplicationController
   def show
       
     respond_to do |format|
-      format.js # show.html.erb
+      format.js 
       
         format.pdf do
           pdf = EmpresaPdf.new(@empresa, view_context)

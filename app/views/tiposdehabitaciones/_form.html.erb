@@ -1,9 +1,9 @@
 <%= simple_form_for(@tiposdehabitacion, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
 
-
+  <%= f.input :nombre %>
   <%= f.input :descripcion, :label => "Descripción" %>
-  <%= f.input :habitacion_tina, :label => "Habitación con tina" %>
-  <%= f.input :piso, :label => "Piso" %>
+  <%= f.input :piso %>
+  <%= f.input :numero_de_habitacion %>
   
   
   <div class="form-actions">

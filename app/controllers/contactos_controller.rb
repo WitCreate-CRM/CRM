@@ -15,7 +15,7 @@ class ContactosController < ApplicationController
 
     @contactos = @empresa.contactos.order(sort_column + ' ' + sort_direction).search(params[:search]).page(params[:page]).per_page(params[:limit].to_i)
     respond_to do |format|
-      format.html # index.html.erb
+      format.html 
       format.json { render json: @contactos }
     end
   end
@@ -24,7 +24,7 @@ class ContactosController < ApplicationController
 
     
     respond_to do |format|
-      format.js # show.html.erb
+      format.js
       
         format.pdf do
           pdf = ContactoPdf.new(@contacto, view_context)

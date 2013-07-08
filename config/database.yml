@@ -4,7 +4,7 @@ development:
   database: witcrm_development
   pool: 5
   username: postgres
-  password: postgres
+  password: POSTGRES
   host: localhost
   port: 5432
 
@@ -15,7 +15,7 @@ test:
   database: witcrm_test
   pool: 5
   username: postgres
-  password: postgres
+  password: POSTGRES
   host: localhost
   port: 5432
 
@@ -25,6 +25,6 @@ production:
   database: witcrm_production
   pool: 5
   username: postgres
-  password: postgres
+  password: POSTGRES
   host: localhost
   port: 5432

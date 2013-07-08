@@ -4,8 +4,12 @@ class CreateEmpresas < ActiveRecord::Migration
       t.string :nombre
       t.string :nit
       t.string :direccion
+      t.references :empleado
 
       t.timestamps
     end
+
+    add_index :empresas, :empleado_id
+
   end
 end

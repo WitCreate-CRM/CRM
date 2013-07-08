@@ -12,7 +12,7 @@ class DepartamentosController < ApplicationController
 
     @departamentos = Departamento.order(sort_column + ' ' + sort_direction).search(params[:search]).page(params[:page]).per_page(params[:limit].to_i)
     respond_to do |format|
-      format.html # index.html.erb
+      format.html 
       format.json { render json: @departamentos }
     end
   end
@@ -20,7 +20,7 @@ class DepartamentosController < ApplicationController
   def show
       @departamento = Departamento.find(params[:id])
     respond_to do |format|
-      format.js # show.html.erb
+      format.js 
       
         format.pdf do
           pdf = DepartamentoPdf.new(@departamento, view_context)
