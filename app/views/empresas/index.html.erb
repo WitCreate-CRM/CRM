@@ -1,7 +1,6 @@
 <%- model_class = Empresa -%>
 <div class="page-header">
-  <center><h1>Listado De Empresas De: <%= @empleado.primer_nombre %></h1>
-</center>
+  <h1> <%= image_tag @empleado.avatar.url(:thumb), :class => "img-rounded img-polaroid" %> &nbsp; &nbsp;Listado De Empresas De <%= @empleado.primer_nombre %></h1>
 </div>
 
 <form method="get" class="form-search">
