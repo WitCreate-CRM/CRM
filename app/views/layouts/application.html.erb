@@ -18,16 +18,20 @@
       <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
           <div class="container">
+           
+     
+
+            
               
                 <ul class="nav">
                   <li class= "dropdown">
 
-                    <a class = "dropdown-toggle btn-large" data-toggle = "dropdown" href = ""><i class="icon-book"></i> Calidad </a> 
+                    <a class = "dropdown-toggle btn-large" data-toggle = "dropdown" href = ""><i class="icon-book"></i> Servicios </a> 
 
                     <ul class="dropdown-menu">
 
                      <li><%= link_to "Alimentos", alimentos_path %></li>
-                     <li><%= link_to "Sugerencias y quejas", sugerenciasyquejas_path %></li>
+                     
                      <li><%= link_to "Tipos de habitaciones", tiposdehabitaciones_path %></li>
                      <li><%= link_to "Tipos de identificaciones", tiposdeidentificaciones_path %></li>
 
@@ -56,6 +60,20 @@
                   </li>
                 </ul>
 
+
+              
+                <ul class="nav">
+                  <li class= "dropdown">
+
+                    <a class = "dropdown-toggle btn-large" data-toggle = "dropdown" href = ""><i class="icon-folder-open"></i> Calidad </a> 
+                    
+                    <ul class="dropdown-menu">
+                     <li><%= link_to "Sugerencias y quejas", sugerenciasyquejas_path %></li>
+
+                    </ul>
+                  </li>
+                </ul>
+
                 <ul>
                   <div align="right"><font size="4"><i class="icon-user"></i> <b><%= current_user.username %></b> </font>
 
@@ -74,9 +92,10 @@
             </div>
           </div>
         </div>
+      </div>
     </div>
 
-
+        
       <% else %>  
 
         
@@ -84,7 +103,7 @@
     
     <br>
     <% flash.each do |name, msg| %>
-      <div class="alert alert-info">
+      <div class="alert alert-error">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       </div>

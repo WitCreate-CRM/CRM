@@ -17,10 +17,8 @@ class Cortesia < ActiveRecord::Base
   end
 
 
-  validates :otro_regalo, :presence => true, 
-   :length => { :maximum => 100 }
 
-  validates :tabla_de_queso, :presence => true, 
-   :length => { :maximum => 40 }
+  validates :alimento, :presence => true, 
+   :length => { :maximum => 70 }
 
 end
