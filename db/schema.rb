@@ -30,9 +30,12 @@ ActiveRecord::Schema.define(:version => 20130611134356) do
     t.string   "celular"
     t.string   "email"
     t.date     "fecha_nacimiento"
+    t.integer  "empresa_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
+
+  add_index "contactos", ["empresa_id"], :name => "index_contactos_on_empresa_id"
 
   create_table "cortesias", :force => true do |t|
     t.integer  "huesped_id"
