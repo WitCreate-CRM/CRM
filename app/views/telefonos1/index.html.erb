@@ -4,24 +4,10 @@
 </div>
 
 <form method="get" class="form-search">
-  <div class="input-append">
 
-      <%= text_field_tag :search, params[:search], :class => "span2 search-query ", :placeholder => "Buscar Registro" %> 
-
-      <button type="submit" class="btn btn-info"><i class="icon-search"></i></button>
-       
-  </div>
-</form>
-
-
-<br>
-
-<form method="get" class="form-search">
   <div class="input-append">
 
     <%= content_tag :label do %> 
-
-    Seleccione numero de registros por pagina
 
     <%= text_field_tag :limit, params[:limit] , :id=>'num', :class => "span1 search-query" %> 
 
@@ -30,6 +16,15 @@
     <button type="submit" class="btn btn-info">Mostrar</button>
  
   </div>
+
+  <div class="input-append sea">
+
+      <%= text_field_tag :search, params[:search], :class => "span2 search-query ", :placeholder => "Buscar Registro" %> 
+
+      <button type="submit" class="btn btn-info"><i class="icon-search"></i></button>
+       
+  </div>
+
 </form>
 
 <br /><br />
