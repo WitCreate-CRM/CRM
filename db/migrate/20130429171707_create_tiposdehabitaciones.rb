@@ -1,9 +1,9 @@
 class CreateTiposdehabitaciones < ActiveRecord::Migration
   def change
     create_table :tiposdehabitaciones do |t|
-      t.string :nombre
+      t.string :tipo
       t.text :descripcion
-      t.string :piso
+      t.text :amenidades
       t.string :numero_de_habitacion
 
       t.timestamps

@@ -1,18 +1,18 @@
 class Tiposdehabitacion < ActiveRecord::Base
 	
-  attr_accessible :descripcion, :nombre, :piso, :numero_de_habitacion
+  attr_accessible :descripcion, :tipo, :amenidades, :numero_de_habitacion
 
   def self.search(search) 
  		where('descripcion like ? ', "%#{search}%" ) 
   end
 
   validates :descripcion, :presence => true,
-   :length => { :maximum => 30 }
+   :length => { :maximum => 500 }
 
-  validates :piso, :presence => true,
-   :length => { :maximum => 2 }
+  validates :amenidades, :presence => true,
+   :length => { :maximum => 500 }
 
-  validates :nombre, :presence => true,
+  validates :tipo, :presence => true,
    :length => { :minimum => 4, :maximum => 10 }
 
   validates :numero_de_habitacion, :presence => true,

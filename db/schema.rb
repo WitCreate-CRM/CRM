@@ -110,7 +110,6 @@ ActiveRecord::Schema.define(:version => 20130611134356) do
   add_index "huespedes", ["empleado_id"], :name => "index_huespedes_on_empleado_id"
   add_index "huespedes", ["tiposdeidentificacion_id"], :name => "index_huespedes_on_tiposdeidentificacion_id"
 
-
   create_table "preferencias", :force => true do |t|
     t.integer  "tiposdehabitacion_id"
     t.integer  "huesped_id"
@@ -152,9 +151,9 @@ ActiveRecord::Schema.define(:version => 20130611134356) do
   add_index "telefonos1", ["empleado_id"], :name => "index_telefonos1_on_empleado_id"
 
   create_table "tiposdehabitaciones", :force => true do |t|
-    t.string   "nombre"
+    t.string   "tipo"
     t.text     "descripcion"
-    t.string   "piso"
+    t.text     "amenidades"
     t.string   "numero_de_habitacion"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
