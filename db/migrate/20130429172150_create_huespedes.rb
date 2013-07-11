@@ -7,7 +7,7 @@ class CreateHuespedes < ActiveRecord::Migration
       t.string :segundo_apellido
       t.references :tiposdeidentificacion
       t.string :documento
-      t.date :fecha_nacimiento
+      t.string :fecha_nacimiento
       t.string :direccion
       t.string :email
       t.references :empleado

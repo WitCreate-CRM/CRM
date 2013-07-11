@@ -12,6 +12,8 @@
 
   <%= f.input :segundo_apellido, :label => "Segundo Apellido" %>
 
+  <%= f.input :fecha_nacimiento, :label => "Fecha de nacimiento" %>
+
   <div class = "span5">Tipo De Identificación <%= f.collection_select :tiposdeidentificacion_id, Tiposdeidentificacion.all, :id, :sigla, :prompt => 'Seleccionar' %></div>
   <br><br><br>
 

@@ -4,7 +4,7 @@ class CreateContactos < ActiveRecord::Migration
       t.string :nombre
       t.string :celular
       t.string :email
-      t.date :fecha_nacimiento
+      t.string :fecha_nacimiento
       t.references :empresa
 
       t.timestamps

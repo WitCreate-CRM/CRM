@@ -9,6 +9,7 @@ class CreateEmpleados < ActiveRecord::Migration
       t.references :tiposdeidentificacion
       t.string :documento
       t.references :departamento
+      t.string :fecha_nacimiento
 
       t.timestamps
     end

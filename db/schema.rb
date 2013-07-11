@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20130611134356) do
     t.string   "nombre"
     t.string   "celular"
     t.string   "email"
-    t.date     "fecha_nacimiento"
+    t.string   "fecha_nacimiento"
     t.integer  "empresa_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20130611134356) do
     t.integer  "tiposdeidentificacion_id"
     t.string   "documento"
     t.integer  "departamento_id"
+    t.string   "fecha_nacimiento"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
     t.string   "avatar_file_name"
@@ -95,7 +96,7 @@ ActiveRecord::Schema.define(:version => 20130611134356) do
     t.string   "segundo_apellido"
     t.integer  "tiposdeidentificacion_id"
     t.string   "documento"
-    t.date     "fecha_nacimiento"
+    t.string   "fecha_nacimiento"
     t.string   "direccion"
     t.string   "email"
     t.integer  "empleado_id"
@@ -113,9 +114,8 @@ ActiveRecord::Schema.define(:version => 20130611134356) do
   create_table "preferencias", :force => true do |t|
     t.integer  "tiposdehabitacion_id"
     t.integer  "huesped_id"
-    t.string   "numero_almohada_en_cama"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   add_index "preferencias", ["huesped_id"], :name => "index_preferencias_on_huesped_id"
@@ -187,7 +187,7 @@ ActiveRecord::Schema.define(:version => 20130611134356) do
     t.integer  "obsequio_id"
     t.integer  "empleado_id"
     t.integer  "empresa_id"
-    t.date     "fecha"
+    t.string   "fecha"
     t.text     "comentarios"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

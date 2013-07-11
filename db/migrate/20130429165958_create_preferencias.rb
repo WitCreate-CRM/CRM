@@ -3,7 +3,6 @@ class CreatePreferencias < ActiveRecord::Migration
     create_table :preferencias do |t|
       t.references :tiposdehabitacion
       t.references :huesped
-      t.string :numero_almohada_en_cama
 
       t.timestamps
     end
