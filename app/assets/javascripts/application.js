@@ -30,5 +30,4 @@ $(document).ready(function() {
   $.rails.allowAction = $.lazybox.confirm;
 	});
 
-});
 

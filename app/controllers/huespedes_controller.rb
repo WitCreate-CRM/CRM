@@ -63,7 +63,7 @@ class HuespedesController < ApplicationController
   def find_huesped
     @huesped = Huesped.find(params[:id]) if params[:id]
   end
-  
+
   def find_empleado_huespedes
     @empleado = Empleado.find(params[:empleado_id])
     @huesped = Huesped.find(params[:id]) if params[:id]

@@ -1,7 +1,7 @@
 class CreateVisitas < ActiveRecord::Migration
   def change
     create_table :visitas do |t|
-      t.references :obsequio
+      t.string :obsequio
       t.references :empleado
       t.references :empresa
       t.string :fecha
@@ -9,7 +9,6 @@ class CreateVisitas < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :visitas, :obsequio_id
     add_index :visitas, :empleado_id
     add_index :visitas, :empresa_id
   end
