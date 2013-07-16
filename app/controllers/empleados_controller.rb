@@ -1,15 +1,10 @@
 class EmpleadosController < ApplicationController
   
   before_filter :require_login
-  before_filter :find_empleado, :except => [ :index, :create, :new ]
 
   helper_method :sort_column, :sort_direction
-  before_filter :find_empleado
-  before_filter :find_empleado, :except => [ :index, :create, :new ]
-
 
   def index
-
     if params[:limit] == nil or params[:limit] <= "0" then
           params[:limit] = 10
     end
@@ -21,7 +16,10 @@ class EmpleadosController < ApplicationController
     end
   end
 
+
   def show
+      @empleado = Empleado.find(params[:id])
+
        respond_to do |format|
        format.js 
       
@@ -39,21 +37,22 @@ class EmpleadosController < ApplicationController
   end
 
   def edit
+    @empleado = Empleado.find(params[:id])
   end
 
   def create
       @empleado  = Empleado.new(params[:empleado])
       render :action => :new unless @empleado.save
-      @empleados = Empleado.all
   end
 
   def update
+      @empleado = Empleado.find(params[:id])
       render :action => :edit unless @empleado.update_attributes(params[:empleado])
   end
 
   def destroy
+      @empleado = Empleado.find(params[:id])
       @empleado.destroy
-      @empleados = Empleado.all
   end
 
   private
@@ -65,10 +64,5 @@ class EmpleadosController < ApplicationController
   def sort_direction
     %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
   end
-
-  def find_empleado
-    @empleado = Empleado.find(params[:id]) if params[:id]
-  end
-  
 
 end

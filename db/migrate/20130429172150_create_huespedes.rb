@@ -10,11 +10,9 @@ class CreateHuespedes < ActiveRecord::Migration
       t.string :fecha_nacimiento
       t.string :direccion
       t.string :email
-      t.references :empleado
 
       t.timestamps
     end
     add_index :huespedes, :tiposdeidentificacion_id
-    add_index :huespedes, :empleado_id
   end
 end

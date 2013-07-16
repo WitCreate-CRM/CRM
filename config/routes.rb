@@ -16,20 +16,12 @@ Witcrm::Application.routes.draw do
 
   resources :empleados do
     resources :telefonos1
-
     resources :empresas do
       resources :contactos
     end
-
-    resources :huespedes do
-      resources :telefonos
-      resources :cortesias do 
-        get :autocomplete_alimento_descripcion, :on => :collection
-      end 
-      resources :preferencias
-    end
-
   end
+
+
 
   resources :huespedes do
     resources :telefonos
@@ -38,19 +30,14 @@ Witcrm::Application.routes.draw do
     end 
     resources :preferencias
   end
+
+
 
   resources :empresas do
     resources :contactos
   end
 
 
-  resources :huespedes do
-    resources :telefonos
-    resources :cortesias do 
-      get :autocomplete_alimento_descripcion, :on => :collection
-    end 
-    resources :preferencias
-  end
 
 
   resources :visitas do
@@ -59,7 +46,10 @@ Witcrm::Application.routes.draw do
   end
 
 
+
+
   resources :users
+
 
   resources :sessions
 

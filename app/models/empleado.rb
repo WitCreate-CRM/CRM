@@ -1,6 +1,5 @@
 class Empleado < ActiveRecord::Base
 
-  has_many :huespedes
   has_many :visitas
   has_many :telefonos1
   has_many :empresas

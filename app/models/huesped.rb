@@ -4,8 +4,7 @@ class Huesped < ActiveRecord::Base
   has_many :preferencias
   has_many :sugerenciasyquejas
   belongs_to :tiposdeidentificacion
-  belongs_to :empleado
-  attr_accessible :direccion, :documento, :email, :fecha_nacimiento, :primer_apellido, :primer_nombre, :segundo_apellido, :segundo_nombre, :empleado_id, :tiposdeidentificacion_id, :avatar
+  attr_accessible :direccion, :documento, :email, :fecha_nacimiento, :primer_apellido, :primer_nombre, :segundo_apellido, :segundo_nombre, :tiposdeidentificacion_id, :avatar
 
   def self.search(search) 
     where('direccion like ? OR documento like ? OR email like ? OR primer_nombre like ? OR segundo_nombre like ? OR primer_apellido like ? OR segundo_apellido like ? ', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%" ) 

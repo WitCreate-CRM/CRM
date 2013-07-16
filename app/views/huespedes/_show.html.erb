@@ -1,6 +1,6 @@
 <%- model_class = Huesped -%>
 <div class="page-header">
-  <h1>Huéspedes a cargo de <%= @empleado.primer_nombre %></h1>
+  <h1>Huésped</h1>
 </div>
 
 <div class='gen'>
@@ -20,4 +20,49 @@
 </div>
 
 <br>
-<%= link_to "pdf", empleado_huesped_path(@huesped, :format => "pdf"), :class => 'btn' %>
+<%= link_to "pdf", huesped_path(@huesped, :format => "pdf"), :class => 'btn' %>
+
+<section class="tabs">
+                <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
+                <label for="tab-1" class="tab-label-1">Datos</label>
+        
+                <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
+                <label for="tab-2" class="tab-label-2">Preferencias</label>
+        
+                <input id="tab-3" type="radio" name="radio-set" class="tab-selector-3" />
+                <label for="tab-3" class="tab-label-3">Work</label>
+            
+                <input id="tab-4" type="radio" name="radio-set" class="tab-selector-4" />
+                <label for="tab-4" class="tab-label-4">Contact</label>
+            
+                <div class="clear-shadow"></div>
+                
+                <div class="content">
+                    <div class="content-1">
+
+  <p><b>Id:</b> <%= @huesped.id %></p>
+  <p><b>Primer nombre:</b> <%= @huesped.primer_nombre %></p>
+  <p><b>Segundo nombre:</b> <%= @huesped.segundo_nombre %></p>
+  <p><b>Primer apellido:</b> <%= @huesped.primer_apellido %></p>
+  <p><b>Segundo apellido:</b> <%= @huesped.segundo_apellido %></p>
+  <p><b>Tipo de identificación:</b> <%= @huesped.tiposdeidentificacion_id %></p>
+  <p><b>Documento:</b> <%= @huesped.documento %></p>
+  <p><b>Fecha de nacimiento:</b> <%= @huesped.fecha_nacimiento %></p>
+  <p><b>Dirección:</b> <%= @huesped.direccion %></p>
+  <p><b>Email:</b> <%= @huesped.email %></p>
+
+  <p><b>Foto :</b></p>
+  <%= image_tag @huesped.avatar.url(:thumb) %>
+
+
+                    </div>
+                    <div class="content-2">
+                    </div>
+                    <div class="content-3">
+                        
+                    </div>
+                    <div class="content-4">
+                        
+                    </div>
+                </div>
+</section>

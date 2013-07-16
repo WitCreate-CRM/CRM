@@ -12,15 +12,17 @@ class CargosController < ApplicationController
 
     @cargos = Cargo.order(sort_column + ' ' + sort_direction).search(params[:search]).page(params[:page]).per_page(params[:limit].to_i)
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.json { render json: @cargos }
     end
   end
 
+
   def show
-      @cargo = Cargo.find(params[:id])
+    @cargo = Cargo.find(params[:id])
+    
     respond_to do |format|
-      format.js # show.html.erb
+      format.js
       
         format.pdf do
           pdf = CargoPdf.new(@cargo, view_context)
@@ -46,7 +48,7 @@ class CargosController < ApplicationController
 
   def update
       @cargo   = Cargo.find(params[:id])
-      render :action => :edit unless @cargo .update_attributes(params[:cargo ])
+      render :action => :edit unless @cargo.update_attributes(params[:cargo ])
   end
 
   def destroy

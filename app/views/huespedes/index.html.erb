@@ -1,6 +1,6 @@
 <%- model_class = Huesped -%>
 <div class="page-header">
-  <center><h1><%= image_tag @empleado.avatar.url(:thumb), :class => "img-rounded img-polaroid" %> &nbsp; &nbsp; Huéspedes a cargo de <%= @empleado.primer_nombre %></h1></center>
+  <center><h1>Huéspedes</h1></center>
 </div>
 
 <form method="get" class="form-search">
@@ -50,9 +50,8 @@
   </table>
   <tfoot>
     <tr>
-      <%= link_to 'Nuevo Huésped', new_empleado_huesped_path, :remote => true, :class => "btn btn-info", :style => "color:white" %>
+      <%= link_to 'Nuevo Huésped', new_huesped_path, :remote => true, :class => "btn btn-info", :style => "color:white" %>
 
-      <%= link_to 'Empleados', empleados_path, :class => "btn btn-info", :style => "color:white" %>
     </tr>
   </tfoot>
 

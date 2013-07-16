@@ -141,14 +141,6 @@ ActiveRecord::Schema.define(:version => 20130611134356) do
 
   add_index "telefonos", ["huesped_id"], :name => "index_telefonos_on_huesped_id"
 
-  create_table "telefonos1", :force => true do |t|
-    t.integer  "empleado_id"
-    t.string   "numero_telefonico"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-  end
-
-  add_index "telefonos1", ["empleado_id"], :name => "index_telefonos1_on_empleado_id"
 
   create_table "tiposdehabitaciones", :force => true do |t|
     t.string   "tipo"

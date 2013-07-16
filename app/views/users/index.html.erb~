@@ -15,8 +15,8 @@
                 
                 <div class="content">
                     <div class="content-1">
-                        
-			 <% @empleados.each do |e| %><p><%= e.cargo.descripcion %> <%= e.primer_nombre %> <%= image_tag e.avatar(:thumb) %></p><% end %>
+                        <%= render @empleados %>
+			 <% @empleados.each do |e| %><p><%= e.cargo.descripcion %><%= e.primer_nombre %></p><% end %>
 
 
                     </div>

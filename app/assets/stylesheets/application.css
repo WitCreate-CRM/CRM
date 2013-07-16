@@ -111,7 +111,7 @@
 
 
 
-.button {
+.butt0n {
     outline: 0;
     padding: 35px 20px;
     display: block;
@@ -131,7 +131,7 @@
     -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); 
     -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); 
 }
-.button:hover {
+.butt0n:hover {
     color: white;
     text-decoration: none;
     background: #4C5A64; 
@@ -139,7 +139,7 @@
     background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#4C5A64), color-stop(4%,#404F5A), color-stop(100%,#2E3940));
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C5A64', endColorstr='#2E3940',GradientType=0 ); 
 }
-.button:active {
+.butt0n:active {
     background-position: 0 top;
     position: relative;
     top: 1px;
@@ -171,7 +171,7 @@
     -webkit-box-shadow: 1px 1px 1px rgba(255,255,255,0.1); 
     box-shadow: 1px 1px 1px rgba(255,255,255,0.1); 
 }
-.vertical-list .button {
+.vertical-list .butt0n {
     font-size: 15px;
     color: #000000;
     border-radius: 5px;
@@ -182,7 +182,7 @@
     background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#7ECC99), color-stop(5%,#90E1AC), color-stop(100%,#DEFBE8)); 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#515B62', endColorstr='#394147',GradientType=0 ); 
 }
-.vertical-list .button:hover {
+.vertical-list .butt0n:hover {
     color: #FFFFFF;
     text-shadow: 1.5px 1.3px #000;
     background: #AAD7F7; 
@@ -190,7 +190,7 @@
     background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#A6DBFA), color-stop(4%,#A6DBFA), color-stop(50%,#4D5A62), color-stop(100%,#434D54)); 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5F6B72', endColorstr='#434D54',GradientType=0 ); 
 }
-.vertical-list .button:active {
+.vertical-list .butt0n:active {
     padding: 40px 22px;
     top: 0;
     background: #515B62; 
@@ -221,7 +221,7 @@
     -webkit-box-shadow: 1px 1px 1px rgba(255,255,255,0.1); 
     box-shadow: 1px 1px 1px rgba(255,255,255,0.1); 
 }
-.vertical-list1 .button {
+.vertical-list1 .butt0n {
     font-size: 15px;
     color: #000000;
     border-radius: 5px;
@@ -232,7 +232,7 @@
     background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#7ECC99), color-stop(5%,#90E1AC), color-stop(100%,#DEFBE8)); 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#515B62', endColorstr='#394147',GradientType=0 ); 
 }
-.vertical-list1 .button:hover {
+.vertical-list1 .butt0n:hover {
     color: #FFFFFF;
     text-shadow: 1.5px 1.3px #000;
     background: #AAD7F7; 
@@ -240,7 +240,7 @@
     background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#A6DBFA), color-stop(4%,#A6DBFA), color-stop(50%,#4D5A62), color-stop(100%,#434D54)); 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5F6B72', endColorstr='#434D54',GradientType=0 ); 
 }
-.vertical-list1 .button:active {
+.vertical-list1 .butt0n:active {
     padding: 40px 22px;
     top: 0;
     background: #515B62; 
@@ -632,15 +632,4 @@
 .content div h2,
 .content div h3{
   color: #398080;
-}
-.content div p {
-  font-size: 14px;
-  line-height: 22px;
-  font-style: italic;
-  text-align: left;
-  margin: 0;
-  color: #777;
-  padding-left: 15px;
-  font-family: Cambria, Georgia, serif;
-  border-left: 8px solid rgba(63,148,148, 0.1);
 }
