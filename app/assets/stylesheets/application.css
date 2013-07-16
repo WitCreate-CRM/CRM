@@ -13,6 +13,7 @@
  *= require_tree .
  *= require lazybox
  *= require_jquery-ui
+ *= require bootstrap-datepicker
  */
 
 

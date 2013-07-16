@@ -1,6 +1,6 @@
 class Sugerenciasyqueja < ActiveRecord::Base
   belongs_to :huesped
-  attr_accessible :observaciones, :problemas_en_la_estadia, :sugerencias, :huesped_id ,:huesped_primer_nombre
+  attr_accessible :comentarios_ultima_visita, :huesped_id ,:huesped_primer_nombre
 
   def huesped_primer_nombre
     huesped.primer_nombre if huesped
@@ -12,16 +12,11 @@ class Sugerenciasyqueja < ActiveRecord::Base
 
 
   def self.search(search) 
- 		where('observaciones like ? OR problemas_en_la_estadia like ? OR sugerencias like ? ', "%#{search}%", "%#{search}%", "%#{search}%" ) 
+ 		where('comentarios_ultima_visita like ? ', "%#{search}%" ) 
   end
 
-  validates :observaciones, :presence => true,
-   :length => { :maximum => 2500 }
 
-  validates :problemas_en_la_estadia, :presence => true,
-   :length => { :maximum => 2500 }
-
-  validates :sugerencias, :presence => true,
+  validates :comentarios_ultima_visita, :presence => true,
    :length => { :maximum => 2500 }
 
 end

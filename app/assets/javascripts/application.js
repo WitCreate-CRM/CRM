@@ -18,6 +18,10 @@
 //= require jquery.remotipart
 //= require jquery-ui
 //= require autocomplete-rails
+//= require bootstrap-datepicker
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.es
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.fr
 //= require_tree .
 
 
@@ -29,5 +33,10 @@ $(document).ready(function() {
   $.lazybox.settings = {cancelClass: "button green", submitClass: 'button red', closeImg: false, niceClose: false}
   $.rails.allowAction = $.lazybox.confirm;
 	});
+
+$(function() {
+    $(".datepicker").datepicker();
+});
+
 
 

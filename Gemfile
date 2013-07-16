@@ -29,4 +29,5 @@ gem 'lazybox'
 gem 'prawn'
 gem 'sorcery'
 gem "bcrypt-ruby", :require => "bcrypt"
+gem 'bootstrap-datepicker-rails'
 

@@ -1,9 +1,8 @@
 <tr id=<%= "cortesia_#{cortesia.id}" %>>
   <td><%= link_to cortesia.id, edit_huesped_cortesia_path(@huesped, cortesia), :remote => true %></td>
-  <td><%= cortesia.botella_de_vino %></td>
-  <td><%= cortesia.otro_regalo %></td>
-  <td><%= cortesia.tabla_de_queso %></td>
-  <td><%= cortesia.alimento_descripcion %></td>
+  <td><%= cortesia.fecha %></td>
+  <td><%= cortesia.tipo_de_cortesia %></td>
+
   <td>
     <div class="btn-group">
       <button class="btn btn-mini btn-info"> Opciones </button>
