@@ -34,6 +34,7 @@
     <tr>
       <th><%= sortable 'id' %></th>
       <th> <%= sortable 'tiposdehabitacion_id'%> </th>
+      <th><%= sortable 'cortesia_id' %></th>
       <th></th>
     </tr>
   </thead>
@@ -43,8 +44,8 @@
   </table>
   <tfoot>
     <tr>
-      <td><%= link_to 'Nueva Preferencia',new_empleado_huesped_preferencia_path, :remote => true, :class => "btn btn-info" %></td> 
-      <td><%= link_to 'Huéspedes', empleado_huespedes_path, :class => "btn btn-info", :style => "color:white" %></td>
+      <td><%= link_to 'Nueva Preferencia',new_huesped_preferencia_path, :remote => true, :class => "btn btn-info" %></td> 
+      <td><%= link_to 'Huéspedes', huespedes_path, :class => "btn btn-info", :style => "color:white" %></td>
     </tr>
   </tfoot>
 

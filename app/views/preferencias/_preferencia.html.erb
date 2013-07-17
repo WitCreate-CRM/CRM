@@ -1,6 +1,7 @@
 <tr id=<%= "preferencia_#{preferencia.id}" %>>
   <td><%= link_to preferencia.id, edit_huesped_preferencia_path(@huesped, preferencia), :remote => true %></td>
   <td><%= preferencia.tiposdehabitacion.tipo %></td>
+  <td><%= preferencia.cortesia_id %></td>
 
   <td>
     <div class="btn-group">

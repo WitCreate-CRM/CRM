@@ -4,6 +4,9 @@
   <div class = "span4"> <%= f.collection_select :tiposdehabitacion_id, Tiposdehabitacion.all, :id, :tipo, :prompt => 'Seleccionar', :onchange => "update_descripcion_div(this.value)" %> </div>
   <br><br><br>
 
+  <%= f.input :cortesia_id, :label => "Última cortesia" %>
+
+
   <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
     <%= link_to 'Atras', huesped_preferencias_path, :class => 'btn btn-small' %>
