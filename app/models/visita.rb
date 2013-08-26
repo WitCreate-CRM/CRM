@@ -19,13 +19,14 @@ class Visita < ActiveRecord::Base
     self.obsequio = Obsequio.find_or_create_by_descripcion(descripcion) unless descripcion.blank?
   end
 
- def self.search(search)
-    where('comentarios like ? OR obsequio like ?', "%#{search}%", "%#{search}%" )
+ def self.search(search, fech_ini, fech_fin)
+    if !(fech_ini.blank? and fech_fin.blank?) 
+        where('created_at >= ? and created_at <= ?', "#{fech_ini}","#{fech_fin}" )
+    else
+        where('comentarios like ? OR obsequio like ?', "%#{search}%", "%#{search}%")
+    end 
  end
 
-  def self.search2(created_at, created_at2)  
-    where('created_at >= ? and created_at <= ?', created_at, created_at2 )
-  end
 
 
 

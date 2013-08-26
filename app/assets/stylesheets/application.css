@@ -10,10 +10,10 @@
  *
  *= require_self
  *= require lazybox
- *= require_tree .
+ *= require jquery.ui.all
  *= require lazybox
- *= require_jquery-ui
  *= require bootstrap-datepicker
+ *= require_tree .
  */
 
 
