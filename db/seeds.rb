@@ -10,7 +10,6 @@ tiposdeidentificaciones = Tiposdeidentificacion.create([{descripcion: 'Cédula d
 
 users = User.create([{email: 'blsm@misena.edu.co', password: 'cuy', password_confirmation: 'cuy', username: 'blsm'}])
 
-empleados = Empleado.create([{cargo_id: '2', primer_nombre: 'Juan', segundo_nombre: 'Elber' ,primer_apellido: 'Gomez' ,segundo_apellido: 'Torba' ,tiposdeidentificacion_id: '1' ,documento: '10365674567' ,departamento_id: '1'}])
 
 cargos = Cargo.create([{descripcion: 'Gerente'}, {descripcion: 'Mercadista'}])
 

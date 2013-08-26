@@ -465,17 +465,17 @@
   background: -o-linear-gradient(top, #5ba4a4 0%,#4e8c8a 100%);
   background: -ms-linear-gradient(top, #5ba4a4 0%,#4e8c8a 100%);
   background: linear-gradient(top, #5ba4a4 0%,#4e8c8a 100%);
-  font-size: 15px;
+  font-size: 11px;
   line-height: 40px;
-  height: 40px;
+  height: 38px;
   position: relative;
-  padding: 0 20px;
+  padding: 0 40px;
   float: left;
   display: block;
-  width: 80px;
-  color: #385c5b;
+  width: 75px;
+  color: white;
   top: 0;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
@@ -514,6 +514,10 @@
     -o-transition: top linear 0.2s;
     -ms-transition: top linear 0.2s;
     transition: top linear 0.2s;
+}
+
+.tabs input:checked + label{
+  color: #5ba4ab;
 }
 
 .tabs input:checked:hover + label {
@@ -590,8 +594,8 @@
 .content {
   background: #FCFFFF;
   position: relative;
-  width: 1000px;
-  height: 600px;
+  width: 134%;
+  height: 500px;
   z-index: 5;
   overflow: hidden;
     box-shadow: 0 -2px 3px -2px rgba(0,0,0,0.2), 0 2px 2px rgba(0,0,0,0.1);
@@ -599,7 +603,7 @@
 }
 
 .content div {
-    position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
   bottom: 100%;

@@ -16,6 +16,7 @@ has_attached_file :avatar,
       :small => "100x100#",
       :medium => "150x150>"
     },
+    :default_url => 'im.png',
     :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
     :url => "/system/:attachment/:id/:style/:filename"
 

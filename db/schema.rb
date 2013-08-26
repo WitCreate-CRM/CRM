@@ -109,20 +109,20 @@ ActiveRecord::Schema.define(:version => 20130608211553) do
   create_table "preferencias", :force => true do |t|
     t.integer  "tiposdehabitacion_id"
     t.integer  "huesped_id"
+    t.integer  "cortesia_id"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
   end
 
+  add_index "preferencias", ["cortesia_id"], :name => "index_preferencias_on_cortesia_id"
   add_index "preferencias", ["huesped_id"], :name => "index_preferencias_on_huesped_id"
   add_index "preferencias", ["tiposdehabitacion_id"], :name => "index_preferencias_on_tiposdehabitacion_id"
 
   create_table "sugerenciasyquejas", :force => true do |t|
     t.integer  "huesped_id"
-    t.text     "observaciones"
-    t.text     "sugerencias"
-    t.text     "problemas_en_la_estadia"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.text     "comentarios_ultima_visita"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   add_index "sugerenciasyquejas", ["huesped_id"], :name => "index_sugerenciasyquejas_on_huesped_id"
@@ -173,9 +173,8 @@ ActiveRecord::Schema.define(:version => 20130608211553) do
     t.string   "obsequio"
     t.integer  "empleado_id"
     t.integer  "empresa_id"
-    t.string   "fecha"
     t.text     "comentarios"
-    t.datetime "created_at",  :null => false
+    t.date     "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 

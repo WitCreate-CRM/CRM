@@ -1,13 +1,12 @@
 <%= simple_form_for(@visita, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
-
-  <%= f.input :obsequio_descripcion, :url => autocomplete_obsequio_descripcion_visitas_path, :label => "Obsequio" ,:as => :autocomplete, :id_element => '#id' %>
+  <%= f.input :obsequio %>
 
   <%= f.input :empleado_primer_nombre, :url => autocomplete_empleado_primer_nombre_visitas_path, :label => "Empleado" ,:as => :autocomplete, :id_element => '#id' %>
 
    <div class = "span5">Empresa <%= f.collection_select :empresa_id, Empresa.all, :id, :nombre, :prompt => 'Seleccionar' %></div>
   <br><br><br>
-  <%= f.input :fecha, :label => "Fecha" %>
   <%= f.input :comentarios, :label => "Comentarios" %>
+  <%= f.input :created_at, :label => "Fecha" %>
  
    <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>

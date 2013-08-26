@@ -3,7 +3,7 @@
                 <label for="tab-1" class="tab-label-1">About</label>
         
                 <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
-                <label for="tab-2" class="tab-label-2">Services</label>
+                <label for="tab-2" class="tab-label-2">Preferencias</label>
         
                 <input id="tab-3" type="radio" name="radio-set" class="tab-selector-3" />
                 <label for="tab-3" class="tab-label-3">Work</label>
@@ -16,7 +16,7 @@
                 <div class="content">
                     <div class="content-1">
                         
-			 <% @empleados.each do |e| %><p><%= e.cargo.descripcion %> <%= e.primer_nombre %> <%= image_tag e.avatar(:thumb) %></p><% end %>
+			 <% @empleados.each do |e| %><p><%= e.cargo.descripcion %> <%= e.primer_nombre %></p><% end %>
 
 
                     </div>

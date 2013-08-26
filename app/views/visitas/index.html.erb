@@ -25,7 +25,21 @@
        
   </div>
 
+
 </form>
+
+<form method = "get">
+  <div class="input-apped">
+    <b>Desde: </b>
+    <%= text_field_tag :created_at, params[:created_at] %>
+    <b>Hasta</b>
+    <%= text_field_tag :created_at2, params[:created_at2] %>
+
+    <%= submit_tag "Buscar" %>
+  </div>
+</form>
+
+
 
 <br /><br />
 
@@ -33,11 +47,11 @@
   <thead>
     <tr>
       <th><%= sortable 'id' %></th>
-      <th><%= sortable 'obsequio_id' %></th>
+      <th><%= sortable 'obsequio' %></th>
       <th><%= sortable 'empleado_id' %></th>
       <th><%= sortable 'empresa_id' %></th>
-      <th><%= sortable 'fecha' %></th>
       <th><%= sortable 'comentarios' %></th>
+      <th><%= sortable 'created_at', :Fecha %></th>
       <th></th>
     </tr>
   </thead>

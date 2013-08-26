@@ -4,8 +4,8 @@ class CreateVisitas < ActiveRecord::Migration
       t.string :obsequio
       t.references :empleado
       t.references :empresa
-      t.string :fecha
       t.text :comentarios
+      t.date :created_at
 
       t.timestamps
     end

@@ -1,26 +1,9 @@
 <%- model_class = Huesped -%>
 <div class="page-header">
-  <h1>Huésped</h1>
+  <h1>Huésped <%= @huesped.primer_nombre %>&nbsp;<%= @huesped.primer_apellido %></h1>
 </div>
 
-<div class='gen'>
-  <p><b>Id:</b> <%= @huesped.id %></p>
-  <p><b>Primer nombre:</b> <%= @huesped.primer_nombre %></p>
-  <p><b>Segundo nombre:</b> <%= @huesped.segundo_nombre %></p>
-  <p><b>Primer apellido:</b> <%= @huesped.primer_apellido %></p>
-  <p><b>Segundo apellido:</b> <%= @huesped.segundo_apellido %></p>
-  <p><b>Tipo de identificación:</b> <%= @huesped.tiposdeidentificacion_id %></p>
-  <p><b>Documento:</b> <%= @huesped.documento %></p>
-  <p><b>Fecha de nacimiento:</b> <%= @huesped.fecha_nacimiento %></p>
-  <p><b>Dirección:</b> <%= @huesped.direccion %></p>
-  <p><b>Email:</b> <%= @huesped.email %></p>
 
-  <p><b>Foto :</b></p>
-  <%= image_tag @huesped.avatar.url(:thumb) %>
-</div>
-
-<br>
-<%= link_to "pdf", huesped_path(@huesped, :format => "pdf"), :class => 'btn' %>
 
 <section class="tabs">
                 <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
@@ -39,24 +22,26 @@
                 
                 <div class="content">
                     <div class="content-1">
+                      
+                      <p><b>Id:</b> <%= @huesped.id %></p>
+                      <p><b>Primer nombre:</b> <%= @huesped.primer_nombre %></p>
+                      <p><b>Segundo nombre:</b> <%= @huesped.segundo_nombre %></p>
+                      <p><b>Primer apellido:</b> <%= @huesped.primer_apellido %></p>
+                      <p><b>Segundo apellido:</b> <%= @huesped.segundo_apellido %></p>
+                      <p><b>Tipo de identificación:</b> <%= @huesped.tiposdeidentificacion_id %></p>
+                      <p><b>Documento:</b> <%= @huesped.documento %></p>
+                      <p><b>Fecha de nacimiento:</b> <%= @huesped.fecha_nacimiento %></p>
+                      <p><b>Dirección:</b> <%= @huesped.direccion %></p>
+                      <p><b>Email:</b> <%= @huesped.email %></p>
 
-  <p><b>Id:</b> <%= @huesped.id %></p>
-  <p><b>Primer nombre:</b> <%= @huesped.primer_nombre %></p>
-  <p><b>Segundo nombre:</b> <%= @huesped.segundo_nombre %></p>
-  <p><b>Primer apellido:</b> <%= @huesped.primer_apellido %></p>
-  <p><b>Segundo apellido:</b> <%= @huesped.segundo_apellido %></p>
-  <p><b>Tipo de identificación:</b> <%= @huesped.tiposdeidentificacion_id %></p>
-  <p><b>Documento:</b> <%= @huesped.documento %></p>
-  <p><b>Fecha de nacimiento:</b> <%= @huesped.fecha_nacimiento %></p>
-  <p><b>Dirección:</b> <%= @huesped.direccion %></p>
-  <p><b>Email:</b> <%= @huesped.email %></p>
-
-  <p><b>Foto :</b></p>
-  <%= image_tag @huesped.avatar.url(:thumb) %>
-
+                      <p><b>Foto :</b></p>
+                      <%= image_tag @huesped.avatar.url(:thumb) %>
 
                     </div>
+
+                    
                     <div class="content-2">
+                    
                     </div>
                     <div class="content-3">
                         
@@ -66,3 +51,8 @@
                     </div>
                 </div>
 </section>
+
+
+
+<br>
+<%= link_to "pdf", huesped_path(@huesped, :format => "pdf"), :class => 'btn' %>

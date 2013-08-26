@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class TelefonoPdf - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/pdfs/telefono_pdf.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Prawn::Document
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-logo">#logo</a>
+    
+    <li><a href="#method-i-telefono_details">#telefono_details</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Alimento.html">Alimento</a>
+  
+    <li><a href="./AlimentoPdf.html">AlimentoPdf</a>
+  
+    <li><a href="./AlimentosController.html">AlimentosController</a>
+  
+    <li><a href="./AlimentosHelper.html">AlimentosHelper</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Cargo.html">Cargo</a>
+  
+    <li><a href="./CargoPdf.html">CargoPdf</a>
+  
+    <li><a href="./CargosController.html">CargosController</a>
+  
+    <li><a href="./CargosHelper.html">CargosHelper</a>
+  
+    <li><a href="./Contacto.html">Contacto</a>
+  
+    <li><a href="./ContactoPdf.html">ContactoPdf</a>
+  
+    <li><a href="./ContactosController.html">ContactosController</a>
+  
+    <li><a href="./ContactosHelper.html">ContactosHelper</a>
+  
+    <li><a href="./Cortesia.html">Cortesia</a>
+  
+    <li><a href="./CortesiaPdf.html">CortesiaPdf</a>
+  
+    <li><a href="./CortesiasController.html">CortesiasController</a>
+  
+    <li><a href="./CortesiasHelper.html">CortesiasHelper</a>
+  
+    <li><a href="./Departamento.html">Departamento</a>
+  
+    <li><a href="./DepartamentoPdf.html">DepartamentoPdf</a>
+  
+    <li><a href="./DepartamentosController.html">DepartamentosController</a>
+  
+    <li><a href="./DepartamentosHelper.html">DepartamentosHelper</a>
+  
+    <li><a href="./Empleado.html">Empleado</a>
+  
+    <li><a href="./EmpleadoPdf.html">EmpleadoPdf</a>
+  
+    <li><a href="./EmpleadosController.html">EmpleadosController</a>
+  
+    <li><a href="./EmpleadosHelper.html">EmpleadosHelper</a>
+  
+    <li><a href="./Empresa.html">Empresa</a>
+  
+    <li><a href="./EmpresaPdf.html">EmpresaPdf</a>
+  
+    <li><a href="./EmpresasController.html">EmpresasController</a>
+  
+    <li><a href="./EmpresasHelper.html">EmpresasHelper</a>
+  
+    <li><a href="./Huesped.html">Huesped</a>
+  
+    <li><a href="./HuespedPdf.html">HuespedPdf</a>
+  
+    <li><a href="./HuespedesController.html">HuespedesController</a>
+  
+    <li><a href="./HuespedesHelper.html">HuespedesHelper</a>
+  
+    <li><a href="./PagesController.html">PagesController</a>
+  
+    <li><a href="./PagesHelper.html">PagesHelper</a>
+  
+    <li><a href="./Preferencia.html">Preferencia</a>
+  
+    <li><a href="./PreferenciaPdf.html">PreferenciaPdf</a>
+  
+    <li><a href="./PreferenciasController.html">PreferenciasController</a>
+  
+    <li><a href="./PreferenciasHelper.html">PreferenciasHelper</a>
+  
+    <li><a href="./SessionsController.html">SessionsController</a>
+  
+    <li><a href="./SessionsHelper.html">SessionsHelper</a>
+  
+    <li><a href="./Sugerenciasyqueja.html">Sugerenciasyqueja</a>
+  
+    <li><a href="./SugerenciasyquejaPdf.html">SugerenciasyquejaPdf</a>
+  
+    <li><a href="./SugerenciasyquejasController.html">SugerenciasyquejasController</a>
+  
+    <li><a href="./SugerenciasyquejasHelper.html">SugerenciasyquejasHelper</a>
+  
+    <li><a href="./Telefono.html">Telefono</a>
+  
+    <li><a href="./TelefonoPdf.html">TelefonoPdf</a>
+  
+    <li><a href="./TelefonosController.html">TelefonosController</a>
+  
+    <li><a href="./TelefonosHelper.html">TelefonosHelper</a>
+  
+    <li><a href="./Tiposdehabitacion.html">Tiposdehabitacion</a>
+  
+    <li><a href="./TiposdehabitacionPdf.html">TiposdehabitacionPdf</a>
+  
+    <li><a href="./TiposdehabitacionesController.html">TiposdehabitacionesController</a>
+  
+    <li><a href="./TiposdehabitacionesHelper.html">TiposdehabitacionesHelper</a>
+  
+    <li><a href="./Tiposdeidentificacion.html">Tiposdeidentificacion</a>
+  
+    <li><a href="./TiposdeidentificacionPdf.html">TiposdeidentificacionPdf</a>
+  
+    <li><a href="./TiposdeidentificacionesController.html">TiposdeidentificacionesController</a>
+  
+    <li><a href="./TiposdeidentificacionesHelper.html">TiposdeidentificacionesHelper</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UsersController.html">UsersController</a>
+  
+    <li><a href="./UsersHelper.html">UsersHelper</a>
+  
+    <li><a href="./Visita.html">Visita</a>
+  
+    <li><a href="./VisitaPdf.html">VisitaPdf</a>
+  
+    <li><a href="./VisitasController.html">VisitasController</a>
+  
+    <li><a href="./VisitasHelper.html">VisitasHelper</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class TelefonoPdf</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(telefono, view)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/pdfs/telefono_pdf.rb, line 2</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">telefono</span>, <span class="ruby-identifier">view</span>)
+  <span class="ruby-keyword">super</span>()
+  <span class="ruby-ivar">@telefono</span> = <span class="ruby-identifier">telefono</span>
+  <span class="ruby-ivar">@view</span> = <span class="ruby-identifier">view</span>
+  <span class="ruby-identifier">logo</span>
+  <span class="ruby-identifier">telefono_details</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-logo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">logo</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="logo-source">
+            <pre><span class="ruby-comment"># File app/pdfs/telefono_pdf.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">logo</span>
+  <span class="ruby-identifier">logopath</span> =  <span class="ruby-node">&quot;#{Rails.root}/app/assets/images/crm.png&quot;</span>
+  <span class="ruby-identifier">image</span> <span class="ruby-identifier">logopath</span>, <span class="ruby-value">:width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">150</span>, <span class="ruby-value">:height</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">70</span>
+  <span class="ruby-identifier">move_down</span> <span class="ruby-value">10</span>
+  <span class="ruby-identifier">draw_text</span> <span class="ruby-string">&quot;Telefono&quot;</span>, <span class="ruby-value">:at</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value">220</span>, <span class="ruby-value">675</span>], <span class="ruby-identifier">size</span><span class="ruby-operator">:</span> <span class="ruby-value">22</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- logo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- logo-method -->
+
+    
+      <div id="method-i-telefono_details" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">telefono_details</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="telefono_details-source">
+            <pre><span class="ruby-comment"># File app/pdfs/telefono_pdf.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">telefono_details</span>
+      <span class="ruby-identifier">move_down</span> <span class="ruby-value">60</span>
+  <span class="ruby-identifier">id</span> = <span class="ruby-ivar">@telefono</span>.<span class="ruby-identifier">id</span>
+  <span class="ruby-identifier">numero_telefonico</span> = <span class="ruby-ivar">@telefono</span>.<span class="ruby-identifier">numero_telefonico</span>
+  
+  <span class="ruby-identifier">table</span> ([[<span class="ruby-string">&quot;Telefono&quot;</span>, <span class="ruby-node">&quot;#{id} &quot;</span>],
+  [<span class="ruby-string">&quot;numero Telefonico&quot;</span>, <span class="ruby-node">&quot;#{numero_telefonico} &quot;</span>],
+  ]),
+
+      <span class="ruby-value">:width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">500</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">columns</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">align</span> = <span class="ruby-value">:center</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">header</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">column_widths</span> = {<span class="ruby-value">0</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span>, <span class="ruby-value">3</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>}
+    <span class="ruby-identifier">columns</span>(<span class="ruby-value">2</span>).<span class="ruby-identifier">font_style</span> = <span class="ruby-value">:bold</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- telefono_details-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- telefono_details-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
