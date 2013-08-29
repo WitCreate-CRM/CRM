@@ -383,24 +383,34 @@
 
 .search_reg {
   position: absolute;
+  font-size: 15px;
   top: 188px;
   left: 27%;
 }
 
 .search_reg:hover {
+  color:#3E8CFA;
+  background: white;
   text-decoration:none;
 }
 
 
-.search_fech {
+.search_fech { 
   position: absolute;
+  font-size: 15px;
   top: 188px;
   left: 40%;
 }
 
+.search_fech:hover {
+  color:#3E8CFA;
+  background: white;
+  text-decoration:none;
+}
 
 
-
+/***************************-------------------------************************/
+/***************************-------------------------************************/
 /***************************-------------------------************************/
 
 .tabs {

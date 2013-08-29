@@ -19,5 +19,3 @@ $('.most_busq_fech').click(function(){
 $(".busq_fech_oculto").toggle();
 });
 });
-
-
