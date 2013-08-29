@@ -9,8 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require lazybox
- *= require jquery.ui.all
+ *= require jquery-ui
  *= require lazybox
  *= require bootstrap-datepicker
  *= require_tree .
@@ -382,52 +381,27 @@
 }
 
 
-.sea {
+.search_reg {
   position: absolute;
-  left: 58%;
+  top: 188px;
+  left: 27%;
+}
+
+.search_reg:hover {
+  text-decoration:none;
+}
+
+
+.search_fech {
+  position: absolute;
+  top: 188px;
+  left: 40%;
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/***************************-------------------------************************/
 
 .tabs {
   position: relative;

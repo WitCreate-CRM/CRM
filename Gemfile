@@ -11,21 +11,21 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
-  gem 'json'
+  #gem 'json'
   
 end
 
-gem 'lazybox'
-gem 'remotipart'
-gem 'paperclip', '~> 3.3.1'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
 gem 'rails3-jquery-autocomplete'
-gem 'will_paginate'
+gem 'bootstrap-datepicker-rails'
 gem 'simple_form'
+gem 'lazybox'
+gem 'paperclip', '~> 3.3.1'
+gem 'remotipart'
+gem 'will_paginate'
 gem 'prawn'
 gem 'sorcery'
 gem "bcrypt-ruby", :require => "bcrypt"
-gem 'bootstrap-datepicker-rails'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails'

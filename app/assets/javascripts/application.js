@@ -34,9 +34,5 @@ $(document).ready(function() {
   $.rails.allowAction = $.lazybox.confirm;
 	});
 
-$(function() {
-    $(".datepicker").datepicker();
-});
-
 
 

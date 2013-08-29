@@ -28,8 +28,6 @@ class Visita < ActiveRecord::Base
  end
 
 
-
-
   validates :comentarios, :presence => true, 
   :length => { :maximum => 200 }
 
