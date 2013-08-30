@@ -381,6 +381,12 @@
 }
 
 
+.sea {
+  position: absolute;
+  left: 54%;
+}
+
+
 .search_reg {
   position: absolute;
   font-size: 15px;

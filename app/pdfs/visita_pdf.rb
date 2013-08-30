@@ -29,16 +29,16 @@ class VisitaPdf < Prawn::Document
 		#{@visita.id}", :size => 13		
 		move_down 20
 		text "Obsequio:
-		#{@visita.obsequio_id} ", :size => 13
+		#{@visita.obsequio} ", :size => 13
 		move_down 20
 		text "Empleado:
-		#{@visita.empleado_id} ", :size => 13
+		#{@visita.empleado.primer_nombre} ", :size => 13
 		move_down 20
 		text "Empresa:
-		#{@visita.empresa_id} ", :size => 13
+		#{@visita.empresa.nombre} ", :size => 13
 		move_down 20
 		text "Fecha:
-		#{@visita.fecha} ", :size => 13
+		#{@visita.created_at} ", :size => 13
 		move_down 20
 		text "Comentarios de visita:
 		#{@visita.comentarios} ", :size => 13
@@ -51,17 +51,17 @@ class VisitaPdf < Prawn::Document
 
 		move_down 60
 		id = @visita.id
-		obsequio_id = @visita.obsequio_id 
-		empleado_id = @visita.empleado_id
-		empresa_id = @visita.empresa_id
-		fecha = @visita.fecha
+		obsequio_id = @visita.obsequio
+		empleado_id = @visita.empleado.primer_nombre
+		empresa_id = @visita.empresa.nombre
+		fecha = @visita.created_at
 		comentarios = @visita.comentarios
 		table ([["Visita No", "#{id} "] ,
 		
-		["Obsequio", "#{obsequio_id} "],
-		["Empleado", "#{empleado_id} "],
-		["Empresa", "#{empresa_id}"],
-		["Fecha", "#{fecha}"],
+		["Obsequio", "#{obsequio} "],
+		["Empleado", "#{empleado.primer_nombre} "],
+		["Empresa", "#{empresa.nombre}"],
+		["Fecha", "#{created_at}"],
 		["Comentarios", "#{comentarios}"]]),
 		:width => 500 do
 	    columns(1).align = :center

@@ -1,7 +1,7 @@
 class Visita < ActiveRecord::Base
   belongs_to :empleado
   belongs_to :empresa
-  attr_accessible :obsequio, :comentarios, :fecha, :obsequio_id, :obsequio_descripcion, :empleado_id, :empleado_primer_nombre, :empresa_id, :created_at
+  attr_accessible :obsequio, :comentarios, :fecha, :empleado_id, :empleado_primer_nombre, :empresa_id, :created_at
 
   def empleado_primer_nombre
 	  empleado.primer_nombre if empleado
@@ -11,13 +11,6 @@ class Visita < ActiveRecord::Base
     self.empleado = Empleado.find_or_create_by_primer_nombre(primer_nombre) unless primer_nombre.blank?
   end
 
-  def obsequio_descripcion
-    obsequio.descripcion if obsequio
-  end
-
-  def obsequio_descripcion=(descripcion)
-    self.obsequio = Obsequio.find_or_create_by_descripcion(descripcion) unless descripcion.blank?
-  end
 
  def self.search(search, fech_ini, fech_fin)
     if !(fech_ini.blank? and fech_fin.blank?) 

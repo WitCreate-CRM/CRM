@@ -1,6 +1,4 @@
 class VisitasController < ApplicationController
-  
-  autocomplete :obsequio, :descripcion, :full => true
 
   autocomplete :empleado, :primer_nombre, :full => true
 

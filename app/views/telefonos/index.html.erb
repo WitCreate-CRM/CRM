@@ -8,11 +8,8 @@
   <div class="input-append">
 
     <%= content_tag :label do %> 
-
     <%= text_field_tag :limit, params[:limit] , :id=>'num', :class => "span1 search-query" %> 
-
     <% end %>
-
     <button type="submit" class="btn btn-info">Mostrar</button>
  
   </div>
@@ -20,14 +17,13 @@
   <div class="input-append sea">
 
       <%= text_field_tag :search, params[:search], :class => "span2 search-query ", :placeholder => "Buscar Registro" %> 
-
       <button type="submit" class="btn btn-info"><i class="icon-search"></i></button>
        
   </div>
 
 </form>
 
-<br /><br />
+<br>
 
 
 <table class="table table-hover table-bordered table-condensed pretty">
