@@ -7,7 +7,6 @@ class VisitaPdf < Prawn::Document
 		@visita = visita
 		@view = view
 		logo
-		deliver_details
 		visita_details
 	end
 
@@ -22,45 +21,20 @@ class VisitaPdf < Prawn::Document
 	end
 
 
-
-	def deliver_details
-		move_down 60
-		text "visita Id:
-		#{@visita.id}", :size => 13		
-		move_down 20
-		text "Obsequio:
-		#{@visita.obsequio} ", :size => 13
-		move_down 20
-		text "Empleado:
-		#{@visita.empleado.primer_nombre} ", :size => 13
-		move_down 20
-		text "Empresa:
-		#{@visita.empresa.nombre} ", :size => 13
-		move_down 20
-		text "Fecha:
-		#{@visita.created_at} ", :size => 13
-		move_down 20
-		text "Comentarios de visita:
-		#{@visita.comentarios} ", :size => 13
-
-	end
-
-
-
 	def visita_details
 
 		move_down 60
 		id = @visita.id
-		obsequio_id = @visita.obsequio
+		obsequio = @visita.obsequio
 		empleado_id = @visita.empleado.primer_nombre
 		empresa_id = @visita.empresa.nombre
-		fecha = @visita.created_at
+		created_at = @visita.created_at
 		comentarios = @visita.comentarios
-		table ([["Visita No", "#{id} "] ,
+		table ([["Visita N°", "#{id} "] ,
 		
 		["Obsequio", "#{obsequio} "],
-		["Empleado", "#{empleado.primer_nombre} "],
-		["Empresa", "#{empresa.nombre}"],
+		["Empleado", "#{empleado_id} "],
+		["Empresa", "#{empresa_id}"],
 		["Fecha", "#{created_at}"],
 		["Comentarios", "#{comentarios}"]]),
 		:width => 500 do
