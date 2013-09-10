@@ -1,10 +1,7 @@
 
 <%= simple_form_for(@empleado, :html => { :class => 'form-horizontal', :multipart => true }, :remote => true) do |f| %>
  <%= javascript_include_tag "empleados" %>
-<<<<<<< HEAD
 
-=======
->>>>>>> 7af67e025f6dcd0df949761ad34a01b106dc673c
 
   <div class = "span5">Cargo <%= f.collection_select :cargo_id, Cargo.all, :id, :descripcion, :prompt => 'Seleccionar' %></div>
   <br><br><br>
@@ -13,20 +10,14 @@
 
   <%= f.input :segundo_nombre, :label => "Segundo Nombre" %>
 
-<<<<<<< HEAD
   <%= f.input :apellido, :label => "Apellido" %>
    
     <p>
    Fecha:
    <input type="text" id="datepicker" />
    </p>
-=======
-  <%= f.input :primer_apellido, :label => "Primer Apellido" %>
-
-  <%= f.input :segundo_apellido, :label => "Segundo Apellido" %>
 
   <%= f.input :fecha_nacimiento, :label => "Fecha de nacimiento", :input_html => { :class => 'datepicker' } %>
->>>>>>> 7af67e025f6dcd0df949761ad34a01b106dc673c
 
   <div class = "span5">Tipo De Identificación <%= f.collection_select :tiposdeidentificacion_id, Tiposdeidentificacion.all, :id, :sigla, :prompt => 'Seleccionar' %></div>
   <br><br><br>

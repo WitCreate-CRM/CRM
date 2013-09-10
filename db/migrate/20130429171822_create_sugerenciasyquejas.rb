@@ -8,6 +8,7 @@ class CreateSugerenciasyquejas < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :sugerenciasyquejas, :huesped_id, :tiposdehabitacion_id
+    add_index :sugerenciasyquejas, :huesped_id
+    add_index :sugerenciasyquejas, :tiposdehabitacion_id
   end
 end

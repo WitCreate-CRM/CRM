@@ -9,7 +9,7 @@
   <p><b>Nit:</b> <%= @empresa.nit %></p>
   <p><b>Dirección:</b> <%= @empresa.direccion %></p>
   <p><b>Telefono:</b> <%= @empresa.telefono %></p>
-  <p><b>Zona:</b> <%= @empresa.zona.lugar %></
+  <p><b>Zona:</b> <%= @empresa.zona.lugar %></p>
 </div>
 
 <td><%= link_to image_tag("pdf.png"), empleado_empresa_path(@empresa, :format => "pdf"), :target => "_blank" %></td>

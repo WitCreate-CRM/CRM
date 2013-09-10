@@ -27,13 +27,13 @@ ActiveRecord::Schema.define(:version => 20130828144649) do
 
   create_table "contactos", :force => true do |t|
     t.string   "nombre"
+    t.string   "extension"
     t.string   "celular"
     t.string   "email"
     t.string   "fecha_nacimiento"
     t.integer  "empresa_id"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-    t.string   "extension",        :limit => 10
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   add_index "contactos", ["empresa_id"], :name => "index_contactos_on_empresa_id"
@@ -81,10 +81,9 @@ ActiveRecord::Schema.define(:version => 20130828144649) do
     t.string   "nit"
     t.string   "direccion"
     t.integer  "empleado_id"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-    t.string   "telefono",    :limit => 20
-    t.integer  "zona_id"
+    t.string   "telefono"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "empresas", ["empleado_id"], :name => "index_empresas_on_empleado_id"
@@ -130,18 +129,14 @@ ActiveRecord::Schema.define(:version => 20130828144649) do
   create_table "sugerenciasyquejas", :force => true do |t|
     t.integer  "huesped_id"
     t.text     "comentarios_ultima_visita"
-<<<<<<< HEAD
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
     t.integer  "tiposdehabitacion_id"
-    t.string   "ultima_cortesia",           :limit => 200
-=======
+    t.text     "ultima_cortesia"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
->>>>>>> 7af67e025f6dcd0df949761ad34a01b106dc673c
   end
 
   add_index "sugerenciasyquejas", ["huesped_id"], :name => "index_sugerenciasyquejas_on_huesped_id"
+  add_index "sugerenciasyquejas", ["tiposdehabitacion_id"], :name => "index_sugerenciasyquejas_on_tiposdehabitacion_id"
 
   create_table "telefonos", :force => true do |t|
     t.integer  "huesped_id"
@@ -181,9 +176,12 @@ ActiveRecord::Schema.define(:version => 20130828144649) do
     t.string   "obsequio"
     t.text     "comentario"
     t.text     "pendiente"
+    t.integer  "visita_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "ultimavisitas", ["visita_id"], :name => "index_ultimavisitas_on_visita_id"
 
   create_table "users", :force => true do |t|
     t.string   "username",                        :null => false
@@ -208,7 +206,6 @@ ActiveRecord::Schema.define(:version => 20130828144649) do
     t.text     "comentarios"
     t.date     "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.integer  "zona_id"
   end
 
   add_index "visitas", ["empleado_id"], :name => "index_visitas_on_empleado_id"

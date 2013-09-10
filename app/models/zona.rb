@@ -1,5 +1,5 @@
 class Zona < ActiveRecord::Base
-	has_many :zonas
+  has_many :zonas
   attr_accessible :codigo, :lugar
 
   def self.search(search) 

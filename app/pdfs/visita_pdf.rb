@@ -1,7 +1,6 @@
 class VisitaPdf < Prawn::Document
 
 
-
 	def initialize(visita, view)
 		super()
 		@visita = visita

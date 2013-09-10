@@ -1,7 +1,6 @@
 class Empleado < ActiveRecord::Base
 
   has_many :visitas
-  has_many :telefonos1
   has_many :empresas
 
   belongs_to :cargo
@@ -25,7 +24,6 @@ class Empleado < ActiveRecord::Base
 
 
 
-<<<<<<< HEAD
   validates :primer_nombre, :presence => true,
    :length => { :minimum => 2, :maximum => 15 }
  
@@ -33,7 +31,5 @@ class Empleado < ActiveRecord::Base
   validates :apellido, :presence => true,
    :length => { :minimum => 2, :maximum => 15 }
 
-=======
->>>>>>> 7af67e025f6dcd0df949761ad34a01b106dc673c
 end
 

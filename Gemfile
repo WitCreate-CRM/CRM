@@ -29,7 +29,5 @@ gem 'will_paginate'
 gem 'prawn'
 gem 'sorcery'
 gem "bcrypt-ruby", :require => "bcrypt"
-<<<<<<< HEAD
 gem 'thin'
-=======
->>>>>>> 7af67e025f6dcd0df949761ad34a01b106dc673c
+

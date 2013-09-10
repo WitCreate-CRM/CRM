@@ -7,6 +7,7 @@ class CreateUltimavisitas < ActiveRecord::Migration
       t.string :obsequio
       t.text :comentario
       t.text :pendiente
+      t.references :visita
 
       t.timestamps
     end

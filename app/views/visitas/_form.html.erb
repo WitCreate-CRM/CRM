@@ -1,22 +1,12 @@
 <%= simple_form_for(@visita, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
-<<<<<<< HEAD
 
-  <%= javascript_include_tag "visita.js" %>
-=======
-  <%= f.input :obsequio %>
->>>>>>> 7af67e025f6dcd0df949761ad34a01b106dc673c
+  <%= javascript_include_tag "visitas" %>
 
   <%= f.input :empleado_primer_nombre, :url => autocomplete_empleado_primer_nombre_visitas_path, :label => "Empleado" ,:as => :autocomplete, :id_element => '#id' %>
 
    <div class = "span5">Empresa <%= f.collection_select :empresa_id, Empresa.all, :id, :nombre, :prompt => 'Seleccionar' %></div>
   <br><br><br>
-<<<<<<< HEAD
 
-  <%= f.label :fecha %>
-  <%= f.input :fecha, :as => :string, :label => false, :input_html => { :class => "datepicker" } %>
-  
-=======
->>>>>>> 7af67e025f6dcd0df949761ad34a01b106dc673c
   <%= f.input :comentarios, :label => "Comentarios" %>
   <%= f.input :created_at, :label => "Fecha" %>
  

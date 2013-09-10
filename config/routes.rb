@@ -65,12 +65,6 @@ Witcrm::Application.routes.draw do
   resources :sessions
 
 
-  resources :obsequios
-
-
-  resources :alimentos
-
-
   resources :cargos
 
 
