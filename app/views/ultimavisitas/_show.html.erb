@@ -1,0 +1,17 @@
+<%- model_class = Ultimavisita-%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class='gen'>
+  <p><b>Id:</b> <%= @ultimavisita.id %></p>
+  <p><b>Codigo:</b> <%= @ultimavisita.fecha %></p>
+  <p><b>Lugar:</b> <%= @ultimavisita.contacto%></p>
+  <p><b>Lugar:</b> <%= @ultimavisita.telefono%></p>
+  <p><b>Lugar:</b> <%= @ultimavisita.obsequio%></p>
+  <p><b>Lugar:</b> <%= @ultimavisita.comentario%></p>
+  <p><b>Lugar:</b> <%= @ultimavisita.pendiente%></p>
+</div>
+
+<td><%= link_to image_tag("pdf.png"),ultimavisita_path(@ultimavisita, :format => "pdf") %></td>
+

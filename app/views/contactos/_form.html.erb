@@ -1,12 +1,14 @@
 <%= simple_form_for([@empresa, @contacto], :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
 
+  <%= javascript_include_tag "contacto" %>
 
    
 
   <%= f.input :nombre, :label => "Nombre" %>
+  <%= f.input :extension, :label => "Extension" %>
   <%= f.input :celular, :label => "Celular" %>
   <%= f.input :email, :label => "Email" %>
-  <%= f.input :fecha_nacimiento, :label => "Fecha de Nacimiento"%>
+  <%= f.input :fecha_nacimiento, :label => "Fecha", :input_html => { :class => 'datepicker' } %>
   
  
    <div class="form-actions">

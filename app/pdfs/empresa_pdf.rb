@@ -36,7 +36,9 @@ class EmpresaPdf < Prawn::Document
 		move_down 20
 		text "Direccion:
 		#{@empresa.direccion} ", :size => 13
-		
+		move_down 20
+		text "Zona:
+		#{@empresa.zona.lugar} ", :size => 13
 
 	end
 
@@ -49,13 +51,14 @@ class EmpresaPdf < Prawn::Document
 		nombre = @empresa.nombre 
 		nit = @empresa.nit
 		direccion= @empresa.direccion
-		
+		zona= @empresa.zona.lugar
 		
 		table ([["Empresa No", "#{id} "] ,
 		
 		["Nombre", "#{nombre} "],
 		["Nit", "#{nit} "],
 		["Direccion", "#{direccion}"],
+		["Zona", "#{zona}"],
 		
 		]),
 		:width => 500 do

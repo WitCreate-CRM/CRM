@@ -5,6 +5,7 @@ class CreateEmpresas < ActiveRecord::Migration
       t.string :nit
       t.string :direccion
       t.references :empleado
+      t.string :telefono
 
       t.timestamps
     end

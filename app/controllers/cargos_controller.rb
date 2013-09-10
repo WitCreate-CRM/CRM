@@ -32,7 +32,7 @@ class CargosController < ApplicationController
      end
     end
   end
-
+  
   def new
       @cargo = Cargo.new
   end

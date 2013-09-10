@@ -1,0 +1,22 @@
+<%= simple_form_for([@visita, @ultimavisita], :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+
+
+  <%= javascript_include_tag "ultimavisita.js" %>
+  
+  <%= f.label :fecha %>
+  <%= f.input :fecha, :as => :string, :label => false, :input_html => { :class => "datepicker" } %>
+  
+  <%= f.input :contacto, :label => "Contacto" %>
+  <%= f.input :telefono, :label => "Telefono" %>
+  <%= f.input :obsequio, :label => "Obsequio" %>
+  <%= f.input :comentario, :label => "Comentario" %>
+  <%= f.input :pendiente, :label => "Pendiente" %>
+   <div class="form-actions">
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <%= link_to 'Atras', visita_ultimavisitas_path, :class => 'btn btn-small' %>
+  </div>
+<% end %>
+
+
+ 

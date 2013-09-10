@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fecha: 2013-08-28
+  contacto: MyString
+  telefono: MyString
+  obsequio: MyString
+  comentario: MyText
+  pendiente: MyText
+
+two:
+  fecha: 2013-08-28
+  contacto: MyString
+  telefono: MyString
+  obsequio: MyString
+  comentario: MyText
+  pendiente: MyText

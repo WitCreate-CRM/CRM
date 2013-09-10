@@ -6,6 +6,9 @@ class VisitasController < ApplicationController
   
   helper_method :sort_column, :sort_direction
 
+  before_filter :find_visita
+
+
   def index
     if params[:limit] == nil or params[:limit] <= "0" then
           params[:limit] = 10
@@ -18,7 +21,7 @@ class VisitasController < ApplicationController
   end
 
   def show
-       @visita = Visita.find(params[:id])
+      
        respond_to do |format|
        format.js 
       
@@ -36,7 +39,7 @@ class VisitasController < ApplicationController
   end
 
   def edit
-      @visita  = Visita.find(params[:id])
+      
   end
 
   def create
@@ -45,23 +48,31 @@ class VisitasController < ApplicationController
   end
 
   def update
-      @visita  = Visita.find(params[:id])
+      
       render :action => :edit unless @visita.update_attributes(params[:visita])
   end
 
   def destroy
-      @visita  = Visita.find(params[:id])
       @visita.destroy
   end
 
   private
  
-  def sort_column
-    Visita.column_names.include?(params[:sort]) ? params[:sort] : "id"
-  end
+    def find_visita
+    @visita = Visita.find(params[:id]) if params[:id]
+    end
 
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
-  end
+
+    def sort_column
+      Visita.column_names.include?(params[:sort]) ? params[:sort] : "id"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+    end
   
 end
+
+
+
+

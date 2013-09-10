@@ -1,0 +1,70 @@
+<%- model_class = Ultimavisita -%>
+<div class="page-header">
+  <center><h1>Listado de ultimas visitas de: <%= @visita.empresa.nombre %></h1>
+</center>
+</div>
+
+<form method="get" class="form-search">
+
+  <div class="input-append">
+
+    <%= content_tag :label do %> 
+
+    <%= text_field_tag :limit, params[:limit] , :id=>'num', :class => "span1 search-query" %> 
+
+
+    <% end %>
+
+    <button type="submit" class="btn btn-info">Mostrar</button>
+ 
+  </div>
+
+  <div class="input-append sea">
+
+        <%= text_field_tag :contact, params[:contact], :placeholder => "Buscar Registro" %>
+        <%= text_field_tag :fecha, params[:fecha], :class => "datepicker ", :placeholder => "Buscar Registro" %> 
+
+        <button type="submit" class="btn btn-info"><i class="icon-search"></i></button>
+         
+
+
+    </div>
+
+</form>
+
+<br /><br />
+ 
+<table class="table table-hover table-bordered table-condensed pretty">
+  <thead>
+    <tr>
+      <th><%= sortable 'id' %></th>
+      <th><%= sortable 'fecha' %></th>
+      <th><%= sortable 'contacto' %></th>
+      <th><%= sortable 'telefono' %></th>
+      <th><%= sortable 'obsequio' %></th>
+      <th><%= sortable 'comentario' %></th>
+      <th><%= sortable 'pendiente' %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+     <%= render @ultimavisitas  rescue nil%>
+  </tbody>
+  </table>
+  <tfoot>
+    <tr>
+      <td><%= link_to 'Nueva ultima visita', new_visita_ultimavisita_path, :remote => true, :class => "btn btn-info", :style => "color:white" %></td>
+
+      <%= link_to 'Visitas', visitas_path,:class => "btn btn-info", :style => "color:white"%>
+
+    </tr>
+  </tfoot>
+
+<hr>
+
+<div class="flickr_pagination" > 
+  <div class="page_info">
+      <p><b> Total ultimas visitas :</b> <%= @ultimavisitas.total_entries %> </p>
+    </div>
+    <%= will_paginate @ultimavisitas, :container => false, :previous_label => '&larr; Anterior', :next_label => 'Siguiente &rarr;' %>
+  </div>

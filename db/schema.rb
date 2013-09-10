@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608211553) do
+ActiveRecord::Schema.define(:version => 20130828144649) do
 
   create_table "alimentos", :force => true do |t|
     t.text     "descripcion"
@@ -31,8 +31,9 @@ ActiveRecord::Schema.define(:version => 20130608211553) do
     t.string   "email"
     t.string   "fecha_nacimiento"
     t.integer  "empresa_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.string   "extension",        :limit => 10
   end
 
   add_index "contactos", ["empresa_id"], :name => "index_contactos_on_empresa_id"
@@ -55,10 +56,10 @@ ActiveRecord::Schema.define(:version => 20130608211553) do
 
   create_table "empleados", :force => true do |t|
     t.integer  "cargo_id"
+    t.string   "codigo"
     t.string   "primer_nombre"
     t.string   "segundo_nombre"
-    t.string   "primer_apellido"
-    t.string   "segundo_apellido"
+    t.string   "apellido"
     t.integer  "tiposdeidentificacion_id"
     t.string   "documento"
     t.integer  "departamento_id"
@@ -80,8 +81,10 @@ ActiveRecord::Schema.define(:version => 20130608211553) do
     t.string   "nit"
     t.string   "direccion"
     t.integer  "empleado_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.string   "telefono",    :limit => 20
+    t.integer  "zona_id"
   end
 
   add_index "empresas", ["empleado_id"], :name => "index_empresas_on_empleado_id"
@@ -106,6 +109,12 @@ ActiveRecord::Schema.define(:version => 20130608211553) do
 
   add_index "huespedes", ["tiposdeidentificacion_id"], :name => "index_huespedes_on_tiposdeidentificacion_id"
 
+  create_table "obsequios", :force => true do |t|
+    t.text     "descripcion"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "preferencias", :force => true do |t|
     t.integer  "tiposdehabitacion_id"
     t.integer  "huesped_id"
@@ -121,8 +130,15 @@ ActiveRecord::Schema.define(:version => 20130608211553) do
   create_table "sugerenciasyquejas", :force => true do |t|
     t.integer  "huesped_id"
     t.text     "comentarios_ultima_visita"
+<<<<<<< HEAD
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.integer  "tiposdehabitacion_id"
+    t.string   "ultima_cortesia",           :limit => 200
+=======
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
+>>>>>>> 7af67e025f6dcd0df949761ad34a01b106dc673c
   end
 
   add_index "sugerenciasyquejas", ["huesped_id"], :name => "index_sugerenciasyquejas_on_huesped_id"
@@ -136,13 +152,19 @@ ActiveRecord::Schema.define(:version => 20130608211553) do
 
   add_index "telefonos", ["huesped_id"], :name => "index_telefonos_on_huesped_id"
 
+  create_table "telefonos1", :force => true do |t|
+    t.integer  "empleado_id"
+    t.string   "numero_telefonico"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "telefonos1", ["empleado_id"], :name => "index_telefonos1_on_empleado_id"
+
   create_table "tiposdehabitaciones", :force => true do |t|
     t.string   "tipo"
-    t.text     "descripcion"
-    t.text     "amenidades"
-    t.string   "numero_de_habitacion"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "tiposdeidentificaciones", :force => true do |t|
@@ -150,6 +172,17 @@ ActiveRecord::Schema.define(:version => 20130608211553) do
     t.string   "sigla"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "ultimavisitas", :force => true do |t|
+    t.date     "fecha"
+    t.string   "contacto"
+    t.string   "telefono"
+    t.string   "obsequio"
+    t.text     "comentario"
+    t.text     "pendiente"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -170,15 +203,22 @@ ActiveRecord::Schema.define(:version => 20130608211553) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token"
 
   create_table "visitas", :force => true do |t|
-    t.string   "obsequio"
     t.integer  "empleado_id"
     t.integer  "empresa_id"
     t.text     "comentarios"
     t.date     "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "zona_id"
   end
 
   add_index "visitas", ["empleado_id"], :name => "index_visitas_on_empleado_id"
   add_index "visitas", ["empresa_id"], :name => "index_visitas_on_empresa_id"
+
+  create_table "zonas", :force => true do |t|
+    t.string   "codigo"
+    t.string   "lugar"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

@@ -1,7 +1,15 @@
 class Visita < ActiveRecord::Base
+<<<<<<< HEAD
+  
+  belongs_to :empleado
+  belongs_to :empresa
+  has_many :ultimavisitas
+  attr_accessible :comentarios, :fecha, :empleado_id, :empleado_primer_nombre, :empresa_id
+=======
   belongs_to :empleado
   belongs_to :empresa
   attr_accessible :obsequio, :comentarios, :fecha, :empleado_id, :empleado_primer_nombre, :empresa_id, :created_at
+>>>>>>> 7af67e025f6dcd0df949761ad34a01b106dc673c
 
   def empleado_primer_nombre
 	  empleado.primer_nombre if empleado

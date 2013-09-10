@@ -1,0 +1,31 @@
+<tr id=<%= "ultimavisita_#{ultimavisita.id}" %>>
+  <td><%= ultimavisita.id %></td>
+  <td><%= ultimavisita.fecha %></td>
+  <td><%= ultimavisita.contacto %></td>
+  <td><%= ultimavisita.telefono %></td>
+  <td><%= ultimavisita.obsequio %></td>
+  <td><%= ultimavisita.comentario %></td>
+ <td><%= ultimavisita.pendiente %></td>
+
+  
+  <td>
+    <div class="btn-group">
+      <button class="btn btn-mini btn-info"> Opciones </button>
+      <button class="btn btn-mini btn-info dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" >
+
+      <li><%= link_to 'Mostrar', visita_ultimavisita_path(@visita, ultimavisita), :remote => true, :class => 'btn btn-mini', :style => "color:black" %></li>
+
+      <li><%= link_to 'Editar', edit_visita_ultimavisita_path(@visita, ultimavisita), :remote => true, :class => 'btn btn-mini', :style => "color:black" %></li>
+
+      <li><%= link_to 'Eliminar', visita_ultimavisita_path(@visita, ultimavisita),
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger', :style => "color:white" %></li>
+        </ul>
+    </div>
+  </td>
+</tr>
+
+

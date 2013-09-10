@@ -1,5 +1,11 @@
 Witcrm::Application.routes.draw do
 
+  resources :ultimavisitas
+
+
+  resources :zonas
+
+
   get "pages/index"
 
   get "logout" => "sessions#destroy", :as => "logout"
@@ -45,6 +51,11 @@ Witcrm::Application.routes.draw do
     get :autocomplete_obsequio_descripcion, :on => :collection
   end
 
+
+
+  resources :visitas do
+  resources :ultimavisitas
+  end
 
 
 

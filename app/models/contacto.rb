@@ -1,7 +1,7 @@
 class Contacto < ActiveRecord::Base
   
   belongs_to :empresa
-  attr_accessible :celular, :email, :fecha_nacimiento, :nombre, :empresa_id
+  attr_accessible :celular, :email, :fecha_nacimiento, :nombre, :extension, :empresa_id
  
   def self.search(search) 
   	where('nombre like ?', "%#{search}%") 
@@ -17,5 +17,8 @@ class Contacto < ActiveRecord::Base
 
    validates :celular, :presence => true, 
    :length => { :maximum => 15 }
+
+    validates :extension, :presence => true, 
+   :length => { :maximum => 10 }
 
 end

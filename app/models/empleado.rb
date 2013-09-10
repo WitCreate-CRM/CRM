@@ -7,10 +7,10 @@ class Empleado < ActiveRecord::Base
   belongs_to :cargo
   belongs_to :tiposdeidentificacion
   belongs_to :departamento
-  attr_accessible :avatar ,:documento, :primer_apellido, :primer_nombre, :segundo_apellido, :segundo_nombre, :cargo_id, :tiposdeidentificacion_id, :departamento_id, :fecha_nacimiento
+  attr_accessible :codigo, :apellido, :avatar ,:documento, :primer_nombre, :segundo_nombre, :cargo_id, :tiposdeidentificacion_id, :departamento_id, :fecha_nacimiento
 
   def self.search(search) 
-  where('primer_nombre like ? OR segundo_nombre like ? OR primer_apellido like ? OR segundo_apellido like ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%" ) 
+  where('primer_nombre like ? OR segundo_nombre like ? ', "%#{search}%", "%#{search}%" ) 
   end
 
   has_attached_file :avatar,
@@ -25,5 +25,15 @@ class Empleado < ActiveRecord::Base
 
 
 
+<<<<<<< HEAD
+  validates :primer_nombre, :presence => true,
+   :length => { :minimum => 2, :maximum => 15 }
+ 
+
+  validates :apellido, :presence => true,
+   :length => { :minimum => 2, :maximum => 15 }
+
+=======
+>>>>>>> 7af67e025f6dcd0df949761ad34a01b106dc673c
 end
 

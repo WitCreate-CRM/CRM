@@ -7,11 +7,21 @@
   <div class = "span3">
   <%= f.text_area(:comentarios_ultima_visita, :size => "10x5")  %>
 </div>
+<br>
+<br>
+  <div class="row">
+    <div class = "span5 offset3">Preferecia De Habitacion <%= f.collection_select :tiposdehabitacion_id, Tiposdehabitacion.all, :id, :tipo, :prompt => 'Seleccionar' %></div>
 
-  <br><br><br><br><br><br>
-  
-  <div class="form-actions">
-    <%= f.submit "guardar", :class => 'btn btn-primary' %>
-    <%= link_to 'Atras', sugerenciasyquejas_path, :class => 'btn btn-small' %>
   </div>
+
+     <%= f.input :ultima_cortesia, :label => "Última cortesia" %>
+
+  <br>
+  
+  <div class="row">
+	  <div class="form-actions">
+	    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+	    <%= link_to 'Atras', sugerenciasyquejas_path, :class => 'btn btn-small' %>
+	  </div>
+</div>
 <% end %>

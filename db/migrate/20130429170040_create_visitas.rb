@@ -1,7 +1,6 @@
 class CreateVisitas < ActiveRecord::Migration
   def change
     create_table :visitas do |t|
-      t.string :obsequio
       t.references :empleado
       t.references :empresa
       t.text :comentarios

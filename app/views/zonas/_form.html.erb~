@@ -1,0 +1,9 @@
+<%= simple_form_for(@cargo, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+ 
+  <%= f.input :descripcion, :label => "Descripción" %>
+ 
+   <div class="form-actions">
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <%= link_to 'Atras', cargos_path, :class => 'btn btn-small' %>
+  </div>
+<% end %>

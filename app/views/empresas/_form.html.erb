@@ -5,8 +5,9 @@
   <%= f.input :nombre, :label => "Nombre" %>
   <%= f.input :nit, :label => "Nit" %>
   <%= f.input :direccion, :label => "Direccion" %>
-  
-  
+  <%= f.input :telefono, :label => "Telefono" %>
+  <%=f.label :zona %>
+    <%= f.collection_select :zona_id, Zona.all, :id, :codigo, :prompt => 'Seleccionar' %>
   
  
    <div class="form-actions">

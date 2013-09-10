@@ -1,6 +1,7 @@
 class Sugerenciasyqueja < ActiveRecord::Base
-  belongs_to :huesped
-  attr_accessible :comentarios_ultima_visita, :huesped_id ,:huesped_primer_nombre
+  belongs_to :huesped 
+  belongs_to :tiposdehabitacion
+  attr_accessible :comentarios_ultima_visita, :huesped_id ,:huesped_primer_nombre, :tiposdehabitacion_id, :ultima_cortesia
 
   def huesped_primer_nombre
     huesped.primer_nombre if huesped
@@ -15,8 +16,13 @@ class Sugerenciasyqueja < ActiveRecord::Base
  		where('comentarios_ultima_visita like ? ', "%#{search}%" ) 
   end
 
+  validates :tiposdehabitacion, :presence => true
+   
 
   validates :comentarios_ultima_visita, :presence => true,
    :length => { :maximum => 2500 }
+
+  validates :ultima_cortesia, :presence => true,
+   :length => { :maximum => 200 }
 
 end

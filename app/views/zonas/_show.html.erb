@@ -1,0 +1,12 @@
+<%- model_class = Zona-%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class='gen'>
+  <p><b>Id:</b> <%= @zona.id %></p>
+  <p><b>Codigo:</b> <%= @zona.codigo %></p>
+  <p><b>Lugar:</b> <%= @zona.lugar%></p>
+</div>
+
+<td><%= link_to image_tag("pdf.png"),zona_path(@zona, :format => "pdf") %></td>

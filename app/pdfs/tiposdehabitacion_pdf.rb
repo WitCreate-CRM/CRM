@@ -18,14 +18,14 @@ class TiposdehabitacionPdf < Prawn::Document
   def tiposdehabitacion_details    
   	move_down 60
     id = @tiposdehabitacion.id
-    descripcion = @tiposdehabitacion.descripcion
-    habitacion_tina = @tiposdehabitacion.habitacion_tina
-    piso = @tiposdehabitacion.piso
+    tipo = @tiposdehabitacion.tipo
+    
+    
     
   	table ([["Id",  "#{id} "] ,
-    ["Descripción", "#{descripcion} "],
-    ["Habitación Con Tina", "#{habitacion_tina} "],
-    ["Piso", "#{piso} "],
+    ["Tipo", "#{tipo} "],
+   
+    
     ]),
 	:width => 500 do
       columns(1).align = :center

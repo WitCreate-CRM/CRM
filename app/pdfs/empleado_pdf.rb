@@ -37,11 +37,8 @@ class EmpleadoPdf < Prawn::Document
 		text "Segundo Nombre:
 		#{@empleado.segundo_nombre} ", :size => 13
 		move_down 20
-		text "Primer Apellido:
-		#{@empleado.primer_apellido} ", :size => 13
-		move_down 20
-		text "Segundo Apellido:
-		#{@empleado.segundo_apellido} ", :size => 13
+		text "Apellido:
+		#{@empleado.apellido} ", :size => 13
 		move_down 20
 		text "Tipo De Identificacion:
 		#{@empleado.tipo_identificacion_id} ", :size => 13
@@ -63,8 +60,7 @@ class EmpleadoPdf < Prawn::Document
 		cargo_id = @empleado.cargo_id 
 		primer_nombre = @empleado.primer_nombre
 		segundo_nombre= @empleado.segundo_nombre
-		primer_apellido = @empleado.primer_nombre
-		segundo_apellido = @empleado.segundo_apellido
+		apellido = @empleado.apellido
 		tipo_identificacion_id = @empleado.tipo_identificacion_id
 		documento = @empleado.documento
 		departamento_id = @empleado.departamento_id
@@ -76,8 +72,7 @@ class EmpleadoPdf < Prawn::Document
 		["Cargo", "#{cargo_id} "],
 		["Primer Nombre", "#{primer_nombre} "],
 		["Segundo Nombre", "#{segundo_nombre}"],
-		["Primer Apellido", "#{primer_apellido}"],
-		["Segundo Nombre", "#{segundo_apellido}"],
+		["Apellido", "#{apellido}"],
 		["Tipo De Identificacion", "#{tipo_identificacion_id} "],
 		["Documento", "#{documento} "],
 		["Departamento", "#{departamento_id} "],

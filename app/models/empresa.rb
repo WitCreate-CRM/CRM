@@ -2,8 +2,8 @@ class Empresa < ActiveRecord::Base
 	
   has_many :contactos
   belongs_to :empleado
-  
-  attr_accessible :direccion, :nit, :nombre
+  belongs_to :zona
+  attr_accessible :direccion, :nit, :nombre, :telefono, :zona_id
 
  def self.search(search) 
   where('nombre like ?', "%#{search}%") 

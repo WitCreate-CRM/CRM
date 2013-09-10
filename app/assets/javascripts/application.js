@@ -18,10 +18,6 @@
 //= require lazybox
 //= require jquery.remotipart
 //= require autocomplete-rails
-//= require bootstrap-datepicker
-//= require bootstrap-datepicker/core
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.es
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.fr
 //= require_tree .
 
 

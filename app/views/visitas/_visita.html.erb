@@ -1,6 +1,9 @@
 <tr id=<%= "visita_#{visita.id}" %>>
   <td><%= visita.id %></td>
+<<<<<<< HEAD
+=======
   <td><%= visita.obsequio %></td>
+>>>>>>> 7af67e025f6dcd0df949761ad34a01b106dc673c
   <td><%= visita.empleado_primer_nombre %></td>
   <td><%= visita.empresa.nombre%></td>
   <td><%= visita.comentarios %></td>
@@ -22,6 +25,10 @@
         :data => { :confirm => 'Esta Seguro?' },
         :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger', :style => "color:white" %></li>
         </ul>
+
+        <td><%= link_to 'Historial', visita_ultimavisitas_path(visita), :class => "btn btn-mini", :style => "color:black"  %></td>
+
     </div>
   </td>
 </tr>
+

@@ -34,6 +34,9 @@ class ContactoPdf < Prawn::Document
 		text "Nombre:
 		#{@contacto.nombre} ", :size => 13
 		move_down 20
+		text "Extension:
+		#{@contacto.extension} ", :size => 13
+		move_down 20
 		text "Celular:
 		#{@contacto.celular} ", :size => 13
 		move_down 20
@@ -53,6 +56,7 @@ class ContactoPdf < Prawn::Document
 		id = @contacto.id
 		empresa = @contacto.empresa_id 
 		nombre = @contacto.nombre
+		extension = @contacto.extension
 		celular= @contacto.celular
 		email = @contacto.email
 		fecha_nacimiento = @contacto.fecha_nacimiento
@@ -60,6 +64,7 @@ class ContactoPdf < Prawn::Document
 		
 		["Empresa", "#{empresa} "],
 		["Nombre", "#{nombre} "],
+		["Extension", "#{extension} "],
 		["Celular", "#{celular}"],
 		["Email", "#{email}"],
 		["fecha de nacimiento", "#{fecha_nacimiento}"]]),
