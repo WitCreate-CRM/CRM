@@ -13,7 +13,7 @@ class UltimavisitasController < ApplicationController
           params[:limit] = 10
     end
 
-    @ultimavisitas =@visita.ultimavisitas.order(sort_column + ' ' + sort_direction).search(params[:contact], params[:fecha]).page(params[:page]).per_page(params[:limit].to_i)
+    @ultimavisitas =@visita.ultimavisitas.order(sort_column + ' ' + sort_direction).search(params[:contact], params[:fecha],params[:create_at],params[:create_at2]).page(params[:page]).per_page(params[:limit].to_i)
     respond_to do |format|
       format.html
       format.json { render json: @ultimavisitas }

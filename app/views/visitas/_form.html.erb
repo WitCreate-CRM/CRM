@@ -8,7 +8,7 @@
   <br><br><br>
 
   <%= f.input :comentarios, :label => "Comentarios" %>
-  <%= f.input :created_at, :label => "Fecha" %>
+  <%= f.input :created_at, as: :string ,:label => "Fecha", :input_html => { :class => 'datepicker' }  %>
  
    <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>

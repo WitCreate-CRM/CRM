@@ -4,7 +4,7 @@ $(function() {
  $(".datepicker" ).datepicker( "option", "dateFormat", "dd-mm-yy" );
  $(".datepicker").datepicker();
 });
-});
+
 
 
 //Mostrar formulario de búsqueda de registros

@@ -82,11 +82,13 @@ ActiveRecord::Schema.define(:version => 20130828144649) do
     t.string   "direccion"
     t.integer  "empleado_id"
     t.string   "telefono"
+    t.integer  "zona_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   add_index "empresas", ["empleado_id"], :name => "index_empresas_on_empleado_id"
+  add_index "empresas", ["zona_id"], :name => "index_empresas_on_zona_id"
 
   create_table "huespedes", :force => true do |t|
     t.string   "primer_nombre"

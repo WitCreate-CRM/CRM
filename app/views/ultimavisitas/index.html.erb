@@ -1,38 +1,67 @@
 <%- model_class = Ultimavisita -%>
+<%= javascript_include_tag "ultimavisita.js" %>
+
 <div class="page-header">
   <center><h1>Listado de ultimas visitas de: <%= @visita.empresa.nombre %></h1>
 </center>
 </div>
 
-<form method="get" class="form-search">
 
+
+<form method="get" class="form-search">
   <div class="input-append">
 
     <%= content_tag :label do %> 
-
     <%= text_field_tag :limit, params[:limit] , :id=>'num', :class => "span1 search-query" %> 
-
-
     <% end %>
-
     <button type="submit" class="btn btn-info">Mostrar</button>
- 
+
   </div>
-
-  <div class="input-append sea">
-
-        <%= text_field_tag :contact, params[:contact], :placeholder => "Buscar Registro" %>
-        <%= text_field_tag :fecha, params[:fecha], :class => "datepicker ", :placeholder => "Buscar Registro" %> 
-
-        <button type="submit" class="btn btn-info"><i class="icon-search"></i></button>
-         
-
-
-    </div>
-
 </form>
 
-<br /><br />
+
+<a href="#" class="most_busq_reg search_reg"> <span class="icon-th-list"></span>  Búscar Registro</a>
+
+<div class="busq_reg_oculto">
+  <form method="get" class="form-search">
+    <div class="input-append">
+
+      <%= text_field_tag :search, params[:search], :class => "span2 search-query ", :placeholder => "Buscar Registro" %> 
+
+      <button type="submit" class="btn btn-info"><i class="icon-search"></i></button>
+         
+    </div>
+  </form>
+</div>
+
+
+<a href="#" class="most_busq_fech search_fech"><span class="icon-calendar"></span>  Búscar Entre Fechas</a>
+
+<div class="busq_fech_oculto">
+<form method = "get" class="form-search">
+  <div>
+    <b>Desde: </b>
+    <%= text_field_tag :created_at, params[:created_at], :class => "span2 search-query datepicker", :placeholder => "Fecha Inicial" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <b>Hasta: </b>
+    <%= text_field_tag :created_at2, params[:created_at2], :class => "span2 search-query datepicker", :placeholder => "Fecha Final" %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <%= submit_tag "Buscar", :class => 'btn btn-info' %>
+
+  </div>
+  
+  <br>
+  
+  <div class="input-append">
+    <%= text_field_tag :fecha, params[:fecha], :class => "span2 search-query datepicker ", :placeholder => "Buscar Registro" %>
+    <button type="submit" class="btn btn-info"><i class="icon-search"></i></button>
+  </div>
+
+</form>
+</div>
+
+
+
+<br>
  
 <table class="table table-hover table-bordered table-condensed pretty">
   <thead>
