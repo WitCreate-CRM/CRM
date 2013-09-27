@@ -12,14 +12,13 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
   #gem 'json'
-  
+  gem 'less-rails'
 end
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails'
 gem 'rails3-jquery-autocomplete'
+gem 'twitter-bootstrap-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'simple_form'
 gem 'lazybox'

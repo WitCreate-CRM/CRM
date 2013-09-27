@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 $(function() {
  $(".datepicker" ).datepicker({ dayNamesMin: [ "Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab" ] });
  var dateFormat = $(".datepicker" ).datepicker( "option", "dateFormat" );
@@ -6,7 +6,7 @@ $(function() {
  $(".datepicker").datepicker();
 });
 
-=======
+
 //Mostrar formulario de búsqueda de registros
 
 $(document).ready(function(){
@@ -28,4 +28,3 @@ $('.most_busq_fech').click(function(){
 $(".busq_fech_oculto").toggle();
 });
 });
->>>>>>> 7af67e025f6dcd0df949761ad34a01b106dc673c

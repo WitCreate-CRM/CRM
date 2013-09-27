@@ -11,13 +11,13 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.ui.all 
 //= require jquery_ujs
-//= require jquery.ui.all
-//= require twitter/bootstrap
-//= require bootstrap
-//= require lazybox
 //= require jquery.remotipart
 //= require autocomplete-rails
+//= require bootstrap
+//= require twitter/bootstrap
+//= require lazybox
 //= require_tree .
 
 
